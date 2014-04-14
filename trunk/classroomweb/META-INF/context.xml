@@ -1,0 +1,19 @@
+<Context reloadable="true">  
+     <WatchedResource>WEB-INF/web.xml</WatchedResource>  
+     <Resource name="jdbc/mysql_ds" auth="Container" type="javax.sql.DataSource"    
+	     maxActive="20"    
+	     maxIdle="5"  
+	     maxWait="10000"  
+	     username="wangweijuan"    
+	     password="wwj12345"  
+	     driverClassName="org.gjt.mm.mysql.Driver"
+	     url="jdbc:mysql://192.168.100.1:3306/ksdb"
+	     testOnBorrow="true" testWhileIdle="true" validationQuery="select 1 from dual"
+	     minEvictableIdleTimeMillis="300000"
+	     timeBetweenEvictionRunsMillis="600000"
+     />  
+ </Context>
+   <!--
+    username="jspcmsuser"    
+	     password="qwer1357."  
+    url="jdbc:mysql://192.168.100.1:3306/jspcms" --> 
