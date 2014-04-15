@@ -8,17 +8,9 @@
 </head>
 <body>
 
-<form action="">
-上传文件<input type="file">
-得到<input type="text">
-</form>
-<p>
-
-站点真实路径：<%=application.getRealPath("/")%>
-</p>
-<p>
-服务器版本：<%=application.getServerInfo()%>
-</p>
+<center>
+<p>您现在的位置是网站后台首页</p>
+</center>
 
 </body>
 </html>

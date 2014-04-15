@@ -46,6 +46,10 @@ public class DbConnection {
 		return isConnected;
 	}
 	public Connection getConn() {
+		
+		if(conn!=null){
+			isConnected=true;
+		}
 		return conn;
 	}
 	public void setConn(Connection conn) {
