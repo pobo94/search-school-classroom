@@ -1,5 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
 
-<title>��վ����Ա��½</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>网站管理员登陆</title>
 <style type="text/css">
 <!--
 body {
@@ -43,9 +50,9 @@ function correctPNG()
 }
 window.attachEvent("onload", correctPNG);
 </script>
-
-
 <link href="images/skin.css" rel="stylesheet" type="text/css">
+</head>
+
 <body>
 <table width="100%" height="166" border="0" cellpadding="0" cellspacing="0">
   <tr>
@@ -67,26 +74,26 @@ window.attachEvent("onload", correctPNG);
                   <td height="149">&nbsp;</td>
                 </tr>
                 <tr>
-                  <td height="80" align="right" valign="top"><img src="images/logo.png" width="279" height="68"></td>
+                  <td height="80" align="right" valign="top"><img src="images/logo.png" width="319" height="68"></td>
                 </tr>
                 <tr>
-                  <td height="198" align="right" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+                  <td height="198"  valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
                     <tr>
                       <td width="35%">&nbsp;</td>
-                      <td height="25" colspan="2" class="left_txt"><p>1- ��ʦС�Ŷӽ߳�Ϊ������...</p></td>
+                      <td height="25" colspan="2" class="left_txt" align="left"><p>1- 科师小团队，由在校大学生组成...</p></td>
                     </tr>
                     <tr>
                       <td>&nbsp;</td>
-                      <td height="25" colspan="2" class="left_txt"><p>2- �ս��Ҳ�ѯ����ʦ��...</p></td>
+                      <td height="25" colspan="2" class="left_txt" align="left"><p>2- 一站通式的整合方式，方便用户使用...</p></td>
                     </tr>
                     <tr>
                       <td>&nbsp;</td>
-                      <td height="25" colspan="2" class="left_txt"><p>3- �Ż�������Դʱ����Դ�����ǵ�Ŀ��...</p></td>
+                      <td height="25" colspan="2" class="left_txt" align="left"><p>3- 强大的后台系统，管理内容易如反掌...</p></td>
                     </tr>
                     <tr>
                       <td>&nbsp;</td>
-                      <td width="30%" height="40"><img src="images/icon-demo.gif" width="16" height="16"><a href="http://www.865171.cn" target="_blank" class="left_txt3"> ʹ��˵��</a> </td>
-                      <td width="35%"><img src="images/icon-login-seaver.gif" width="16" height="16"><a href="http://www.865171.cn" class="left_txt3"> ���߿ͷ�</a></td>
+                      <td width="30%" height="40" align="left"><img src="images/icon-demo.gif" width="16" height="16"><a href="#"class="left_txt3"> 使用说明</a> </td>
+                      <td width="35%" align="left"><img src="images/icon-login-seaver.gif" width="16" height="16"><a href="#" class="left_txt3"> 在线客服</a></td>
                     </tr>
                   </table></td>
                 </tr>
@@ -98,32 +105,33 @@ window.attachEvent("onload", correctPNG);
         <td width="50%" valign="bottom"><table width="100%" height="59" border="0" align="center" cellpadding="0" cellspacing="0">
             <tr>
               <td width="4%">&nbsp;</td>
-              <td width="96%" height="38"><span class="login_txt_bt">��½��Ϣ����̨����</span></td>
+              <td width="96%" height="38" align="left"><span class="login_txt_bt">登陆信息网后台管理</span></td>
             </tr>
             <tr>
               <td>&nbsp;</td>
               <td height="21"><table cellSpacing="0" cellPadding="0" width="100%" border="0" id="table211" height="328">
                   <tr>
-                    <td height="164" colspan="2" align="middle"><form name="myform" action="index.html" method="post">
+                    <td height="164" colspan="2" align="middle"><form name="myform" action="home.jsp" method="post">
                         <table cellSpacing="0" cellPadding="0" width="100%" border="0" height="143" id="table212">
                           <tr>
-                            <td width="13%" height="38" class="top_hui_text"><span class="login_txt">����Ա��&nbsp;&nbsp; </span></td>
-                            <td height="38" colspan="2" class="top_hui_text"><input name="username" class="editbox4" value="" size="20">                            </td>
+                            <td width="13%" height="38" class="top_hui_text" align="left"><span class="login_txt">管理员：&nbsp;&nbsp; </span></td>
+                            <td height="38" colspan="2" class="top_hui_text" align="left"><input name="username" type=text class="editbox4" value="" size="20">                            </td>
                           </tr>
                           <tr>
-                            <td width="13%" height="35" class="top_hui_text"><span class="login_txt"> �� �룺 &nbsp;&nbsp; </span></td>
-                            <td height="35" colspan="2" class="top_hui_text"><input class="editbox4" type="password" size="20" name="password">
+                            <td width="13%" height="35" class="top_hui_text" align="left"><span class="login_txt"> 密 &nbsp;码： &nbsp;&nbsp; </span></td>
+                            <td height="35" colspan="2" class="top_hui_text" align="left"><input class="editbox4" type="password" size="20" name="password">
                               <img src="images/luck.gif" width="19" height="18"> </td>
                           </tr>
                           <tr>
-                            <td width="13%" height="35" ><span class="login_txt">��֤�룺</span></td>
-                            <td height="35" colspan="2" class="top_hui_text"><input class=wenbenkuang name=verifycode type=text value="" maxLength=4 size=10>
+                            <td width="13%" height="35" class="top_hui_text" align="left"><span class="login_txt">验证码：</span></td>
+                            <td height="35" colspan="2" class="top_hui_text" align="left"><input class=wenbenkuang name=verifycode type=text value="" maxLength=4 size=10>
                               </td>
                           </tr>
                           <tr>
-                            <td height="35" >&nbsp;</td>
-                            <td width="20%" height="35" ><input name="Submit" type="submit" class="button" id="Submit" value="�� ½"> </td>
-                            <td width="67%" class="top_hui_text"><input name="cs" type="button" class="button" id="cs" value="ȡ ��" onClick="showConfirmMsg1()"></td>
+                             
+                             <td width="13%" height="35" class="top_hui_text" align="center"><input name="Submit" type="submit" class="button" id="Submit" value="登 陆"></td>
+                            <td height="35" colspan="2" class="top_hui_text" align="left"><input name="cs" type="button" class="button" id="cs" value="取 消" onClick="showConfirmMsg1()"></td>
+                        
                           </tr>
                         </table>
                         <br>
@@ -148,3 +156,5 @@ window.attachEvent("onload", correctPNG);
     </table></td>
   </tr>
 </table>
+</body>
+</html>

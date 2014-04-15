@@ -1,0 +1,26 @@
+（1）
+behind文件内放的是后台管理的内容；
+front文件内放的是前台的内容；
+（2）
+登录google.code查看我们的项目地址为：https://code.google.com/p/search-school-classroom/source/checkout
+在浏览器上输入改地址，进去后点击右上角的sign in,输入邮箱和密码即可登录；
+王伟娟：
+google邮箱：aimmywang123@gmail.com(wangweijuan123)
+黄亮：
+google邮箱：hlxinxi2011@gmail.com（huangliang123）
+程禄元：
+google邮箱clyxinxi2011@gmail.com（chengluyuan123）
+（3）
+svn客户端从google.code上checkout下来该项目的地址为：
+https://search-school-classroom.googlecode.com/svn/trunk/
+（4）
+项目中的每个成员在对项目进行修改后，在提交代码到goole.code上时，会弹出一个提示框输入账号和密码：
+王伟娟：
+账号：aimmywang123@gmail.com
+密码：Mb5Fx3cG2ZJ3
+黄亮：
+账号：hlxinxi2011@gmail.com
+密码：zs7jN6NQ2yy3
+程禄元：
+账号：clyxinxi2011@gmail.com
+密码：sM2HJ2SJ5Gr2
