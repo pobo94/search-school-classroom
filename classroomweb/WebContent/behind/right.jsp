@@ -1,5 +1,12 @@
-<link href="images/skin.css" rel="stylesheet" type="text/css" />
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" /><style type="text/css">
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>åŽå°é¡µé¢</title>
+
+<style type="text/css">
 <!--
 body {
 	margin-left: 0px;
@@ -10,13 +17,16 @@ body {
 }
 -->
 </style>
+<link href="images/skin.css" rel="stylesheet" type="text/css" />
+</head>
+
 <body>
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
   <tr>
     <td width="17" valign="top" background="images/mail_leftbg.gif"><img src="images/left-top-right.gif" width="17" height="29" /></td>
     <td valign="top" background="images/content-bg.gif"><table width="100%" height="31" border="0" cellpadding="0" cellspacing="0" class="left_topbg" id="table2">
       <tr>
-        <td height="31"><div class="titlebt">»¶Ó­½çÃæ</div></td>
+        <td height="31"><div class="titlebt">åŽå°é¦–é¡µ</div></td>
       </tr>
     </table></td>
     <td width="16" valign="top" background="images/mail_rightbg.gif"><img src="images/nav-right-bg.gif" width="16" height="29" /></td>
@@ -30,23 +40,30 @@ body {
         <td valign="top">&nbsp;</td>
       </tr>
       <tr>
-        <td colspan="2" valign="top"><span class="left_bt">¸ÐÐ»ÄúÊ¹ÓÃÍøÕ¾¹ÜÀíÏµÍ³³ÌÐò</span><br>
+        <td colspan="2" valign="top"><span class="left_bt">æ¬¢è¿Žè¿›å…¥åŽå°ç®¡ç†ç³»ç»Ÿç¨‹åº</span><br>
               <br>
-            <span class="left_txt">&nbsp;<img src="images/ts.gif" width="16" height="16"> ÌáÊ¾£º<br>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ÄúÏÖÔÚÊ¹ÓÃµÄÊÇwww.865171.cn¿ª·¢µÄÒ»Ì×ÓÃÓÚ¹¹½¨ÉÌÎñÐÅÏ¢ÀàÃÅ»§ÐÍÍøÕ¾µÄ×¨ÒµÏµÍ³£¡Èç¹ûÄúÓÐÈÎºÎÒÉÎÊÇëµã×óÏÂ½âµÄ</span><span class="left_ts">ÔÚÏß¿Í·þ</span><span class="left_txt">½øÐÐ×ÉÑ¯£¡<br>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Æß´óÀ¸Ä¿ÍêÃÀÕûºÏ£¬Ò»Õ¾Í¨Ê¹ÓÃ·½Ê½£¬¹¦ÄÜÇ¿´ó£¬²Ù×÷¼òµ¥£¬ºóÌ¨²Ù×÷Ò×Èç·´ÕÆ£¬Ö»Ðè»á´ò×Ö£¬»áÉÏÍø£¬¾Í»á¹ÜÀíÍøÕ¾£¡<br>
-           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;´Ë³ÌÐòÊÇÄú½¨Á¢µØÇø¼¶ÉÌ¼ÒÐÅÏ¢ÃÅ»§µÄÊ×Ñ¡·½°¸£¡¡¡ <br>
+            <span class="left_txt">&nbsp;<img src="images/ts.gif" width="16" height="16"> æç¤ºï¼š<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;æ‚¨çŽ°åœ¨ä½¿ç”¨çš„æ˜¯ç§‘å¸ˆå°å›¢é˜Ÿå¼€å‘çš„ä¸€å¥—ç”¨äºŽåŽå°å†…å®¹ç®¡ç†ç³»ç»Ÿï¼å¦‚æžœæ‚¨æœ‰ä»»ä½•ç–‘é—®å¯ä»¥ç»™æˆ‘ä»¬å‘é€</span><span class="left_ts">é‚®ä»¶</span><span class="left_txt">è¿›è¡Œäº¤æµï¼<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ä¸ƒå¤§æ ç›®å®Œç¾Žæ•´åˆï¼Œä¸€ç«™é€šä½¿ç”¨æ–¹å¼ï¼ŒåŠŸèƒ½å¼ºå¤§ï¼Œæ“ä½œç®€å•ï¼ŒåŽå°æ“ä½œæ˜“å¦‚åæŽŒï¼Œåªéœ€ä¼šæ‰“å­—ï¼Œä¼šä¸Šç½‘ï¼Œå°±ä¼šç®¡ç†ç½‘ç«™ï¼<br>
+         <!--   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;æ­¤ç¨‹åºæ˜¯æ‚¨å»ºç«‹åœ°åŒºçº§å•†å®¶ä¿¡æ¯é—¨æˆ·çš„é¦–é€‰æ–¹æ¡ˆï¼ã€€ <br> -->
 </span></td>
         <td width="7%">&nbsp;</td>
         <td width="40%" valign="top"><table width="100%" height="144" border="0" cellpadding="0" cellspacing="0" class="line_table">
           <tr>
             <td width="7%" height="27" background="images/news-title-bg.gif"><img src="images/news-title-bg.gif" width="2" height="27"></td>
-            <td width="93%" background="images/news-title-bg.gif" class="left_bt2">×îÐÂ¶¯Ì¬</td>
+            <td width="93%" background="images/news-title-bg.gif" class="left_bt2">æœ€æ–°åŠ¨æ€</td>
+            
           </tr>
-          <tr>
+           <tr>
             <td height="102" valign="top">&nbsp;</td>
-            <td height="102" valign="top"></td>
+            <td height="102" valign="top"><label></label>
+              <label>
+              <textarea name="textarea" cols="48" rows="8" class="left_txt" readonly="readonly">
+         2014å¹´çš„äº”ä¸€åŠ³åŠ¨èŠ‚å°±è¦æ¥ä¸´äº†ï¼Œæˆ‘æ ¡çš„æ˜¥å­£è¿åŠ¨ä¼šå³å°†ä¸¾è¡Œã€‚å…³äºŽ2014å¹´æ˜¥å­£è¿åŠ¨ä¼šæœŸé—´ä¸¥æ ¼è¯·å‡è§„å®šçš„é€šçŸ¥ï¼Œå·²ç»å‘åˆ°ç­çº§é‚®ç®±ã€‚
+                </textarea>
+              </label></td>
           </tr>
+        
           <tr>
             <td height="5" colspan="2">&nbsp;</td>
           </tr>
@@ -58,7 +75,7 @@ body {
         <td>&nbsp;</td>
       </tr>
       <tr>
-        <td colspan="2" valign="top"><!--JavaScript²¿·Ö-->
+        <td colspan="2" valign="top"><!--JavaScriptéƒ¨åˆ†-->
               <SCRIPT language=javascript>
 function secBoard(n)
 {
@@ -70,20 +87,20 @@ mainTable.tBodies[i].style.display="none";
 mainTable.tBodies[n].style.display="block";
 }
           </SCRIPT>
-              <!--HTML²¿·Ö-->
+              <!--HTMLéƒ¨åˆ†-->
               <TABLE width=72% border=0 cellPadding=0 cellSpacing=0 id=secTable>
                 <TBODY>
                   <TR align=middle height=20>
-                    <TD align="center" class=sec2 onclick=secBoard(0)>ÑéÖ¤ÐÅÏ¢</TD>
-                    <TD align="center" class=sec1 onclick=secBoard(1)>Í³¼ÆÐÅÏ¢</TD>
-                    <TD align="center" class=sec1 onclick=secBoard(2)>ÏµÍ³²ÎÊý</TD>
-                    <TD align="center" class=sec1 onclick=secBoard(3)>°æÈ¨ËµÃ÷</TD>
+                    <TD align="center" class=sec2 onclick="secBoard(0)">éªŒè¯ä¿¡æ¯</TD>
+                    <TD align="center" class=sec1 onclick="secBoard(1)">ç»Ÿè®¡ä¿¡æ¯</TD>
+                    <TD align="center" class=sec1 onclick="secBoard(2)">ç³»ç»Ÿå‚æ•°</TD>
+                    <Td align="center" class=sec1 onclick="secBoard(3)">ç‰ˆæƒè¯´æ˜Ž</Td>
                   </TR>
                 </TBODY>
               </TABLE>
           <TABLE class=main_tab id=mainTable cellSpacing=0
 cellPadding=0 width=100% border=0>
-                <!--¹ØÓÚTBODY±ê¼Ç-->
+                <!--å…³äºŽTBODYæ ‡è®°-->
                 <TBODY style="DISPLAY: block">
                   <TR>
                     <TD vAlign=top align=middle><TABLE width=98% height="133" border=0 align="center" cellPadding=0 cellSpacing=0>
@@ -93,40 +110,40 @@ cellPadding=0 width=100% border=0>
                           </TR>
                           <TR>
                             <TD width="4%" height="28" background="images/news-title-bg.gif"></TD>
-                            <TD height="25" colspan="2" background="images/news-title-bg.gif" class="left_txt">Ç×°®µÄ¹ÜÀíÔ±£º <font color="#FFFFFF" class="left_ts"><b></b></TD>
+                            <TD height="25" colspan="2" background="images/news-title-bg.gif" class="left_txt">äº²çˆ±çš„ç®¡ç†å‘˜ï¼š <font color="#FFFFFF" class="left_ts"><b></b></TD>
                           </TR>
                           <TR>
                             <TD bgcolor="#FAFBFC">&nbsp;</TD>
-                            <TD width="42%" height="25" bgcolor="#FAFBFC"><span class="left_txt">ÄúÓÐÎ´ÑéÖ¤·ÖÀàÐÅÏ¢£º </span>
+                            <TD width="42%" height="25" bgcolor="#FAFBFC"><span class="left_txt">æ‚¨æœ‰æœªéªŒè¯åˆ†ç±»ä¿¡æ¯ï¼š </span>
                                
                                 <span class="left_ts"> </span></TD>
-                            <TD width="54%" height="25" bgcolor="#FAFBFC"><span class="left_txt">ÄúÓÐÎ´ÑéÖ¤¹ã¸æÕÅÌù£º </span>
-                               
-                                <span class="left_ts"> </span></TD>
-                          </TR>
-                          <TR>
-                            <TD bgcolor="#FAFBFC">&nbsp;</TD>
-                            <TD height="25" bgcolor="#FAFBFC"><span class="left_txt">ÄúÓÐÎ´ÑéÖ¤ÉÌ¼ÒÕ¹Ê¾£º </span>
-                               
-                                <span class="left_ts"> </span></TD>
-                            <TD height="25" bgcolor="#FAFBFC"><span class="left_txt">ÄúÓÐÎ´ÑéÖ¤ÍøÉÏÉÌ³Ç£º </span>
+                            <TD width="54%" height="25" bgcolor="#FAFBFC"><span class="left_txt">æ‚¨æœ‰æœªéªŒè¯å¹¿å‘Šå¼ è´´ï¼š </span>
                                
                                 <span class="left_ts"> </span></TD>
                           </TR>
                           <TR>
                             <TD bgcolor="#FAFBFC">&nbsp;</TD>
-                            <TD height="25" bgcolor="#FAFBFC"><span class="left_txt">ÄúÓÐÎ´ÑéÖ¤ÍøÉÏÃûÆ¬£º </span>
+                            <TD height="25" bgcolor="#FAFBFC"><span class="left_txt">æ‚¨æœ‰æœªéªŒè¯å•†å®¶å±•ç¤ºï¼š </span>
+                               
                                 <span class="left_ts"> </span></TD>
-                            <TD height="25" bgcolor="#FAFBFC"><span class="left_txt">ÄúÓÐÎ´ÑéÖ¤ÊÐ³¡ÁªÃË£º </span>
+                            <TD height="25" bgcolor="#FAFBFC"><span class="left_txt">æ‚¨æœ‰æœªéªŒè¯ç½‘ä¸Šå•†åŸŽï¼š </span>
                                
                                 <span class="left_ts"> </span></TD>
                           </TR>
                           <TR>
                             <TD bgcolor="#FAFBFC">&nbsp;</TD>
-                            <TD height="25" bgcolor="#FAFBFC"><span class="left_txt">ÄúÓÐÎ´ÑéÖ¤ÊÐ³¡×ÊÑ¶£º </span>
+                            <TD height="25" bgcolor="#FAFBFC"><span class="left_txt">æ‚¨æœ‰æœªéªŒè¯ç½‘ä¸Šåç‰‡ï¼š </span>
+                                <span class="left_ts"> </span></TD>
+                            <TD height="25" bgcolor="#FAFBFC"><span class="left_txt">æ‚¨æœ‰æœªéªŒè¯å¸‚åœºè”ç›Ÿï¼š </span>
                                
                                 <span class="left_ts"> </span></TD>
-                            <TD height="25" bgcolor="#FAFBFC"><span class="left_txt">ÄúÓÐÎ´ÑéÖ¤ÉÌ¼ÒÉÌÆ·£º </span>
+                          </TR>
+                          <TR>
+                            <TD bgcolor="#FAFBFC">&nbsp;</TD>
+                            <TD height="25" bgcolor="#FAFBFC"><span class="left_txt">æ‚¨æœ‰æœªéªŒè¯å¸‚åœºèµ„è®¯ï¼š </span>
+                               
+                                <span class="left_ts"> </span></TD>
+                            <TD height="25" bgcolor="#FAFBFC"><span class="left_txt">æ‚¨æœ‰æœªéªŒè¯å•†å®¶å•†å“ï¼š </span>
                                 <span class="left_ts"> </span></TD>
                           </TR>
                           <TR>
@@ -136,7 +153,7 @@ cellPadding=0 width=100% border=0>
                     </TABLE></TD>
                   </TR>
                 </TBODY>
-                <!--¹ØÓÚcells¼¯ºÏ-->
+                <!--å…³äºŽcellsé›†åˆ-->
                 <TBODY style="DISPLAY: none">
                   <TR>
                     <TD vAlign=top align=middle><TABLE width=98% height="133" border=0 align="center" cellPadding=0 cellSpacing=0>
@@ -146,27 +163,27 @@ cellPadding=0 width=100% border=0>
                           </TR>
                           <TR>
                             <TD width="4%" height="28" background="images/news-title-bg.gif"></TD>
-                            <TD colspan="2" background="images/news-title-bg.gif" class="left_txt">ÏÖÓÐ»áÔ±£ºÃû&nbsp;&nbsp; ÆäÖÐ£º                                Ãû&nbsp;&nbsp;&nbsp;&nbsp;Ãû&nbsp;&nbsp;&nbsp;&nbsp;Ãû</TD>
+                            <TD colspan="2" background="images/news-title-bg.gif" class="left_txt">çŽ°æœ‰ä¼šå‘˜ï¼šå&nbsp;&nbsp; å…¶ä¸­ï¼š                                å&nbsp;&nbsp;&nbsp;&nbsp;å&nbsp;&nbsp;&nbsp;&nbsp;å</TD>
                           </TR>
                           <TR>
                             <TD bgcolor="#FAFBFC">&nbsp;</TD>
-                            <TD width="42%" height="25" bgcolor="#FAFBFC"><span class="left_txt">±¾Õ¾ÏÖÓÐ·ÖÀàÐÅÏ¢£º </span><span class="left_txt">Ìõ</span></TD>
-                            <TD width="54%" bgcolor="#FAFBFC"><span class="left_txt">±¾Õ¾ÏÖÓÐ¹ã¸æÕÅÌù£º </span><span class="left_txt">Ìõ</span></TD>
+                            <TD width="42%" height="25" bgcolor="#FAFBFC"><span class="left_txt">æœ¬ç«™çŽ°æœ‰åˆ†ç±»ä¿¡æ¯ï¼š </span><span class="left_txt">æ¡</span></TD>
+                            <TD width="54%" bgcolor="#FAFBFC"><span class="left_txt">æœ¬ç«™çŽ°æœ‰å¹¿å‘Šå¼ è´´ï¼š </span><span class="left_txt">æ¡</span></TD>
                           </TR>
                           <TR>
                             <TD bgcolor="#FAFBFC">&nbsp;</TD>
-                            <TD height="25" bgcolor="#FAFBFC"><span class="left_txt">±¾Õ¾ÏÖÓÐÉÌ¼ÒÕ¹Ê¾£º </span><span class="left_txt">¸ö</span></TD>
-                            <TD height="25" bgcolor="#FAFBFC"><span class="left_txt">±¾Õ¾ÏÖÓÐÍøÉÏÉÌ³Ç£º </span><span class="left_txt">¸ö</span></TD>
+                            <TD height="25" bgcolor="#FAFBFC"><span class="left_txt">æœ¬ç«™çŽ°æœ‰å•†å®¶å±•ç¤ºï¼š </span><span class="left_txt">ä¸ª</span></TD>
+                            <TD height="25" bgcolor="#FAFBFC"><span class="left_txt">æœ¬ç«™çŽ°æœ‰ç½‘ä¸Šå•†åŸŽï¼š </span><span class="left_txt">ä¸ª</span></TD>
                           </TR>
                           <TR>
                             <TD bgcolor="#FAFBFC">&nbsp;</TD>
-                            <TD height="25" bgcolor="#FAFBFC"><span class="left_txt">±¾Õ¾ÏÖÓÐÍøÉÏÃûÆ¬£º </span><span class="left_txt">¸ö</span></TD>
-                            <TD height="25" bgcolor="#FAFBFC"><span class="left_txt">±¾Õ¾ÏÖÓÐÊÐ³¡ÁªÃË£º </span><span class="left_txt">¸ö</span></TD>
+                            <TD height="25" bgcolor="#FAFBFC"><span class="left_txt">æœ¬ç«™çŽ°æœ‰ç½‘ä¸Šåç‰‡ï¼š </span><span class="left_txt">ä¸ª</span></TD>
+                            <TD height="25" bgcolor="#FAFBFC"><span class="left_txt">æœ¬ç«™çŽ°æœ‰å¸‚åœºè”ç›Ÿï¼š </span><span class="left_txt">ä¸ª</span></TD>
                           </TR>
                           <TR>
                             <TD bgcolor="#FAFBFC">&nbsp;</TD>
-                            <TD height="25" bgcolor="#FAFBFC"><span class="left_txt">±¾Õ¾ÏÖÓÐÊÐ³¡×ÊÑ¶£º </span><span class="left_txt">Ìõ</span></TD>
-                            <TD height="25" bgcolor="#FAFBFC"><span class="left_txt">±¾Õ¾ÏÖÓÐÉÌ¼ÒÉÌÆ·£º </span><span class="left_txt">¸ö</span></TD>
+                            <TD height="25" bgcolor="#FAFBFC"><span class="left_txt">æœ¬ç«™çŽ°æœ‰å¸‚åœºèµ„è®¯ï¼š </span><span class="left_txt">æ¡</span></TD>
+                            <TD height="25" bgcolor="#FAFBFC"><span class="left_txt">æœ¬ç«™çŽ°æœ‰å•†å®¶å•†å“ï¼š </span><span class="left_txt">ä¸ª</span></TD>
                           </TR>
                           <TR>
                             <TD height="5" colspan="3"></TD>
@@ -175,7 +192,7 @@ cellPadding=0 width=100% border=0>
                     </TABLE></TD>
                   </TR>
                 </TBODY>
-                <!--¹ØÓÚtBodies¼¯ºÏ-->
+                <!--å…³äºŽtBodiesé›†åˆ-->
                 <TBODY style="DISPLAY: none">
                   <TR>
                     <TD vAlign=top align=middle><TABLE width=98% border=0 align="center" cellPadding=0 cellSpacing=0>
@@ -188,21 +205,21 @@ cellPadding=0 width=100% border=0>
                           </TR>
                           <TR>
                             <TD width="4%" height="25" background="images/news-title-bg.gif"></TD>
-                            <TD height="25" colspan="2" background="images/news-title-bg.gif" class="left_txt"><span class="TableRow2">·þÎñÆ÷IP:</span>ÏµÍ³°æ±¾£º</TD>
+                            <TD height="25" colspan="2" background="images/news-title-bg.gif" class="left_txt"><span class="TableRow2">æœåŠ¡å™¨IP:</span>ç³»ç»Ÿç‰ˆæœ¬ï¼š</TD>
                           </TR>
                           <TR>
                             <TD height="25" bgcolor="#FAFBFC">&nbsp;</TD>
-                            <TD width="42%" height="25" bgcolor="#FAFBFC"><span class="left_txt">·þÎñÆ÷ÀàÐÍ£º</span></TD>
-                            <TD width="54%" height="25" bgcolor="#FAFBFC"><span class="left_txt">½Å±¾½âÊÍÒýÇæ£º</span></TD>
+                            <TD width="42%" height="25" bgcolor="#FAFBFC"><span class="left_txt">æœåŠ¡å™¨ç±»åž‹ï¼š</span></TD>
+                            <TD width="54%" height="25" bgcolor="#FAFBFC"><span class="left_txt">è„šæœ¬è§£é‡Šå¼•æ“Žï¼š</span></TD>
                           </TR>
                           <TR>
                             <TD height="25" bgcolor="#FAFBFC">&nbsp;</TD>
-                            <TD height="25" colspan="2" bgcolor="#FAFBFC"><span class="left_txt">Õ¾µãÎïÀíÂ·¾¶£º</span></TD>
+                            <TD height="25" colspan="2" bgcolor="#FAFBFC"><span class="left_txt">ç«™ç‚¹ç‰©ç†è·¯å¾„ï¼š</span></TD>
                           </TR>
                           <TR>
                             <TD height="25" bgcolor="#FAFBFC">&nbsp;</TD>
-                            <TD height="25" bgcolor="#FAFBFC"><span class="left_txt">FSOÎÄ±¾¶ÁÐ´£º</span><span class="TableRow2"><font color="#FF0066"><b><img src="images/X.gif" width="12" height="13"></b></font><img src="images/g.gif" width="12" height="12"></span></TD>
-                            <TD height="25" bgcolor="#FAFBFC"><span class="left_txt">Êý¾Ý¿âÊ¹ÓÃ£º</span><span class="left_ts"><img src="images/X.gif" width="12" height="13"><b style="color:blue">
+                            <TD height="25" bgcolor="#FAFBFC"><span class="left_txt">FSOæ–‡æœ¬è¯»å†™ï¼š</span><span class="TableRow2"><font color="#FF0066"><b><img src="images/X.gif" width="12" height="13"></b></font><img src="images/g.gif" width="12" height="12"></span></TD>
+                            <TD height="25" bgcolor="#FAFBFC"><span class="left_txt">æ•°æ®åº“ä½¿ç”¨ï¼š</span><span class="left_ts"><img src="images/X.gif" width="12" height="13"><b style="color:blue">
                               
                             MS SQL
                             
@@ -218,7 +235,7 @@ cellPadding=0 width=100% border=0>
                     </TABLE></TD>
                   </TR>
                 </TBODY>
-                <!--¹ØÓÚdisplayÊôÐÔ-->
+                <!--å…³äºŽdisplayå±žæ€§-->
                 <TBODY style="DISPLAY: none">
                   <TR>
                     <TD vAlign=top align=middle><TABLE width=98% border=0 align="center" cellPadding=0 cellSpacing=0>
@@ -231,27 +248,27 @@ cellPadding=0 width=100% border=0>
                           </TR>
                           <TR>
                             <TD width="4%" background="images/news-title-bg.gif"></TD>
-                            <TD width="91%" background="images/news-title-bg.gif" class="left_ts">¡¶¡·³ÌÐòËµÃ÷£º</TD>
+                            <TD width="91%" background="images/news-title-bg.gif" class="left_ts">ã€Šã€‹ç¨‹åºè¯´æ˜Žï¼š</TD>
                             <TD width="5%" background="images/news-title-bg.gif" class="left_txt">&nbsp;</TD>
                           </TR>
                           <TR>
                             <TD bgcolor="#FAFBFC">&nbsp;</TD>
-                            <TD bgcolor="#FAFBFC" class="left_txt"><span class="left_ts">1¡¢</span>±¾³ÌÐòÓÉwww.865171.cnÈ«ÐÂ¸ÄÔì(QQ:215288671) </TD>
+                            <TD bgcolor="#FAFBFC" class="left_txt"><span class="left_ts">1ã€</span>æœ¬ç¨‹åºç”±www.865171.cnå…¨æ–°æ”¹é€ (QQ:215288671) </TD>
                             <TD bgcolor="#FAFBFC" class="left_txt">&nbsp;</TD>
                           </TR>
                           <TR>
                             <TD bgcolor="#FAFBFC">&nbsp;</TD>
-                            <TD bgcolor="#FAFBFC" class="left_txt"><span class="left_ts">2¡¢</span>±¾³ÌÐò½öÌá¹©Ê¹ÓÃ£¬ÈÎºÎÎ¥·´»¥ÁªÍø¹æ¶¨µÄÐÐÎª£¬×ÔÐÐ¸ºÔð£¡</TD>
+                            <TD bgcolor="#FAFBFC" class="left_txt"><span class="left_ts">2ã€</span>æœ¬ç¨‹åºä»…æä¾›ä½¿ç”¨ï¼Œä»»ä½•è¿åäº’è”ç½‘è§„å®šçš„è¡Œä¸ºï¼Œè‡ªè¡Œè´Ÿè´£ï¼</TD>
                             <TD bgcolor="#FAFBFC" class="left_txt">&nbsp;</TD>
                           </TR>
                           <TR>
                             <TD bgcolor="#FAFBFC">&nbsp;</TD>
-                            <TD bgcolor="#FAFBFC" class="left_txt"><span class="left_ts">3¡¢</span> Ö§³Ö×÷ÕßµÄÀÍ¶¯£¬Çë±£Áô°æÈ¨¡£</TD>
+                            <TD bgcolor="#FAFBFC" class="left_txt"><span class="left_ts">3ã€</span> æ”¯æŒä½œè€…çš„åŠ³åŠ¨ï¼Œè¯·ä¿ç•™ç‰ˆæƒã€‚</TD>
                             <TD bgcolor="#FAFBFC" class="left_txt">&nbsp;</TD>
                           </TR>
                           <TR>
                             <TD bgcolor="#FAFBFC">&nbsp;</TD>
-                            <TD bgcolor="#FAFBFC" class="left_txt"><span class="left_ts">4¡¢</span>³ÌÐòÊ¹ÓÃ£¬¼¼ÊõÖ§³ÖÇëÁªÏµwww.865171.cn¡£</TD>
+                            <TD bgcolor="#FAFBFC" class="left_txt"><span class="left_ts">4ã€</span>ç¨‹åºä½¿ç”¨ï¼ŒæŠ€æœ¯æ”¯æŒè¯·è”ç³»www.865171.cnã€‚</TD>
                             <TD bgcolor="#FAFBFC" class="left_txt">&nbsp;</TD>
                           </TR>
                           <TR>
@@ -266,16 +283,13 @@ cellPadding=0 width=100% border=0>
         <td valign="top"><table width="100%" height="144" border="0" cellpadding="0" cellspacing="0" class="line_table">
           <tr>
             <td width="7%" height="27" background="images/news-title-bg.gif"><img src="images/news-title-bg.gif" width="2" height="27"></td>
-            <td width="93%" background="images/news-title-bg.gif" class="left_bt2">³ÌÐòËµÃ÷</td>
+            <td width="93%" background="images/news-title-bg.gif" class="left_bt2">ç¨‹åºè¯´æ˜Ž</td>
           </tr>
           <tr>
             <td height="102" valign="top">&nbsp;</td>
             <td height="102" valign="top"><label></label>
               <label>
-              <textarea name="textarea" cols="48" rows="8" class="left_txt">Ò»¡¢×¨ÒµµÄµØÇø¼¶ÉÌ¼ÒÃÅ»§½¨Õ¾Ê×Ñ¡·½°¸£¡
-¶þ¡¢È«Õ¾Ò»ºÅÍ¨£¬Ò»´Î×¢²á£¬ÖÕÉíÊ¹ÓÃ£¬Ò»¸öÕÊºÅ£¬È«Õ¾Í¨ÓÃ£¡
-Èý¡¢·ÖÀàÐÅÏ¢¡¢ÉÌ¼ÒÕ¹Ê¾£¨°ÙÒµÁªÃË£©¡¢ÍøÉÏÉÌ³Ç¡¢ÍøÉÏÃûÆ¬£¨ÍøÉÏ»ÆÒ³£©¡¢¹ã¸æÕÅÌù¡¢ÊÐ³¡ÁªÃË¡¢ÊÐ³¡×ÊÑ¶Æß´óÀ¸Ä¿ÍêÃÀÕûºÏ¡£
-ËÄ¡¢½çÃæÉè¼Æ¾«ÃÀ£¬ºóÌ¨¹¦ÄÜÇ¿´ó¡£Éµ¹ÏÊ½ºóÌ¨²Ù×÷£¬ÎÞÐè×¨ÒµµÄÍøÕ¾ÖÆ×÷ÖªÊ¶£¬Ö»Òª»á´ò×Ö£¬¾Í»á¹ÜÀíÎ¬»¤ÍøÕ¾¡£</textarea>
+              <textarea name="textarea" cols="48" rows="8" class="left_txt" readonly="readonly">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;é€šè¿‡åŽå°ç®¡ç†ç³»ç»Ÿå¯ä»¥ä¾¿æ·çš„æ“ä½œè¡¨å•ï¼Œç»´æŠ¤åŽå°æ•°æ®ã€‚ç®€çº¦æ—¶å°šçš„ç•Œé¢æ˜¾ç¤ºï¼Œè®©æ‚¨èˆ’é€‚çš„å·¥ä½œã€‚</textarea>
               </label></td>
           </tr>
           <tr>
@@ -292,8 +306,8 @@ cellPadding=0 width=100% border=0>
       </tr>
       <tr>
         <td width="2%">&nbsp;</td>
-        <td width="51%" class="left_txt"><img src="images/icon-mail2.gif" width="16" height="11"> ¿Í»§·þÎñÓÊÏä£º1725440647@qq.com<br>
-              <img src="images/icon-phone.gif" width="17" height="14"> ¹Ù·½ÍøÕ¾£ºhttp://www.17tian.com</td>
+        <td width="51%" class="left_txt"><img src="images/icon-mail2.gif" width="16" height="11"> å®¢æˆ·æœåŠ¡é‚®ç®±ï¼šaimmywang@163.com<br>
+              <img src="images/icon-phone.gif" width="17" height="14"> å®˜æ–¹ç½‘ç«™ï¼šhttp://www.classroom.com</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
       </tr>
