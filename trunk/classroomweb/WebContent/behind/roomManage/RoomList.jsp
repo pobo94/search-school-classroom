@@ -6,7 +6,44 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>教室管理</title>
-<link rel="stylesheet" type="text/css" href="/behind/css/roomList.css">
+<!-- <link rel="stylesheet" type="text/css" href="behind/css/roomList.css"> -->
+<style type="text/css">
+#room_top {
+	background-color: #EAEFF3;
+	height: 50px;
+	border-width: 1px;
+	border-bottom-style: solid;
+	/* padding_top:30px; */
+}
+#conetent {
+	background-color: #FFC;
+	/* height: 600px; */
+	
+}
+ul li{
+	list-style:none;
+	float:left;
+	margin-left:40px;
+	margin-top:20px;	
+	
+}
+#room_top ul li a {
+	color: #000;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	display: block;
+	background-color: #EAEFA5;
+	text-decoration: none;
+	border: 1px solid #FFF;
+	
+}
+#room_top ul li a:hover{
+	background:#FF9834;
+	color:#FFF;
+	border-right:3px solid #E87200;
+}
+</style>
 </head>
 <%
 	List<ClassRoom> roomList=(ArrayList<ClassRoom>)request.getAttribute("roomList");
@@ -28,8 +65,8 @@
   </div>
   <div id="conetent">
   <form action="" id="myform" name="myform" method="post">
-  	<table id="room_table" width="100%" border="1">
-  	 <tr>
+  	<table id="room_table" width="100%" border="0">
+  	 <tr height=40>
   	 <td align="center">ddd</td>
   	 <td align="center">教室号</td>
   	 <td align="center">教学楼</td>
@@ -83,10 +120,10 @@
   	 	<%}else if(lessonNum==9) {%>
   	 	   <td align="center">9-10节</td>
   	 	<%} %>
-  	 	<td>星期<%=day %></td>
-  	 	<td>第<%=week %>周</td>
-  	 	<td><%=term %>学期</td>
-  	 	<td><a href="#">编辑</a>|<a href="#">删除</a></td>
+  	 	<td align="center">星期<%=day %></td>
+  	 	<td align="center">第<%=week %>周</td>
+  	 	<td align="center"><%=term %>学期</td>
+  	 	<td align="center"><a href="#">编辑</a>|<a href="#">删除</a></td>
   	 </tr>
 	<%
   	 	}
@@ -94,11 +131,8 @@
 	%> 	
   	</table>
   	</form>
-  </div>
-  
-   <div id="room_foot">
    <form action="" name="foot_form" id="foot_form">
-   		<table id="foot_table" width="100%" height="30" border="1" align="center">
+   		<table id="foot_table" width="100%" height="30" border="0" align="center">
    		<tr>
    			<td align="center">
    				<a href="behind/classroom/roomServlet?page=1&&action=list">首页</a>&nbsp;&nbsp;
