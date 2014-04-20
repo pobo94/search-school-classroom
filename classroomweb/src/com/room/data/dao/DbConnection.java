@@ -19,7 +19,11 @@ public class DbConnection {
 			Class.forName(DBDRIVER);
 			System.out.println("加载驱动");
 			conn = DriverManager.getConnection(DBURL,DBUSER,DBPASS);
-			System.out.println("连接数据库");
+			if(conn!=null){
+				
+				System.out.println("连接数库成功");
+			}
+			
 			 
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();

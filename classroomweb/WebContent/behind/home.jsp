@@ -13,6 +13,6 @@
 	<frame src="right.jsp" name="main" marginwidth="0" marginheight="0" frameborder="0" scrolling="auto" target="_self" />
   </frameset>
 <noframes>
-  <body></body>
-    </noframes>
+<body></body>
+</noframes>
 </html>
