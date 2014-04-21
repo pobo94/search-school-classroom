@@ -17,7 +17,6 @@ public class DbConnection {
 		
 		try {
 			Class.forName(DBDRIVER);
-			System.out.println("加载驱动");
 			conn = DriverManager.getConnection(DBURL,DBUSER,DBPASS);
 			if(conn!=null){
 				
