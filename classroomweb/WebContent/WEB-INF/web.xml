@@ -8,7 +8,8 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>roomServlet</servlet-name>
-    <url-pattern>/behind/classroom/roomServlet</url-pattern>
+    <!-- <url-pattern>/behind/classroom/roomServlet</url-pattern> -->
+    <url-pattern>/roomServlet</url-pattern>
   </servlet-mapping>
   
   

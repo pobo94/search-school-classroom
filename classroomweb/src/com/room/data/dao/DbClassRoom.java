@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.room.data.model.ClassRoom;
+import com.room.data.tools.Helper;
 
 public class DbClassRoom {
 	
@@ -21,14 +22,13 @@ public class DbClassRoom {
 	}
 	
 	//判断指定的教室号和楼号是否存在，根据返回的布尔值确定是否添加
-	public boolean exit(String roomNum,String buildingNum){
+	public boolean exit(int roomId){
 		
 		boolean flag=false;
-		String sql="select * from classroom where RoomNum=? and BuildingNum=?";
+		String sql="select * from classroom where RoomId=?";
 		try {
 			pstmt=dbconn.getConn().prepareStatement(sql);
-			pstmt.setString(1, roomNum);
-			pstmt.setString(2, buildingNum);
+			pstmt.setInt(1, roomId);
 			rs=pstmt.executeQuery();
 			
 			if(rs.next()){
@@ -63,8 +63,7 @@ public class DbClassRoom {
 		String term=room.getTerm();
 		
 		//RoomId,是自动增长型的所以该字段不用写
-		String sql="insert into classroom(AdminId,RoomNum,BuildingNum,IsEmpty,Lesson,)"+
-		"(Day,Week,Term)values(?,?,?,?,?,?,?,?)";
+		String sql="insert into classroom(AdminId,RoomNum,BuildingNum,IsEmpty,Lesson,Day,Week,Term)values(?,?,?,?,?,?,?,?)";
 		
 		try {
 			pstmt=dbconn.getConn().prepareStatement(sql);
@@ -125,7 +124,6 @@ public class DbClassRoom {
 			
 			boolean flag=false;
 			int adminId=room.getAdminId();
-			int roomId=room.getRoomId();
 			String roomNum=room.getRoomNum();
 			String buildNum=room.getBuildingNum();
 			int isEmpty=room.getIsEmpty();
@@ -134,7 +132,7 @@ public class DbClassRoom {
 			int week=room.getWeek();
 			String term=room.getTerm();
 			
-			String sql="update classroom set AdminId=?,RoomNum=? BuildingNum=?,IsEmpty=?Lesson=?,Day=?,Week=?,Term=? whereRoomId=?";
+			String sql="update classroom set AdminId=?,RoomNum=?,BuildingNum=?,IsEmpty=?,Lesson=?,Day=?,Week=?,Term=? where RoomId=?";
 			try {
 				pstmt=dbconn.getConn().prepareStatement(sql);
 				pstmt.setInt(1, adminId);
@@ -145,7 +143,7 @@ public class DbClassRoom {
 				pstmt.setInt(6, day);
 				pstmt.setInt(7, week);
 				pstmt.setString(8, term);
-				pstmt.setInt(9, roomId);
+				pstmt.setInt(9, room.getRoomId());
 				
 				int num=pstmt.executeUpdate();
 				if(num>0){
@@ -164,7 +162,22 @@ public class DbClassRoom {
 			
 			return flag;
 		}
-	
+	  //根据教室Id获取教室对象；
+		public ClassRoom getClassRoom(int roomId){
+			ClassRoom room=null;
+			String sql="select * from classroom where RoomId=?";
+			try {
+				pstmt=dbconn.getConn().prepareStatement(sql);
+				pstmt.setInt(1, roomId);
+				rs=pstmt.executeQuery();
+				while(rs.next()){
+					room=new ClassRoom(rs);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			return room;
+		}
 	  //返回教室列表
 		public List<ClassRoom> getRoomList(List<ClassRoom> roomList,int page,int page_size){
 			
@@ -248,7 +261,6 @@ public class DbClassRoom {
 	// 返回总列表数
 		public int countAll() {
 			
-			System.out.println("该方法得出数据行总数");
 			String sql = "select count(*) as totalCount  from classroom ";
 			int rowcount = 0;
 			try {
@@ -268,6 +280,29 @@ public class DbClassRoom {
 				}
 			}
 			return rowcount;
+		}
+
+		public void deleteAll(String[] strRoomIds) {
+			
+			for(int i=0;i<strRoomIds.length;i++){
+				int roomId=Helper.strToint(strRoomIds[i]);
+				
+				String sql="delete from classroom where RoomId=?";
+				try {
+					pstmt=dbconn.getConn().prepareStatement(sql);
+					pstmt.setInt(1, roomId);
+					pstmt.executeUpdate();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}				
+			}
+			
+			try {
+				pstmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			
 		}
 		
 	
