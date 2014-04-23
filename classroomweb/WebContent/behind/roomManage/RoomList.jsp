@@ -37,38 +37,6 @@ a:active {
 </style>
 
 <script type="text/javascript">
-
-function jumpPage(thisform){
-	
-	var pageCount= document.getElementById("pageCount").value;
-	alert("pageCount="+pageCount);
-	var p= document.getElementById("jumppage").value;
-	alert("page="+p);
-	if(/^[1-9]\d*$/.test(p)){
-		if(p<=pageCount)
-			{
-			alert("2");
-		
-		var url="/classroomweb/roomServlet?action=list&&page="+p;
-		thisform.action=url;
-		alert("action="+thisform.action);
-		document.thisform.submit(); 
-		
-			/* var url="/classroomweb/roomServlet?action=list&&page="+p;
-			alert(url);
-		    $.get(url,function(data,status){
-		    	
-		    }
-			  ); */  
-		
-			}else{
-				alert("请输入范围内的页码！");
-			}
-	}else{
-		alert("请输入正确格式！");
-	}
-}
-
 	
 function selectAll(myform) {// 全选
 		
@@ -90,16 +58,9 @@ function selectAll(myform) {// 全选
 		}
 	}
 
-
-function addRoom(){
-	 var url="/classroomweb/roomServlet?action=operate&&type=0";
-	  $.get(url,function(data,status){
-			 
-		  }
-	  );
-}
-
-function delRoom(node){
+function delRoom(node){ 
+	
+	 alert("删除教室");
   	 var roomId=node.id;
   	 var url="/classroomweb/roomServlet?action=delete"+"&roomId="+roomId;
   	 var trNode=node.parentNode.parentNode;
@@ -135,6 +96,7 @@ function batch_del(){//批量删除
 				     table.deleteRow(trNode.rowIndex);
 			  });
 		}
+}
 }
 </script>
 </head>
