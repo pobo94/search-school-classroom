@@ -50,6 +50,45 @@ function correctPNG()
 }
 window.attachEvent("onload", correctPNG);
 </script>
+
+<script type="text/javascript">
+	function refresh(obj) {
+		obj.src = "/classroomweb/userServlet?action=random&" + Math.random();
+	}
+	
+	function validate_required(field,alerttxt)
+	{
+		
+	  if (value==null||value=="")
+	    {
+	    alert(alerttxt);
+	    return false;
+	    } else  {
+		  return true;
+		  }
+	} 
+	
+
+	function validate_form(thisform)
+	{
+	with (thisform)
+	  {
+	  if (validate_required(username,"账号不能为空!")==false) {
+		  username.focus();
+	    return false;
+	    }
+	   if (validate_required(password,"密码不能为空!")==false) {
+	    password.focus();
+	    return false;
+	    }
+	   if (validate_required(random,"请输入正确的验证码!")==false) {
+		    random.focus();
+		    return false;
+		    }	   
+	}
+	}
+	</script>
+
 <link href="images/skin.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -116,8 +155,8 @@ window.attachEvent("onload", correctPNG);
                     
                     
                     
-                    <form name="myform" action="/classroomweb/userServlet?action=login" method="post">
-                        
+                    <form name="myform"  onsubmit="return validate_form(this)" action="/classroomweb/userServlet?action=login" method="post">
+                       
                         <table cellSpacing="0" cellPadding="0" width="100%" border="0" height="143" id="table212">
                           <tr>
                             <td width="13%" height="38" class="top_hui_text" align="left">
@@ -136,7 +175,12 @@ window.attachEvent("onload", correctPNG);
                             <td width="13%" height="35" class="top_hui_text" align="left">
                             <span class="login_txt">验证码：</span></td>
                             <td height="35" colspan="2" class="top_hui_text" align="left">
-                            <input class=wenbenkuang name=verifycode type=text value="" maxLength=4 size=10>
+                            
+                            <input class=wenbenkuang name="random" type=text value="" maxLength=4 size=10>
+                            
+                            <img title="点击更换" onclick="javascript:refresh(this);"
+                            src="/classroomweb/userServlet?action=random"alt="" width="75" height="24" />
+                            
                               </td>
                           </tr>
                           <tr>
@@ -144,12 +188,13 @@ window.attachEvent("onload", correctPNG);
                              <td width="13%" height="35" class="top_hui_text" align="center">
                              <input name="Submit" type="submit" class="button" id="Submit" value="登 陆"></td>
                             <td height="35" colspan="2" class="top_hui_text" align="left">
-                            <input name="cs" type="button" class="button" id="cs" value="取 消" onClick="showConfirmMsg1()"></td>
+                            <input name="cs" type="reset" class="button" id="cs" value="取 消" onClick="showConfirmMsg1()"></td>
                         
                           </tr>
                         </table>
                         <br>
-                    </form></td>
+                    </form>
+                   </td>
                   </tr>
                   <tr>
                     <td width="433" height="164" align="right" valign="bottom">
