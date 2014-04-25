@@ -101,6 +101,7 @@ window.attachEvent("onload", correctPNG);
             </tr>
             
         </table></td>
+        
         <td width="1%" >&nbsp;</td>
         <td width="50%" valign="bottom"><table width="100%" height="59" border="0" align="center" cellpadding="0" cellspacing="0">
             <tr>
@@ -111,26 +112,39 @@ window.attachEvent("onload", correctPNG);
               <td>&nbsp;</td>
               <td height="21"><table cellSpacing="0" cellPadding="0" width="100%" border="0" id="table211" height="328">
                   <tr>
-                    <td height="164" colspan="2" align="middle"><form name="myform" action="home.jsp" method="post">
+                    <td height="164" colspan="2" align="middle">
+                    
+                    
+                    
+                    <form name="myform" action="/classroomweb/userServlet?action=login" method="post">
+                        
                         <table cellSpacing="0" cellPadding="0" width="100%" border="0" height="143" id="table212">
                           <tr>
-                            <td width="13%" height="38" class="top_hui_text" align="left"><span class="login_txt">管理员：&nbsp;&nbsp; </span></td>
-                            <td height="38" colspan="2" class="top_hui_text" align="left"><input name="username" type=text class="editbox4" value="" size="20">                            </td>
+                            <td width="13%" height="38" class="top_hui_text" align="left">
+                            <span class="login_txt">管理员：&nbsp;&nbsp; </span></td>
+                            <td height="38" colspan="2" class="top_hui_text" align="left">
+                            <input name="username" type=text class="editbox4" value="" size="20">                            </td>
                           </tr>
                           <tr>
-                            <td width="13%" height="35" class="top_hui_text" align="left"><span class="login_txt"> 密 &nbsp;码： &nbsp;&nbsp; </span></td>
-                            <td height="35" colspan="2" class="top_hui_text" align="left"><input class="editbox4" type="password" size="20" name="password">
+                            <td width="13%" height="35" class="top_hui_text" align="left">
+                            <span class="login_txt"> 密 &nbsp;码： &nbsp;&nbsp; </span></td>
+                            <td height="35" colspan="2" class="top_hui_text" align="left">
+                            <input class="editbox4" type="password" size="20" name="password">
                               <img src="images/luck.gif" width="19" height="18"> </td>
                           </tr>
                           <tr>
-                            <td width="13%" height="35" class="top_hui_text" align="left"><span class="login_txt">验证码：</span></td>
-                            <td height="35" colspan="2" class="top_hui_text" align="left"><input class=wenbenkuang name=verifycode type=text value="" maxLength=4 size=10>
+                            <td width="13%" height="35" class="top_hui_text" align="left">
+                            <span class="login_txt">验证码：</span></td>
+                            <td height="35" colspan="2" class="top_hui_text" align="left">
+                            <input class=wenbenkuang name=verifycode type=text value="" maxLength=4 size=10>
                               </td>
                           </tr>
                           <tr>
                              
-                             <td width="13%" height="35" class="top_hui_text" align="center"><input name="Submit" type="submit" class="button" id="Submit" value="登 陆"></td>
-                            <td height="35" colspan="2" class="top_hui_text" align="left"><input name="cs" type="button" class="button" id="cs" value="取 消" onClick="showConfirmMsg1()"></td>
+                             <td width="13%" height="35" class="top_hui_text" align="center">
+                             <input name="Submit" type="submit" class="button" id="Submit" value="登 陆"></td>
+                            <td height="35" colspan="2" class="top_hui_text" align="left">
+                            <input name="cs" type="button" class="button" id="cs" value="取 消" onClick="showConfirmMsg1()"></td>
                         
                           </tr>
                         </table>
@@ -138,7 +152,8 @@ window.attachEvent("onload", correctPNG);
                     </form></td>
                   </tr>
                   <tr>
-                    <td width="433" height="164" align="right" valign="bottom"><img src="images/login-wel.gif" width="242" height="138"></td>
+                    <td width="433" height="164" align="right" valign="bottom">
+                    <img src="images/login-wel.gif" width="242" height="138"></td>
                     <td width="57" align="right" valign="bottom">&nbsp;</td>
                   </tr>
               </table></td>

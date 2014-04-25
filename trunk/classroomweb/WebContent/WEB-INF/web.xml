@@ -6,10 +6,19 @@
     <servlet-name>roomServlet</servlet-name>
     <servlet-class>com.room.data.service.roomServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>userServlet</servlet-name>
+    <servlet-class>com.room.data.service.UserServlet</servlet-class>
+  </servlet>
+  
   <servlet-mapping>
     <servlet-name>roomServlet</servlet-name>
     <!-- <url-pattern>/behind/classroom/roomServlet</url-pattern> -->
     <url-pattern>/roomServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>userServlet</servlet-name>
+    <url-pattern>/userServlet</url-pattern>
   </servlet-mapping>
   
   
