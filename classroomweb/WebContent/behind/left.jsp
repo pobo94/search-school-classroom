@@ -37,13 +37,14 @@
           </tr>
         </table>
         <ul class="MM">
-          <li><a href="index.jsp" target="main">用户管理</a></li>
-          <li><a href="index.jsp" target="main">管理员管理</a></li>
+         <!--  <li><a href="userManage/Index.jsp" target="main">用户管理</a></li> -->
+         <li><a href="/classroomweb/userServlet?action=userlist&page=1" target="main">用户管理</a></li>
+          <li><a href="/classroomweb/userServlet?action=managelist" target="main">管理员管理</a></li>
           <li><a href="roomManage/Index.jsp" target="main">教室管理</a></li>
           <li><a href="index.jsp" target="main">公告管理</a></li>
           <li><a href="index.jsp" target="main">吐槽管理</a></li>
           <li><a href="index.jsp" target="main">应用管理</a></li>
-          <li><a href="index.jsp" target="main">图片管理</a></li>
+          <li><a href="" target="main">图片管理</a></li>
         </ul>
       </div>
       <h1 class="type"><a href="javascript:void(0)">栏目内容管理</a></h1>

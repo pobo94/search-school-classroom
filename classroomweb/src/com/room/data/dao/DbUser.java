@@ -3,6 +3,7 @@ package com.room.data.dao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import com.room.data.model.User;
 import com.room.data.tools.Helper;
@@ -63,6 +64,58 @@ public class DbUser {
 
 		return flag;
 	}
+	
+	 //返回user列表
+	 public List<User> getUserList(List<User> userList,int page,int
+	 page_size){
+	
+	 String
+	 sql="select * from user limit "+(page-1)*page_size+","+page_size;
+	 try {
+	 pstmt=dbconn.getConn().prepareStatement(sql);
+	 rs=pstmt.executeQuery();
+	
+	 while(rs.next()){
+	 User user=new User(rs);
+	 userList.add(user);
+	 }
+	 } catch (SQLException e) {
+	
+	 e.printStackTrace();
+	 }finally{
+	 try {
+	 rs.close();
+	 pstmt.close();
+	 } catch (SQLException e) {
+	 e.printStackTrace();
+	 }
+	 }
+	 return userList;
+	 }
+
+	// // 返回总列表数
+		 public int countAll() {
+		
+		 String sql = "select count(*) as totalCount  from user ";
+		 int rowcount = 0;
+		 try {
+		 pstmt=dbconn.getConn().prepareStatement(sql);
+		 rs=pstmt.executeQuery();
+		 if (rs.next()) {
+		 rowcount = rs.getInt("totalCount");
+		 }
+		 } catch (Exception e) {
+		 e.printStackTrace();
+		 }finally{
+		 try {
+		 rs.close();
+		 pstmt.close();
+		 } catch (SQLException e) {
+		 e.printStackTrace();
+		 }
+		 }
+		 return rowcount;
+		 }
 
 	// 在教室表中插入一行
 	// public boolean insertUser(User user){
@@ -195,33 +248,7 @@ public class DbUser {
 	// }
 	// return room;
 	// }
-	// //返回教室列表
-	// public List<ClassRoom> getRoomList(List<ClassRoom> roomList,int page,int
-	// page_size){
-	//
-	// String
-	// sql="select * from classroom limit "+(page-1)*page_size+","+page_size;
-	// try {
-	// pstmt=dbconn.getConn().prepareStatement(sql);
-	// rs=pstmt.executeQuery();
-	//
-	// while(rs.next()){
-	// ClassRoom room=new ClassRoom(rs);
-	// roomList.add(room);
-	// }
-	// } catch (SQLException e) {
-	//
-	// e.printStackTrace();
-	// }finally{
-	// try {
-	// rs.close();
-	// pstmt.close();
-	// } catch (SQLException e) {
-	// e.printStackTrace();
-	// }
-	// }
-	// return roomList;
-	// }
+	
 	//
 	// //根据教学楼号，查询所有空闲教室；
 	//
@@ -278,29 +305,7 @@ public class DbUser {
 	// return flag;
 	// }
 	//
-	// // 返回总列表数
-	// public int countAll() {
-	//
-	// String sql = "select count(*) as totalCount  from classroom ";
-	// int rowcount = 0;
-	// try {
-	// pstmt=dbconn.getConn().prepareStatement(sql);
-	// rs=pstmt.executeQuery();
-	// if (rs.next()) {
-	// rowcount = rs.getInt("totalCount");
-	// }
-	// } catch (Exception e) {
-	// e.printStackTrace();
-	// }finally{
-	// try {
-	// rs.close();
-	// pstmt.close();
-	// } catch (SQLException e) {
-	// e.printStackTrace();
-	// }
-	// }
-	// return rowcount;
-	// }
+	
 	//
 	// public void deleteAll(String[] strRoomIds) {
 	//
