@@ -48,11 +48,11 @@ public class User {
 			setAccount(rs.getString(2));
 			setPassWord(rs.getString(3));
 			setRealName(rs.getString(4));			
-			setGender(rs.getInt(6));
-			setQq(rs.getString(7));
-			setEmail(rs.getString(8));
-			setMobile(rs.getString(9));
-			setStatus(rs.getInt(10));
+			setGender(rs.getInt(5));
+			setQq(rs.getString(6));
+			setEmail(rs.getString(7));
+			setMobile(rs.getString(8));
+			setStatus(rs.getInt(9));
 			setRegisterTime(rs.getDate(10));
 			setLastTime(rs.getDate(11));			
 			setVistCount(rs.getInt(12));
