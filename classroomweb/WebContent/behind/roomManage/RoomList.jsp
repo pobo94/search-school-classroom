@@ -78,10 +78,10 @@ function delRoom(node){
 function batch_del(){//批量删除
 	alert("1！");
 	
-	var checkbox = document.getElementsByName("checkbox");
+	var my_checkbox = document.getElementsByName("my_checkbox");
 	var j = 0;
-	for ( var i = 0; i < checkbox.length; i++) {
-		if (checkbox[i].checked) {
+	for ( var i = 0; i < my_checkbox.length; i++) {
+		if (my_checkbox[i].checked) {
 			j++;
 		}
 	}
@@ -178,7 +178,7 @@ function batch_del(){//批量删除
   	 	  
   	 %>
   	 <tr height=30 bgcolor="#FFFFFF" onMouseOver="this.bgColor='#CDE6FF'" onMouseOut="this.bgColor='#FFFFFF'">
-  	 	<td align="center"><input type="checkbox" name="checkbox" value="<%=roomId%>"></td>
+  	 	<td align="center"><input type="checkbox" name="my_checkbox" value="<%=roomId%>"></td>
   	 	<td align="center"><%=roomNum %></td>
   	 	<td align="center"><%=buildingNum %></td>
   	 	<%if(isEmpty==0){ %>
