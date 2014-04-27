@@ -61,8 +61,8 @@ public class roomServlet extends HttpServlet {
 
 	private void deleteAllRoom(HttpServletRequest request,
 			HttpServletResponse response) {
-
-        String[] strRoomIds = request.getParameterValues("checkbox");
+        System.out.println("=============================");
+        String[] strRoomIds =  request.getParameterValues("my_checkbox");
 		
 		DbConnection dbconn=new DbConnection();
 		DbClassRoom dbroom= new DbClassRoom(dbconn); 
@@ -111,6 +111,7 @@ public class roomServlet extends HttpServlet {
 			classroom.setBuildingNum("D");
 		}
 		classroom.setIsEmpty(Helper.strToint(request.getParameter("isEmpty")));
+		System.out.println(request.getParameter("lesson"));
 		if(request.getParameter("lesson")=="1-2节"){
 			classroom.setLesson(1);
 		}else if(request.getParameter("lesson")=="3-4节"){
