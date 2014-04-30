@@ -31,7 +31,7 @@ a:active {
 	border-bottom-style: solid 1px;
 }
 #conetent {
-	background-color: #EAEFF3;
+	background-color: #EAEFF3/* #FFC */;
 	
 }
 </style>
@@ -40,15 +40,19 @@ a:active {
 
 function selectBtn(thisform) { // 搜索
 	
+	alert("---------------");
 	var x = document.getElementById("selectBuildNum");
+	alert("buildNum="+x.value);
 	if (x.value == "") {
 		alert("请输入搜索信息");
 		return false;
 	} else {
 		
 		var c=x.value.charAt(0);
+		alert(c);
 		if ((/^[A-Za-z]+$/.test(c))) {
-			document.myform.action = "/classroomweb/roomServlet?action=search&&buildNum="+x.value+"&&page="+1;
+			document.myform.action = "/classroomweb/roomServlet?action=search&&buildNum="+x.value;
+			alert(document.myform.action);
 			document.myform.submit();
 		} else {		
 				alert("请输入正确信息");
@@ -140,6 +144,7 @@ function batch_del(){//批量删除
     int pageSize=(Integer)request.getAttribute("room_pagesize");//每页显示的个数
     int pageCount=(Integer)request.getAttribute("room_allpage");//所有页数
     int roomCount=(Integer)request.getAttribute("room_count");//所有教室个数
+    String buildNum=(String)request.getAttribute("buildNum");
     ClassRoom classroom=null;
 %>
 
@@ -158,16 +163,18 @@ function batch_del(){//批量删除
     	<a href="/classroomweb/roomServlet?action=operate&&type=0">添加教室</a>&nbsp;&nbsp;&nbsp;&nbsp;
     	<!-- <a href="javaScript:void(0)" onclick="batch_add()">批量添加</a>&nbsp;&nbsp;&nbsp;&nbsp; -->
     	<a href="javaScript:void(0)" onclick="batch_del()">批量删除</a>&nbsp;&nbsp;&nbsp;&nbsp;
-    	<a href='/classroomweb/roomServlet?action=list&&page=1'>刷新</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    	<a href='/classroomweb/roomServlet?action=search&&page=1&&buildNum=<%=buildNum%>'>刷新</a>&nbsp;&nbsp;&nbsp;&nbsp;
     	</td>
     	<td align="right">
     	查询空教室：<input type="text"
-						name="selectBuildNum" id="selectBuildNum" value="教学楼号"
+						name="selectBuildNum" id="selectBuildNum" value="教学楼号如:A"
 						
-						onfocus="if(this.value=='教学楼号') this.value='';"
-						onblur="if(this.value=='') {this.value='教学楼号';}" />&nbsp;&nbsp;
+						onfocus="if(this.value=='教学楼号如:A') this.value='';"
+						onblur="if(this.value=='') {this.value='教学楼号如:A';}" />&nbsp;&nbsp;
 						<input type=submit name="selectBtn1" value="搜索" class="button"
 						onclick="selectBtn(myform)" /> 
+						<a href="/classroomweb/roomServlet?action=list&&page=1">教室管理</a>
+
     	</td>
     </tr>
     </table>
@@ -246,18 +253,18 @@ function batch_del(){//批量删除
    			<input type="hidden" value=<%=pageCount%> id="pageCount">
    			  共<%=roomCount%>条记录，每页<%=pageSize%>条记录，
    			    当前第:<%=pageNum%>/<%=pageCount %>页
-   				<a href="/classroomweb/roomServlet?action=list&&page=1">首页</a>&nbsp;&nbsp;
+   				<a href="/classroomweb/roomServlet?action=search&&page=1&&buildNum=<%=buildNum%>">首页</a>&nbsp;&nbsp;
    				<% if(pageNum==1){ %> 
    				<a>上一页</a>&nbsp;&nbsp;
 				 <%}else{ %> 
-				<a href="/classroomweb/roomServlet?page=<%=pageNum-1%>&&action=list">上一页</a>&nbsp;&nbsp;
+				<a href="/classroomweb/roomServlet?page=<%=pageNum-1%>&&action=search&&buildNum=<%=buildNum%>">上一页</a>&nbsp;&nbsp;
 				 <%} %>
 				<% if(pageNum==pageCount){ %> 
 				 <a>下一页</a>&nbsp;&nbsp;
 				 <%}else{ %> 
-				<a href="/classroomweb/roomServlet?page=<%=pageNum+1%>&&action=list">下一页</a>&nbsp;&nbsp;
+				<a href="/classroomweb/roomServlet?page=<%=pageNum+1%>&&action=search&&buildNum=<%=buildNum%>">下一页</a>&nbsp;&nbsp;
 				 <%} %> 
-				<a href="/classroomweb/roomServlet?page=<%=pageCount%>&&action=list">尾页</a>
+				<a href="/classroomweb/roomServlet?page=<%=pageCount%>&&action=search&&buildNum=<%=buildNum%>">尾页</a>
 				<input type="text" id="jumppage" value="输入页码" onfocus="if(this.value=='输入页码') this.value='';"
 						onblur="if(this.value=='') {this.value='输入页码';}" style="width:3"> 
 				<input type="button" value="跳转" onclick="jumpPage(myform)" name="jump" class="button">  			

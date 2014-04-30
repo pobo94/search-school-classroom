@@ -206,9 +206,32 @@ public class DbClassRoom {
 		
 	//根据教学楼号，查询所有空闲教室；
 		
-	  public List<ClassRoom> getRoomList(String buildingNum){
+	  public List<ClassRoom> getRoomList(String buildingNum,List<ClassRoom> roomList,int page,int page_size){
 		  
-		  List<ClassRoom> roomList=new ArrayList<ClassRoom>();
+		  String sql="select * from classroom where BuildingNum=? and IsEmpty=0 limit "+(page-1)*page_size+","+page_size;
+			try {
+				pstmt=dbconn.getConn().prepareStatement(sql);
+				pstmt.setString(1, buildingNum);
+				rs=pstmt.executeQuery();
+				
+				while(rs.next()){					
+					ClassRoom room=new ClassRoom(rs);
+					roomList.add(room);
+				}
+			} catch (SQLException e) {
+				
+				e.printStackTrace();
+			}finally{
+				try {
+					rs.close();
+					pstmt.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}				
+			}
+			return roomList;
+		  
+		 /* List<ClassRoom> roomList=new ArrayList<ClassRoom>();
 		  ClassRoom room=null;
 		  String sql="select * from classroom where BuildingNum=? and IsEmpty=0";
 		  try {
@@ -229,7 +252,7 @@ public class DbClassRoom {
 				e.printStackTrace();
 			}
 		}
-		  return roomList;
+		  return roomList;*/
 	  }
 	
 	//判断指定教学楼内的某个教室是否为空
@@ -257,7 +280,34 @@ public class DbClassRoom {
 		}
 		  return flag;
 	  }
-	
+	 
+	 //返回指定教学楼内空闲教室的个数
+	 public int countAllEmpty(String buildNum){
+	  
+		 int rowcount=0;
+		 
+		 String sql = "select count(*) as totalCount  from classroom where BuildingNum=? and IsEmpty=0 ";
+			
+			try {
+				pstmt=dbconn.getConn().prepareStatement(sql);
+				pstmt.setString(1, buildNum);
+				rs=pstmt.executeQuery();
+				if (rs.next()) {
+					rowcount = rs.getInt("totalCount");
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally{
+				try {
+					rs.close();
+					pstmt.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		 return rowcount;
+	  
+ }
 	// 返回总列表数
 		public int countAll() {
 			
@@ -286,6 +336,7 @@ public class DbClassRoom {
 			
 			for(int i=0;i<strRoomIds.length;i++){
 				int roomId=Helper.strToint(strRoomIds[i]);
+				System.out.println("删除的教室ID为："+roomId);
 				
 				String sql="delete from classroom where RoomId=?";
 				try {
