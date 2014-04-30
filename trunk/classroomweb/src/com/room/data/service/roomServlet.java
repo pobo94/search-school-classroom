@@ -50,6 +50,8 @@ public class roomServlet extends HttpServlet {
 					deleteRoom(request,response);
 				}else if(action.equalsIgnoreCase("deleteAll")){
 					deleteAllRoom(request,response);
+				}else if(action.equalsIgnoreCase("search")){
+					searchEmptyRoom(request,response);
 				}
 			
 			} catch (UnsupportedEncodingException e) {
@@ -59,9 +61,49 @@ public class roomServlet extends HttpServlet {
 
      }
 
+	private void searchEmptyRoom(HttpServletRequest request,
+			HttpServletResponse response) {
+		
+		System.out.println("进入查询楼内空教室");
+		int rowCount=0;	
+		int pageCount=0;
+		String buildNum=request.getParameter("buildNum");
+		int page=Helper.strToint(request.getParameter("page"));
+		System.out.println("教学楼为："+buildNum);
+		DbConnection dbconn=new DbConnection();
+		dbRoom= new DbClassRoom(dbconn); 
+		List<ClassRoom> roomList=new ArrayList<ClassRoom>();
+		roomList=dbRoom.getRoomList(buildNum, roomList, page, page_size);
+		rowCount=dbRoom.countAllEmpty(buildNum);
+		
+		dbconn.disConnect();
+		
+		if(rowCount%page_size!=0){
+			pageCount=rowCount/page_size+1;
+		}else{
+			pageCount=rowCount/page_size;
+		}
+		
+		request.setAttribute("room_count", rowCount);
+		request.setAttribute("room_page", page);
+		request.setAttribute("room_pagesize", page_size);
+		request.setAttribute("room_allpage", pageCount);
+		request.setAttribute("roomList", roomList);
+		request.setAttribute("buildNum", buildNum);
+		
+		try {
+			getServletContext().getRequestDispatcher("/behind/roomManage/SearchList.jsp").forward(request, response);
+		} catch (ServletException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+
 	private void deleteAllRoom(HttpServletRequest request,
 			HttpServletResponse response) {
-        System.out.println("=============================");
+  
         String[] strRoomIds =  request.getParameterValues("my_checkbox");
 		
 		DbConnection dbconn=new DbConnection();
@@ -69,9 +111,10 @@ public class roomServlet extends HttpServlet {
 		dbroom.deleteAll(strRoomIds);
 		dbconn.disConnect();		
 		try {
-			response.sendRedirect("/behind/roomManage/Index.jsp");
+			getServletContext().getRequestDispatcher("/behind/roomManage/Index.jsp").forward(request, response);
+		} catch (ServletException e) {
+			e.printStackTrace();
 		} catch (IOException e) {
-			
 			e.printStackTrace();
 		}
 		

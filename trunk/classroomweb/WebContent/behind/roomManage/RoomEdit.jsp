@@ -15,28 +15,31 @@
     }
 %>
 <body>
+<div><p align="right"><a href="javascript:history.back(1)">返回</a></p></div>
+
 	<form action="/classroomweb/roomServlet?action=save&&type=<%=type%>" method="post" name="theform">
+	    
 	    <%if(type==1) {%>
 		<input type="hidden" name="roomId" id="roomId" value=<%=classroom.getRoomId() %>>
 		<%}%>
 		
-		<table align="center">
-		<tr>
+		<table align="center" style="width: 500px;border: solid #EAEFF4 2px;">
+		<tr height=50 bgcolor="#EAEFF3">
 		   <td colspan="2" align="center"><%if(type==0){ %> 添加教室<%}else if(type==1){ %>编辑教室<%} %>
 		   </td>
 		</tr>
 		
-		<tr>
+		<tr height=40>
 		<td align="right"><label id="nameColum">管理员ID：</label></td>
 		<%if(type==0) {%>
-		<td align="left"><input type="text" name="adminId" id="adminId" value=""></td>
+		<td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="adminId" id="adminId" value=""></td>
 		<%}else{ %>
-		<td align="left"><input type="text" name="adminId" id="adminId" value=<%=classroom.getAdminId() %> readonly="readonly"></td>
+		<td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="adminId" id="adminId" value=<%=classroom.getAdminId() %> readonly="readonly"></td>
 		<%} %>
 		</tr>
-		<tr>
+		<tr height=40>
 		<td align="right"><label id="nameColum">教室号：</label></td>
-		<td align="left">
+		<td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		    <%if(type==0){ %>
 		    <input type="text" name="roomNum" id="roomNum" value="">
 		    <%}else{ %>
@@ -45,9 +48,9 @@
 		</td>
 		</tr>
 		
-		<tr>
+		<tr height=40>
 		<td align="right"><label id="nameColum">教学楼：</label></td>
-		<td align="left">
+		<td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		    <%if(type==0){ %>
 		    <select name="buildNum" id="buildNum" style="width:155px">
 		    <option  value="" selected="selected">请选择教学楼</option>
@@ -61,9 +64,9 @@
 			<%} %>
 		</td>
 		</tr>
-		<tr>
+		<tr height=40>
 		<td align="right"><label id="nameColum">教室状态：</label></td>
-		<td align="left">
+		<td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			 <%if(type==0){ %>
 		    <select name="isEmpty" id="isEmpty" style="width:155px">
 		    <option selected="selected" >请选择</option>
@@ -88,17 +91,17 @@
 		    %>
 		</td>
 		</tr>
-		<tr>
+		<tr height=40>
 		<td align="right"><label id="nameColum">课节：</label></td>
-		<td align="left">
+		<td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<%if(type==0){ %>
 			<select name="lesson" id="lesson" style="width:155px">
-			<option value="1"selected="selected" >请选择</option>
+			<option value="0"selected="selected" >请选择</option>
 		    <option value="1">1-2节</option>
-		    <option value="3" >3-4节</option>
-		    <option value="5" >5-6节</option>
-		    <option value="3" >7-8节</option>
-		    <option value="5" >9-10节</option>
+		    <option value="3">3-4节</option>
+		    <option value="5">5-6节</option>
+		    <option value="7">7-8节</option>
+		    <option value="9">9-10节</option>
 		    </select>
 		    <%}else if(type==1){%>
 		    <input name="lesson" id="lesson" type="text" value="<%=classroom.getLesson()%>-<%=classroom.getLesson()+1%>节" readonly="readonly">
@@ -106,9 +109,9 @@
 		</td>
 		</tr>
 		
-		<tr>
+		<tr height=40>
 		<td align="right"><label id="nameColum">星期：</label></td>
-		<td align="left">
+		<td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		   <%if(type==0){ %>
 		   <select name="day" id="day" style="width:155px">
 		    <option value="1"selected="selected" >请选择</option>
@@ -126,9 +129,9 @@
 		</td>
 		</tr>
 		
-		<tr>
+		<tr height=40>
 		<td align="right"><label id="nameColum" >周数：</label></td>
-		<td align="left">
+		<td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<%if(type==0){ %>
 			<input type="text" name="week" id="week" value="">
 			<%}else { %>
@@ -137,9 +140,9 @@
 		</td>
 		</tr>
 		
-		<tr>
+		<tr height=40>
 		<td align="right"><label id="nameColum">学期：</label></td>
-		<td align="left">
+		<td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<%if(type==0){ %>
 			<input type="text" name="term" id="term" value="">
 			<%}else { %>
@@ -148,12 +151,12 @@
 		</td>
 		</tr>
 		
-		<tr>
+		<tr height=40>
 		<td align="right">
 			<input type="submit" name="ok" value="确定">
 		</td>
 		<td align="left">
-			<input type="reset" name="cancel" value="取消">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" name="cancel" value="取消">
 		</td>
 		</tr>
 		</table>
