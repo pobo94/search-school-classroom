@@ -32,14 +32,16 @@ function clearText(field)
             <h2>空教室查询</h2>            
         </div>
              
-    </div>
+    </div> 
     
     <div class="cleaner"></div>
 
-
-<div id="templatemo_footer_wrapper">
-	<jsp:include page="share_web/footer.jsp" flush="true" />
 </div>
+ <div id="templatemo_footer_wrapper">
+	<jsp:include page="share_web/footer.jsp" flush="true" /> 
+
+</div> 
+
     
 </body>
 </html>

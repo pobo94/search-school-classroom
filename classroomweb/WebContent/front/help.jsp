@@ -81,7 +81,8 @@ function clearText(field)
 </div>
 
 <div id="templatemo_footer_wrapper">
-	<jsp:include page="share_web/footer.jsp" flush="true" />
+	<jsp:include page="share_web/footer.jsp" flush="true" /> 
+
 </div>
     
 </body>
