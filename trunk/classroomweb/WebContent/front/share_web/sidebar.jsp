@@ -4,7 +4,7 @@
 <div id="templatemo_sidebar">
     
 	<div id="site_title">
-           <a href="#"><img src="images/xiaohui.jpg"  alt="logo" />
+           <a href="http://www.hevttc.edu.cn/"><img src="images/xiaohui.jpg"  alt="logo" />
 	    <h4></h4>
            <h3><strong>河北科技师范学院</strong></h3></a>
         </div> <!-- end of site_title --> 
