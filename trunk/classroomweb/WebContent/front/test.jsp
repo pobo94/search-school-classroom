@@ -1,11 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-<%@ page language="java" import="java.util.*,com.room.data.tools.*"%>
-<%
-	int menu=Helper.strToint(request.getParameter("menu"));
-%>
-<link href="../front/templatemo_style.css" rel="stylesheet" type="text/css" />
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>对话框练习</title>
+
 <link href="/classroomweb/inc/artdlg/skins/blue.css" rel="stylesheet" />
 <script src="/classroomweb/inc/artdlg/artDialog.min.js"></script>
+<!-- <script src="/classroomweb/front/js/popup.js"></script> -->
 <style type="text/css">
 
   .labright{
@@ -26,10 +29,7 @@
 </style>
 <script type="text/javascript">
 
-	function test(btn){
-		
-		var page=btn.id;
-		alert("要跳转的页面为："+page);
+	function test(){
 		art.dialog({
 			id:'msg',
 			title:'请首先登录您的账号',
@@ -42,8 +42,8 @@
 			drag:false,
 			resize:false,
 			
-		    content:
-		    '<form action='+page+'.jsp method="post"><center>'+
+		    content: 
+		    '<form action="index.jsp" method="post"><center>'+
 		    '<p><label>账号</label>：<input class="myinput" type="text" value="" ><lable class="labright">立即注册</label></p>'+
 		    '<p><label>密码：<input class="myinput" type="password" value="" ><lable class="labright" >忘记密码</label></p>'+
 		    '<p><input type="checkbox" id="checkbox" ><label class="labright" >记住密码</label>'+
@@ -57,18 +57,10 @@
 		
 	}
 </script>
-
-
-
-<div id="templatemo_menu" style="float:left;">
-			<ul>
-                <li><a href="index.jsp" <%if(menu==1){ %>class="current"<%} %>>首页</a></li>
-                <li><a href="searchroom.jsp"  <%if(menu==2){ %>class="current"<%} %>>空教室查询</a></li>
-                <li><a href="javascript:void(0)" id="applyroom" onclick="test(this)" <%if(menu==3){ %>class="current"<%} %>>教室申请</a></li>
-                <li><a href="javascript:void(0)" id="tucao_chat" onclick="test(this)" <%if(menu==4){ %>class="current"<%} %>>校友吐槽</a></li>
-                <%-- <li><a href="applyroom.jsp" <%if(menu==3){ %>class="current"<%} %>>教室申请</a></li> --%>
-               <%--  <li><a href="tucao_chat.jsp" <%if(menu==4){ %>class="current"<%} %>>校友吐槽</a></li> --%>
-                <li><a href="app_recommended.jsp" <%if(menu==5){ %>class="current"<%} %>>精品应用</a></li>              
-            </ul>    	
-	        <div class="cleaner"></div> 
-</div> <!-- end of templatemo_menu -->
+</head>
+<body>
+<input type="button" onclick="test();"value="测试"> 
+<img alt="QQ登录" src="/classroomweb/front/images/qq_login_logo.png">
+<img alt="新浪微博登录" src="/classroomweb/front/images/sinaweibo_login_logo.png">
+</body>
+</html>
