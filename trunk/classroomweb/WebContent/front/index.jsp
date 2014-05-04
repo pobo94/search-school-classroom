@@ -7,13 +7,92 @@
 <title>首页</title>
 <!-- <link href="templatemo_style.css" rel="stylesheet" type="text/css" /> -->
 <link href="css/templatemo_style.css" rel="stylesheet" type="text/css" />
-<script language="javascript" type="text/javascript">
-function clearText(field)
-{
-	if (field.defaultValue == field.value) field.value = '';
-	else if (field.value == '') field.value = field.defaultValue;
-}
+
+<script type="text/javascript" src="/classroomweb/jslib/jquery-1.4.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		 var index = 0;
+		 var timer;
+		 $(".imgID li").mouseover(function(){
+			index  =   $(".imgID li").index(this);
+			animateImg(index);
+		 }).eq(0).mouseover();	
+		 $('.main').hover(function(){
+				 clearInterval(timer);
+			 },function(){
+				 timer = setInterval(function(){
+					animateImg(index)
+					index++;
+					if(index==$(".imgID > li").length){index=0;}
+				  } , 2000);
+		 }).trigger("mouseleave");
+	})
+	function animateImg(index){
+			var divh = $(".content .main").height();
+			$(".imgarea").stop(true,false).animate({top : -divh*index+"px"},1000); 
+			/* $(".imgarea").stop(true,false).animate({left:'-=166px'},1000); */
+			$(".imgID li").removeClass("active")
+				.eq(index).addClass("active");
+	}
 </script>
+<style type="text/css">
+	.content{float:left;}
+	.content .main {
+	   
+	    margin-top:30px;
+		margin-bottom:10px;
+		/* width:335px; 
+		height:264px; */ 
+		width:550px; 
+		height:300px;
+		overflow:hidden;
+		position:relative;
+	}
+	.content .imgarea,.content .imgID{
+		position:absolute;
+	}
+	.content .imgarea li{ 
+		list-style:none;
+		display:inline;
+	}
+	.content .imgarea img{ 
+		width:550px; 
+		height:295px;
+		display:block;
+		border:0px;
+	}
+	.content .imgID{ 
+		right:5px; 
+		bottom:0px;
+	}
+	.content .imgID li{
+		float: left;
+		color: #069;
+		text-align: center;
+		line-height: 16px;
+		width: 18px;
+		height: 18px;
+		font-family: Arial;
+		font-size: 12px;
+		cursor: pointer;
+		overflow: hidden;
+		margin: 3px 1px;
+		border: 1px solid #069;
+		background-color: #fff;
+	}
+	.content .imgID li.active{
+		color: #fff;
+		line-height: 16px;
+		width: 16px;
+		height: 16px;
+		font-size: 14px;
+		margin: 3px 1px;
+		border: 1px solid #069;
+		background-color: #069;
+		font-weight: bold;
+	}
+</style>
+
 </head>
 <body>
 
@@ -42,33 +121,30 @@ function clearText(field)
             
         </div>
         
-         <div class="content_box last">
+         <div class="content_box last" style="float:left;">
+           <div class="col_w280">
+                	<h3>最近活动</h3>
+                	
+           <div class="content">
+			  <div class="main" >
+			    <ul class="imgarea" >
+			      <li><a href="#"><img src="images/bg_0.jpg" /></a></li>
+			      <li><a href="#"><img src="images/bg_1.jpg"/></a></li>
+			      <li><a href="#"><img src="images/bg_2.jpg"/></a></li>
+			      <li><a href="#"><img src="images/bg_3.jpg"/></a></li>
+			    </ul>
+			    <ul class="imgID" >
+			      <li>1</li>
+			      <li>2</li>
+			      <li>3</li>
+				  <li>4</li>
+			    </ul>
+			  </div>
+			 
+			  </div>			  
+           </div>
                 
-                <div class="col_w280">
-                	<h3>最近项目</h3>
-                    <div class="image_wrapper"><img src="images/templatemo_image_02.jpg" alt="image" /></div>
-                	<p><em>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</em></p>
-                    <p align="justify">Cras tortor urna, adipiscing at mollis sit amet, suscipit quis ipsum. Maecenas bibendum interdum quam at vestibulum. Suspendisse ipsum massa, congue vitae gravida in, lacinia nec ante. Sed cursus nibh eget felis mattis sodales. Etiam at neque nec tellus posuere auctor.</p>
-                    <div class="cleaner"></div>
-                	<div class="btn_more image_fr"><a href="#">More</a></div>
-                </div>
-                <div class="col_w280 last">
-                	<h3>新增服务</h3>
-                    <p align="justify">Donec nunc neque, pulvinar a, vestibulum eget, luctus id, orci. Pellentesque elementum enim a augue. Nunc sit amet sapien eget eros iaculis hendrerit quis a enim.</p>
-                    
-                	<ul class="tmo_list">
-                        <li>Sed nec eros egestas nisl</li>
-                        <li>Morbi sed nulla ac est cursus</li>
-                        <li><a href="#">Curabitur ullamcorper nibh</a></li>
-                        <li>Pellentesque adipiscing</li>   
-                        <li>Morbi sed nulla ac est cursus</li>
-                        <li><a href="#">Curabitur ullamcorper nibh</a></li>                     
-                    </ul>
-	                <div class="cleaner"></div>
-    	            <div class="btn_more image_fr"><a href="#">More</a></div>
-                </div>
-                <div class="cleaner"></div>
-            </div>
+         </div>
             
         </div>
     <div class="cleaner"></div>    
