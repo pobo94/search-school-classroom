@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>校友吐槽</title>
+<title>关于我们</title>
 <link href="css/templatemo_style.css" rel="stylesheet" type="text/css" />
 <script language="javascript" type="text/javascript">
 function clearText(field)
@@ -28,46 +28,37 @@ function clearText(field)
 	        <div class="cleaner"></div> 
       </div> <!-- end of templatemo_menu -->
         
-        <div class="content_box" style="float:left;">
-        	
-            <h2> 我们的公司</h2>
-            <div class="content_box_inner">
-                <div class="image_wrapper image_fl"><img src="images/templatemo_image_03.jpg" alt="image" /></div>
-              
-                <p><em>Nullam at erat ipsum, quis tincidunt mauris. Nunc sit amet sapien eget eros iaculis hendrerit quis a enim. Vestibulum at leo ante, vel auctor velit.</em></p>
-                <p>Aenean dolor mi, malesuada eget consequat tristique, tempor vehicula ligula. Ut quis nibh orci, fermentum consequat est. Proin porta congue enim, a interdum mi hendrerit quis. Donec lacus sem, egestas vitae posuere in, pulvinar ac nisi. Nullam eu metus libero, et pretium massa. Sed neque purus, placerat quis tempor nec, ullamcorper ut urna. Vivamus eget lorem risus, eget dapibus eros euismod ultricies.</p>
-                <div class="btn_more image_fr"><a href="#">More</a></div>
-                
-                <div class="cleaner"></div>
-            </div>
-            
-        </div>
-        
+      
          <div class="content_box last" style="float:left;">
                 
                <h2>我们的团队</h2>
                <div class="content_box_inner">
-                    <p align="justify">Fusce sed quam magna. Aliquam erat volutpat. Vestibulum scelerisque blandit luctus. Sed ornare elit eu erat eleifend vel commodo dolor feugiat. Sed cursus nibh eget felis mattis sodales. Etiam at neque nec tellus posuere auctor.   Donec nunc neque, pulvinar a, vestibulum eget, luctus id, orci. Pellentesque elementum enim a augue.</p>
-                    <div class="tmo_list_r">
-                        <ul class="tmo_list">
-                            <li>Morbi sed nulla</li>
-                            <li>Curabitur ullamcorper</li>
-                            <li>Pellentesque adipiscing</li>
-                            <li>Cras rutrum ullamcorper</li>
-                            <li>Sed nec eros</li>
-                            <li>Morbi sed nulla</li>
-                      </ul>
-                 </div>
-                    <div class="tmo_list_r">
-                        <ul class="tmo_list tmo_list_r">
-                            <li>Sed nec eros</li>
-                            <li>Morbi sed nulla</li>
-                            <li>Morbi sed nulla</li>
-                            <li>Curabitur ullamcorper</li>
-                            <li>Pellentesque adipiscing</li>
-                            <li>Cras rutrum ullamcorper</li>
-                        </ul>
-                    </div>
+                <p align="justify"> 一、团队概况</p>
+                   <h5 align="justify">                   
+						“快人一步”目前正式职工8人，公司员工平均年龄22岁。公司拥有一流的致力于
+						软件开发行业的服务团队，把服务学生放在优先的位置，核心是建立一个适应校园环境的优秀服务管理团队。
+					</h5> 
+				<p align="justify"> 二、成员简介</p>
+					<h5>王伟娟 职位  主要负责：</h5>
+					<h5>黄亮 职位： 主要负责：</h5>
+					<h5>程禄元 职位： 主要负责：</h5>
+					<h5>韩亚男 职位： 主要负责：</h5>
+					<h5>闫明 职位： 主要负责：</h5>
+					<h5>刘佳华 职位： 主要负责：</h5>
+					<h5>曹甜双 职位： 主要负责：</h5>
+					<h5>余巧玲 职位： 主要负责：</h5>
+
+			   <p align="justify">三、服务客户</p>
+					<h5>
+					河北科技师范学院
+					</h5>
+			   <p align="justify">四、资源优势</p>
+					<h5>本校后勤与广大学生支持</h5>
+			   <p align="justify">五、公司理念</p>
+					<h5>诚信、务实、服务、成长</h5>
+                                 
+             </div>
+                    
                     <div class="cleaner"></div>
                     <div class="btn_more float_r"><a href="#">More</a></div>
        	   </div>

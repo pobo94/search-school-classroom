@@ -27,10 +27,10 @@ public class Announcement {
 	public Announcement(ResultSet rs) {
 		try {
 			
-			setAdminId(rs.getInt(1));
-			setAnnounceId(rs.getInt(2));
-			setContent(rs.getString(3));
-			setPubTime(rs.getDate(4));
+//			setAdminId(rs.getInt(1));
+			setAnnounceId(rs.getInt(1));
+			setContent(rs.getString(2));
+			setPubTime(rs.getTimestamp(3));
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
