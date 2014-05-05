@@ -1,8 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*,com.room.data.dao.*,com.room.data.model.*,com.room.data.tools.*"%>
+<%
+
+	List<Announcement> annList=(List<Announcement>)session.getAttribute("annList");
+	//List<Announcement> annList=(List<Announcement>)request.getAttribute("annList");
+	Announcement announcement=new Announcement();
+%>
+
 <link href="../front/templatemo_style.css" rel="stylesheet" type="text/css" />
-<div id="templatemo_sidebar">
-    
+
+
+<div id="templatemo_sidebar">   
 	<div id="site_title">
            <a href="http://www.hevttc.edu.cn/"><img src="images/xiaohui.jpg"  alt="logo" />
 	    <h4></h4>
@@ -14,39 +22,22 @@
         	<div class="sidebar_content">
         	
         	<marquee  direction="up" width="255" height="370"  loop="-1" vspace="6" hspace="6" scrollamount="4" scrolldelay="1" id="pu"
-
-onmousemove="pu.stop()" onmouseout="pu.start()">
+			   onmousemove="pu.stop()" onmouseout="pu.start()">
+				
 				<ul id="news_box">
+				<%
+				 for(int i=0;i<annList.size();i++){
+					announcement=annList.get(i);
+					String content=announcement.getContent();
+					String pubTime=Helper.changeTime(announcement.getPubTime());
+				%>
                 	<li>
-                    	<h6><a href="#">公告一</a></h6>
-                  		<p>逸夫楼因周末有成人考试，周六日封楼。</p>
-                  		<p>发布时间：2014-5-5</p>
+                    	<h6><--------------公告<%=i+1%>--------------></h6>
+                  		<p><%=content %></p>
+                  		<p>发布时间：<%=pubTime %></p>
                     </li>
-                    <li>
-                    	<h6><a href="#">公告二</a></h6>
-                    	<p>逸夫楼502教室因，举办活动周三下午使用，上自习的同学请另找教室</p>
-                    	<p>发布时间：2014-5-5</p>
-                    </li>
- 		    <li>
-                    	<h6><a href="#">公告三</a></h6>
-                    	<p>逸夫楼402教室因，举办活动周三下午使用，上自习的同学请另找教室</p>
-                    	<p>发布时间：2014-5-5</p>
-                    </li>
-		    <li>
-                    	<h6><a href="#">公告四</a></h6>
-                    	<p>逸夫楼302教室因，举办活动周三下午使用，上自习的同学请另找教室</p>
-                    	<p>发布时间：2014-5-5</p>
-                    </li>
- 		    <li>
-                    	<h6><a href="#">公告五</a></h6>
-                    	<p>逸夫楼102教室因，举办活动周三下午使用，上自习的同学请另找教室</p>
-                    	<p>发布时间：2014-5-5</p>
-                    </li>
-                    <li class="last">
-                    	<h6><a href="#">公告六</a></h6>
-                    	<p>B楼104周五，某某专家讲座。</p>
-                    	<p>发布时间：2014-5-5</p>
-                    </li>
+                    <%} %>
+                    
                 </ul>
                </marquee>
             </div>

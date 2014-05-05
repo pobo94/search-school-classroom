@@ -14,7 +14,7 @@ public class DbAnnouncement {
 	private DbConnection dbconn;
 	private PreparedStatement pstmt = null;
 	private ResultSet rs=null;
-	int pagesize=6;
+	int pagesize=10;
 	
 	public DbAnnouncement(DbConnection db){
 		
