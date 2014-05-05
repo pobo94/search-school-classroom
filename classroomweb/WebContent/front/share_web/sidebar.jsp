@@ -13,33 +13,42 @@
         	<a href="#"><h3><strong>公告栏</strong></h3></a>
         	<div class="sidebar_content">
         	
+        	<marquee  direction="up" width="255" height="370"  loop="-1" vspace="6" hspace="6" scrollamount="4" scrolldelay="1" id="pu"
+
+onmousemove="pu.stop()" onmouseout="pu.start()">
 				<ul id="news_box">
                 	<li>
                     	<h6><a href="#">公告一</a></h6>
                   		<p>逸夫楼因周末有成人考试，周六日封楼。</p>
+                  		<p>发布时间：2014-5-5</p>
                     </li>
                     <li>
                     	<h6><a href="#">公告二</a></h6>
                     	<p>逸夫楼502教室因，举办活动周三下午使用，上自习的同学请另找教室</p>
+                    	<p>发布时间：2014-5-5</p>
                     </li>
  		    <li>
                     	<h6><a href="#">公告三</a></h6>
                     	<p>逸夫楼402教室因，举办活动周三下午使用，上自习的同学请另找教室</p>
+                    	<p>发布时间：2014-5-5</p>
                     </li>
 		    <li>
                     	<h6><a href="#">公告四</a></h6>
                     	<p>逸夫楼302教室因，举办活动周三下午使用，上自习的同学请另找教室</p>
+                    	<p>发布时间：2014-5-5</p>
                     </li>
  		    <li>
                     	<h6><a href="#">公告五</a></h6>
                     	<p>逸夫楼102教室因，举办活动周三下午使用，上自习的同学请另找教室</p>
+                    	<p>发布时间：2014-5-5</p>
                     </li>
                     <li class="last">
                     	<h6><a href="#">公告六</a></h6>
                     	<p>B楼104周五，某某专家讲座。</p>
+                    	<p>发布时间：2014-5-5</p>
                     </li>
                 </ul>
-               
+               </marquee>
             </div>
             
         </div>   
