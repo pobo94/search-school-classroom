@@ -15,7 +15,7 @@ public class Test {
 		
 		DbConnection dbconn=new DbConnection();
 		DbAnnouncement dbann=new DbAnnouncement(dbconn);
-//		Announcement announcement=null;
+		Announcement announcement=null;
 		List<Announcement> annlist=null;
 //		//查看公告列表；
 //		try {
@@ -40,24 +40,24 @@ public class Test {
 	
 		
 //		查看排序后的公告列表，限制条数
-//		try {
-//			System.out.println("<table>");
-//			annlist=dbann.getSortAnnList();
-//			for(int i=0;i<annlist.size();i++){
-//				announcement=annlist.get(i);
-//				if(announcement==null){
-//					return ;
-//				}
-//				System.out.println("<tr>");
-//				System.out.println("<td>"+(i+1)+"</td>");
-//				System.out.println("<td>"+announcement.getContent()+"</td>");
-//				System.out.println("<td>"+announcement.getPubTime()+"</td>");
-//				System.out.println("</tr>");
-//			}
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}
-//		
+		try {
+			System.out.println("<table>");
+			annlist=dbann.getSortAnnList();
+			for(int i=0;i<annlist.size();i++){
+				announcement=annlist.get(i);
+				if(announcement==null){
+					return ;
+				}
+				System.out.println("<tr>");
+				System.out.println("<td>"+(i+1)+"</td>");
+				System.out.println("<td>"+announcement.getContent()+"</td>");
+				System.out.println("<td>"+announcement.getPubTime()+"</td>");
+				System.out.println("</tr>");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
 		
 		//添加公告
 //		Announcement announcement=new Announcement();
@@ -73,16 +73,16 @@ public class Test {
 //			e.printStackTrace();
 //		}
 		
-//		公告条数
-		int count=0;
-		try {
-			count=dbann.getCountAnn();
-		} catch (SQLException e) {
-			
-			e.printStackTrace();
-		}
-		dbconn.disConnect();
-		System.out.println("公告条数为："+count);
+//		所有公告条数
+//		int count=0;
+//		try {
+//			count=dbann.getCountAnn();
+//		} catch (SQLException e) {
+//			
+//			e.printStackTrace();
+//		}
+//		dbconn.disConnect();
+//		System.out.println("公告条数为："+count);
 
 	}
 
