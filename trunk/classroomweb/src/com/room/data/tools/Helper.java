@@ -25,12 +25,17 @@ public class Helper {
 		    return changeStr;
 		    
 	}
-    
+    //修改日期显示格式
     public static String changeTime(Date date){
     	SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     	return format.format(date);
     }
     
+  //修改日期显示格式
+    public static String changeSimpleTime(Date date){
+    	SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd");
+    	return format.format(date);
+    }
     public static Date getCurrentDateTime(){
     	 Calendar calendar = Calendar.getInstance();
 		 calendar.setTimeInMillis(System.currentTimeMillis());
@@ -50,7 +55,7 @@ public class Helper {
 		}
     	return str;
     }
-    
+    //字符串转换为整型
     public static int strToint(String str){
     	if(str.equals("")||str==null){
     		str="0";
@@ -65,5 +70,17 @@ public class Helper {
     		return "";
     	else
     		return str;
+    }
+    //获取当前日期中的星期
+    public static String getWeekOfDate(Date dt) {
+        String[] weekDays = {"星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"};
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(dt);
+
+        int w = cal.get(Calendar.DAY_OF_WEEK) - 1;
+        if (w < 0)
+            w = 0;
+
+        return weekDays[w];
     }
 }
