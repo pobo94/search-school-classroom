@@ -5,6 +5,7 @@
 	List<Announcement> annList=(List<Announcement>)session.getAttribute("annList");
 	//List<Announcement> annList=(List<Announcement>)request.getAttribute("annList");
 	Announcement announcement=new Announcement();
+	Date dt=new Date();
 %>
 
 <link href="../front/templatemo_style.css" rel="stylesheet" type="text/css" />
@@ -18,7 +19,9 @@
         </div> <!-- end of site_title --> 
         
         <div class="sidebar_box">
+        	
         	<a href="#"><h3><strong>公告栏</strong></h3></a>
+        	<h6>&nbsp;&nbsp;<%=Helper.changeTime(Helper.getCurrentDateTime()) %>&nbsp;&nbsp;<%=Helper.getWeekOfDate(dt) %></h6>
         	<div class="sidebar_content">
         	
         	<marquee  direction="up" width="255" height="370"  loop="-1" vspace="6" hspace="6" scrollamount="4" scrolldelay="1" id="pu"
@@ -34,7 +37,7 @@
                 	<li>
                     	<h6><--------------公告<%=i+1%>--------------></h6>
                   		<p><%=content %></p>
-                  		<p>发布时间：<%=pubTime %></p>
+                  		<p>发布时间：<%=pubTime %>&nbsp;&nbsp;<%=Helper.getWeekOfDate(announcement.getPubTime()) %></p>
                     </li>
                     <%} %>
                     
