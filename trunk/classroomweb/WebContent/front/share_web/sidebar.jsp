@@ -3,7 +3,6 @@
 <%
 
 	List<Announcement> annList=(List<Announcement>)session.getAttribute("annList");
-	//List<Announcement> annList=(List<Announcement>)request.getAttribute("annList");
 	Announcement announcement=new Announcement();
 	Date dt=new Date();
 %>
@@ -20,7 +19,7 @@
         
         <div class="sidebar_box">
         	
-        	<a href="#"><h3><strong>公告栏</strong></h3></a>
+        	<a href="#"><h3><strong>科师教室动态</strong></h3></a>
         	<h6>&nbsp;&nbsp;<%=Helper.changeTime(Helper.getCurrentDateTime()) %>&nbsp;&nbsp;<%=Helper.getWeekOfDate(dt) %></h6>
         	<div class="sidebar_content">
         	

@@ -98,7 +98,9 @@
 <body>
 <%
 	List<Announcement> annList=(List<Announcement>)session.getAttribute("annList");
+    List<ClassRoom> roomList=(List<ClassRoom>)session.getAttribute("roomList");
 	session.setAttribute("annList",annList);
+	session.setAttribute("roomList",roomList);
 %>
 <div id="templatemo_wrapper">
  <jsp:include page="share_web/sidebar.jsp" flush="true" />     

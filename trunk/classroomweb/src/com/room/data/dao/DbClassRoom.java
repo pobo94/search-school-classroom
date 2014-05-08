@@ -231,28 +231,6 @@ public class DbClassRoom {
 			}
 			return roomList;
 		  
-		 /* List<ClassRoom> roomList=new ArrayList<ClassRoom>();
-		  ClassRoom room=null;
-		  String sql="select * from classroom where BuildingNum=? and IsEmpty=0";
-		  try {
-			pstmt=dbconn.getConn().prepareStatement(sql);
-			pstmt.setString(1, buildingNum);
-			rs=pstmt.executeQuery();
-			if(rs.next()){
-				room=new ClassRoom(rs);
-				roomList.add(room);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}finally{
-			try {
-				rs.close();
-				pstmt.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
-		  return roomList;*/
 	  }
 	
 	//判断指定教学楼内的某个教室是否为空
@@ -331,7 +309,7 @@ public class DbClassRoom {
 			}
 			return rowcount;
 		}
-
+		//批量删除教室
 		public void deleteAll(String[] strRoomIds) {
 			
 			for(int i=0;i<strRoomIds.length;i++){
@@ -354,6 +332,31 @@ public class DbClassRoom {
 				e.printStackTrace();
 			}
 			
+		}
+		
+		//查询当天指定教学楼内所有的空闲教室
+		public List<ClassRoom> getCurDayEmptyRoom(String buildNum,int weekday,int week) {
+			
+			List<ClassRoom> roomList=new ArrayList<ClassRoom>();
+			String sql="select * from classroom where BuildingNum=? and Day=? and Week=? and Term='2013-2014-2' and IsEmpty=0";
+			
+			try {
+				pstmt=dbconn.getConn().prepareStatement(sql);
+				pstmt.setString(1, buildNum);
+				pstmt.setInt(2, weekday);
+				pstmt.setInt(3, week);
+				
+				rs=pstmt.executeQuery();
+				while(rs.next()){
+					ClassRoom room=new ClassRoom(rs);
+					roomList.add(room);
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			return roomList;
 		}
 		
 	

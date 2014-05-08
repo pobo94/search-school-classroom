@@ -6,7 +6,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>空教室查询</title>
 <link href="css/templatemo_style.css" rel="stylesheet" type="text/css" />
-</head>
 
 <style type="text/css">
 body {
@@ -87,8 +86,15 @@ function gs(d,a){
   return curVal;
 }
 </script>
-
-
+</head>
+<%
+ List<ClassRoom> roomList=(List<ClassRoom>)session.getAttribute("roomList");
+ ClassRoom room=new ClassRoom();
+ String[] strLesson={"1-2节","3-4节","5-6节","7-8节","9-10节"};
+ String buildNum="";
+ String roomNum="";
+ System.out.println("空教室的个数："+roomList.size());
+%>
 <body>
 
 <div id="templatemo_wrapper">
@@ -138,31 +144,106 @@ function gs(d,a){
   <li>
     <dl>
       <dt>1-2节所有的空教室</dt>
-      <dd>A103|A106|A109|A203</dd>
+      <dd>
+      <%for(int i=0;i<roomList.size();i++){ 
+    	  room=roomList.get(i);
+    	  int lesson=room.getLesson();
+    	 
+    	  if(strLesson[lesson-(lesson+1)/2].equals("1-2节")){
+    		 buildNum=room.getBuildingNum();
+    		 roomNum=room.getRoomNum();    	  
+      %>
+      <%=buildNum %><%=roomNum %>|
+      <%
+         
+    	  }
+      }
+      %>
+     </dd>
     </dl>
   </li>
-   <li>
+  <li>
     <dl>
       <dt>3-4节所有的空教室</dt>
-      <dd>A103|A106|A109|A203</dd>
+      <dd>
+      	<%for(int i=0;i<roomList.size();i++){ 
+    	  room=roomList.get(i);
+    	  int lesson=room.getLesson();
+    	 
+    	  if(strLesson[lesson-(lesson+1)/2].equals("3-4节")){
+    		 buildNum=room.getBuildingNum();
+    		 roomNum=room.getRoomNum();    	  
+      %>
+      <%=buildNum %><%=roomNum %>|
+      <%
+         
+    	  }
+      }
+      %>
+      </dd>
     </dl>
   </li>
  <li>
     <dl>
       <dt>5-6节所有的空教室</dt>
-      <dd>A103|A106|A109|A203</dd>
+      <dd>
+      	<%for(int i=0;i<roomList.size();i++){ 
+    	  room=roomList.get(i);
+    	  int lesson=room.getLesson();
+    	 
+    	  if(strLesson[lesson-(lesson+1)/2].equals("5-6节")){
+    		 buildNum=room.getBuildingNum();
+    		 roomNum=room.getRoomNum();    	  
+      %>
+      <%=buildNum %><%=roomNum %>|
+      <%
+         
+    	  }
+      }
+      %>
+      </dd>
     </dl>
   </li>
   <li>
     <dl>
       <dt>7-8节所有的空教室</dt>
-      <dd>A103|A106|A109|A203</dd>
+      <dd>
+      	<%for(int i=0;i<roomList.size();i++){ 
+    	  room=roomList.get(i);
+    	  int lesson=room.getLesson();
+    	 
+    	  if(strLesson[lesson-(lesson+1)/2].equals("7-8节")){
+    		 buildNum=room.getBuildingNum();
+    		 roomNum=room.getRoomNum();    	  
+      %>
+      <%=buildNum %><%=roomNum %>|
+      <%
+         
+    	  }
+      }
+      %>
+      </dd>
     </dl>
   </li>
   <li>
     <dl>
       <dt>9-10节所有的空教室</dt>
-      <dd>A103|A106|A109|A203</dd>
+      <dd>
+      	<%for(int i=0;i<roomList.size();i++){ 
+    	  room=roomList.get(i);
+    	  int lesson=room.getLesson();
+    	 
+    	  if(strLesson[lesson-(lesson+1)/2].equals("9-10节")){
+    		 buildNum=room.getBuildingNum();
+    		 roomNum=room.getRoomNum();    	  
+      %>
+      <%=buildNum %><%=roomNum %>|
+      <%
+         
+    	  }
+      }
+      %>
+      </dd>
     </dl>
   </li>
  </ul> 
