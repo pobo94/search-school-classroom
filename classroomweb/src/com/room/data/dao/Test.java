@@ -58,32 +58,41 @@ public class Test {
 			e.printStackTrace();
 		}
 		
-		
-		//添加公告
-//		Announcement announcement=new Announcement();
-//		int adminId=1;
-//		String content="X楼516因信息专业实习第10-13周被使用";
-//		Calendar calendar = Calendar.getInstance();
-//		announcement.setPubTime(calendar.getTime());
-//		announcement.setAdminId(adminId);
-//		announcement.setContent(content);
-//		try {
-//			dbann.insertAnnounce(announcement);
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}
-		
-//		所有公告条数
-//		int count=0;
-//		try {
-//			count=dbann.getCountAnn();
-//		} catch (SQLException e) {
-//			
-//			e.printStackTrace();
-//		}
-//		dbconn.disConnect();
-//		System.out.println("公告条数为："+count);
+		int count=getAnnounceNum(dbconn,dbann);
+		System.out.println("公告条数为："+count);
 
 	}
+	//添加公告
+	private static void insertAnnouncement(DbConnection dbconn,DbAnnouncement dbann){
+		
+		Announcement announcement=new Announcement();
+		int adminId=1;
+		String content="X楼516因信息专业实习第10-13周被使用";
+		Calendar calendar = Calendar.getInstance();
+		announcement.setPubTime(calendar.getTime());
+		announcement.setAdminId(adminId);
+		announcement.setContent(content);
+		try {
+			dbann.insertAnnounce(announcement);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		dbconn.disConnect();
+	}
+	//所有公告条数
+	private static int getAnnounceNum(DbConnection dbconn,DbAnnouncement dbann) {
+		
+		int count=0;
+		try {
+			count=dbann.getCountAnn();
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		dbconn.disConnect();
+		System.out.println("公告条数为："+count);
+		return count;
+	}
+	
 
 }
