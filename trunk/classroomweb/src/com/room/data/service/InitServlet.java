@@ -54,6 +54,9 @@ public class InitServlet extends HttpServlet {
 		String buildNum=request.getParameter("buildNum");
 		int weekday=Helper.strToint(request.getParameter("weekday"));
 		int week=Helper.strToint(request.getParameter("week"));
+		System.out.println("buildNum="+buildNum);
+		System.out.println("weekday="+weekday);
+		System.out.println("week="+week);
 		List<ClassRoom> roomList=new ArrayList<ClassRoom>();
 		
 		DbClassRoom dbRoom=new DbClassRoom(dbconn);
@@ -65,6 +68,9 @@ public class InitServlet extends HttpServlet {
 		HttpSession session=request.getSession();
 		session.setAttribute("annList", annList);
 		session.setAttribute("roomList", roomList);
+		session.setAttribute("buildNum", buildNum);
+		session.setAttribute("weekday", weekday);
+		session.setAttribute("week", week);
 		try {
 
 			getServletContext().getRequestDispatcher("/front/home.jsp").forward(request, response);

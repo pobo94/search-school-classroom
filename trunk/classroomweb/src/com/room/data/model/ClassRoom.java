@@ -3,7 +3,7 @@ package com.room.data.model;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class ClassRoom {
+public class ClassRoom implements java.io.Serializable {
 
 	private int adminId;
 	private int roomId;

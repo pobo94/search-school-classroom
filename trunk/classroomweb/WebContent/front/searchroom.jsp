@@ -8,24 +8,46 @@
 <link href="css/templatemo_style.css" rel="stylesheet" type="text/css" />
 
 <style type="text/css">
-body {
- margin: 30px auto;
-}
+/* body {
+ margin: 5px auto;
+} */
 #myform{
- font-size: 12px;
- margin-top: 20px;
+ font-family:楷体/* Times New Roman */;
+ font-size: 16px;
+ /* margin-top: 5px; */
  margin-left: 40px;
  margin-bottom: 20px;
+ font-weight:bold;
+ color:#2d7ad1;
+}
+.myselect{
+ cursor:pointer;
+ position:relative;
+ left:-2px;
+ top:-2px;
+ font-size:12px;
+ width:137px;
+ height:25px;
+ line-height:14px;
+ border:1px 2d7ad1;
+ color:#909993;
+
+}
+.myselect option{
+	cursor:pointer;
+	height:30px;
+    padding-top:5px;
 }
 ul {
  list-style: none;
 }
 #faq {
+ font-family:宋体/* Times New Roman */;
  font-size: 14px;
  width: 600px;
 }
 #faq li {
- margin: 30px 0 10px;
+ margin: 10px 0 10px;
  padding: 0 0 5px;
 }
 #faq dl {
@@ -37,15 +59,19 @@ ul {
  font-weight:bold;
  cursor:pointer;
  line-height: 20px;
- padding: 0 0 5px 22px;
+ padding: 0 0 5px 10px;
  border-bottom:1px #ccc dotted;
+ color:#2d7ad1;
 }
 #faq dd {
+ height:50px;
  display:block;
+ border:1px /* #f19005 */ #2d7ad1 solid;
  margin:0;
- padding: 5px 0 5px 20px;
- background:#E5ECF9;
+ padding: 5px 0 5px 10px;
+ /* background:#CCC/* #E5ECF9 */; */
  line-height: 180%;
+ overflow:auto;
 
 }
 </style>
@@ -89,11 +115,15 @@ function gs(d,a){
 </head>
 <%
  List<ClassRoom> roomList=(List<ClassRoom>)session.getAttribute("roomList");
+ int weekday=(Integer)session.getAttribute("weekday");
+ int week=(Integer)session.getAttribute("week");
  ClassRoom room=new ClassRoom();
  String[] strLesson={"1-2节","3-4节","5-6节","7-8节","9-10节"};
+ String[] strWeekday={"星期一","星期二","星期三","星期四","星期五"};
  String buildNum="";
  String roomNum="";
  System.out.println("空教室的个数："+roomList.size());
+ 
 %>
 <body>
 
@@ -109,145 +139,62 @@ function gs(d,a){
        		 <jsp:param value="2" name="menu"/> 
        </jsp:include> 
         
-       <div class="content_box" style="float:left;">         	
-              
+       <div class="content_box last" style="float:left;">         	
            <div id="myform" >
-  <form>
-     <select>
-	<option class="week" value="0" name="week" select="selected" >选择周数</option>
-        <option class="week" value="1" name="week">1</option>
-        <option class="week" value="2" name="week">2</option>
-	<option class="week" value="3" name="week">3</option>
-	<option class="week" value="4" name="week">4</option>
-	<option class="week" value="5" name="week">5</option>
-     </select>
-     <select>
-	<option class="week" value="0" name="day" select="selected" >选择星期</option>
-        <option class="week" value="1" name="day">星期一</option>
-        <option class="week" value="2" name="day">星期二</option>
-	<option class="week" value="3" name="day">星期三</option>
-	<option class="week" value="4" name="day">星期四</option>
-	<option class="week" value="5" name="day">星期五</option>
-        <option class="week" value="5" name="dayk">星期六</option>
-	<option class="week" value="5" name="day">星期日</option>
-     </select>
-     <select>
-        <option class="week" value="1" name="build_room" select="selected">A教学楼</option>
-        <option class="week" value="2" name="build_room">B教学楼</option>
-     </select>
-     &nbsp;&nbsp;<input type="submit" name="mysubmit" value="查询" class="mybutton">&nbsp;&nbsp;
-     <input type="submit" name="mybutton" value="刷新" class="mybutton">
-  </form>
-</div>
+           	 <p style="color: red;margin-left: 5px;margin-bottom:2px;">
+           	  <img src="images/volume_quiet.png" alt="image" />
+                                系统默认为您显示今天所有的空闲教室，您可以通过以下方式自己筛选查询。
+             </p> 
+			  <form action="searchForm.jsp" method="post">
+			     <select class="myselect" name="week">	
+					<%for(int i=1;i<=16;i++) {%>
+				        <option value="<%=i%>" <%if(week==i) {%>selected="selected"<%} %>>第<%=i %>周</option>
+				     <%} %>
+			     </select>
+			     <select class="myselect" name="weekday">
+					<% for(int j=1;j<=5;j++){ %>
+					<option value="<%=j%>"<%if(weekday==j) {%>selected="selected"<%} %>><%=strWeekday[j-1] %></option>
+			        <%} %>
+			     </select>
+			     <select class="myselect" name="buildNum">
+			        <option value="A" selected="selected">A教学楼</option>
+			        <option value="B">B教学楼</option>
+			     </select>
+			     &nbsp;&nbsp;<input type="submit" name="mysubmit" value="查询" class="mybutton">&nbsp;&nbsp;
+			     <input type="submit" name="mybutton" value="刷新" class="mybutton">
+			  </form>
+		</div>
 
-<ul id="faq">
-  <li>
-    <dl>
-      <dt>1-2节所有的空教室</dt>
-      <dd>
-      <%for(int i=0;i<roomList.size();i++){ 
-    	  room=roomList.get(i);
-    	  int lesson=room.getLesson();
-    	 
-    	  if(strLesson[lesson-(lesson+1)/2].equals("1-2节")){
-    		 buildNum=room.getBuildingNum();
-    		 roomNum=room.getRoomNum();    	  
-      %>
-      <%=buildNum %><%=roomNum %>|
-      <%
-         
-    	  }
-      }
-      %>
-     </dd>
-    </dl>
-  </li>
-  <li>
-    <dl>
-      <dt>3-4节所有的空教室</dt>
-      <dd>
-      	<%for(int i=0;i<roomList.size();i++){ 
-    	  room=roomList.get(i);
-    	  int lesson=room.getLesson();
-    	 
-    	  if(strLesson[lesson-(lesson+1)/2].equals("3-4节")){
-    		 buildNum=room.getBuildingNum();
-    		 roomNum=room.getRoomNum();    	  
-      %>
-      <%=buildNum %><%=roomNum %>|
-      <%
-         
-    	  }
-      }
-      %>
-      </dd>
-    </dl>
-  </li>
- <li>
-    <dl>
-      <dt>5-6节所有的空教室</dt>
-      <dd>
-      	<%for(int i=0;i<roomList.size();i++){ 
-    	  room=roomList.get(i);
-    	  int lesson=room.getLesson();
-    	 
-    	  if(strLesson[lesson-(lesson+1)/2].equals("5-6节")){
-    		 buildNum=room.getBuildingNum();
-    		 roomNum=room.getRoomNum();    	  
-      %>
-      <%=buildNum %><%=roomNum %>|
-      <%
-         
-    	  }
-      }
-      %>
-      </dd>
-    </dl>
-  </li>
-  <li>
-    <dl>
-      <dt>7-8节所有的空教室</dt>
-      <dd>
-      	<%for(int i=0;i<roomList.size();i++){ 
-    	  room=roomList.get(i);
-    	  int lesson=room.getLesson();
-    	 
-    	  if(strLesson[lesson-(lesson+1)/2].equals("7-8节")){
-    		 buildNum=room.getBuildingNum();
-    		 roomNum=room.getRoomNum();    	  
-      %>
-      <%=buildNum %><%=roomNum %>|
-      <%
-         
-    	  }
-      }
-      %>
-      </dd>
-    </dl>
-  </li>
-  <li>
-    <dl>
-      <dt>9-10节所有的空教室</dt>
-      <dd>
-      	<%for(int i=0;i<roomList.size();i++){ 
-    	  room=roomList.get(i);
-    	  int lesson=room.getLesson();
-    	 
-    	  if(strLesson[lesson-(lesson+1)/2].equals("9-10节")){
-    		 buildNum=room.getBuildingNum();
-    		 roomNum=room.getRoomNum();    	  
-      %>
-      <%=buildNum %><%=roomNum %>|
-      <%
-         
-    	  }
-      }
-      %>
-      </dd>
-    </dl>
-  </li>
- </ul> 
-                     
+		<ul id="faq">		
+			<% for(int j=0;j<5;j++){ int count=0;%>
+			  <li>
+			    <dl>
+			      <dt> <img src="images/marker_rounded_light_blue.png" alt="image" />&nbsp;&nbsp;<%=strLesson[j] %>所有的空教室&nbsp;&nbsp;<img src="images/arrow_state_blue_expanded.png" alt="image" /></dt>
+				      <dd>
+				      <%for(int i=0;i<roomList.size();i++){ 
+				    	  room=roomList.get(i);
+				    	  int lesson=room.getLesson();
+				    	 
+				    	  if(strLesson[(lesson-1)/2].equals(strLesson[j])){
+				    		 buildNum=room.getBuildingNum();
+				    		 roomNum=room.getRoomNum();
+				    		 if(buildNum!=null&&roomNum!=null){
+				    			 count++;
+				      %>
+				      <%=buildNum %><%=roomNum %>|
+				      <%
+				    		 }
+				    	  }
+				    	 
+				      }
+				      %>
+				      
+				     </dd>
+				      <p style="color: red;margin-left: 5px;margin-top:10px;"><img src="images/zoom.png" alt="image" />&nbsp;&nbsp;总计:<%=count %>个</p>
+			    </dl>
+			  </li>
+			<%} %>		 
+		 </ul>                      
        </div>
              
     </div> 
@@ -259,7 +206,5 @@ function gs(d,a){
 	<jsp:include page="share_web/footer.jsp" flush="true" /> 
 
 </div> 
-
-    
 </body>
 </html>
