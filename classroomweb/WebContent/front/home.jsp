@@ -99,8 +99,14 @@
 <%
 	List<Announcement> annList=(List<Announcement>)session.getAttribute("annList");
     List<ClassRoom> roomList=(List<ClassRoom>)session.getAttribute("roomList");
+    String buildNum=(String)session.getAttribute("buildNum");
+    int weekday=(Integer)session.getAttribute("weekday");
+    int week=(Integer)session.getAttribute("week");
 	session.setAttribute("annList",annList);
 	session.setAttribute("roomList",roomList);
+	session.setAttribute("buildNum", buildNum);
+	session.setAttribute("weekday", weekday);
+	session.setAttribute("week", week);
 %>
 <div id="templatemo_wrapper">
  <jsp:include page="share_web/sidebar.jsp" flush="true" />     
