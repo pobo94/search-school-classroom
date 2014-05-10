@@ -11,6 +11,19 @@
 /* body {
  margin: 5px auto;
 } */
+.bb{
+    width:30px;height:80px;
+    background:#2d7ad1;float:right;    
+    position:fixed !important; top:50%;    
+    position:absolute; z-index:100; 
+    top:expression(offsetParent.scrollTop+20);right:20px;
+    line-height:30px;
+    text-align:center;
+    font-family:楷体;
+    font-size: 16px;
+    color:#FFF;
+}
+
 #myform{
  font-family:楷体/* Times New Roman */;
  font-size: 16px;
@@ -196,6 +209,9 @@ function gs(d,a){
 			<%} %>		 
 		 </ul>                      
        </div>
+       <div class="bb">
+                分享
+       </div> 
              
     </div> 
     

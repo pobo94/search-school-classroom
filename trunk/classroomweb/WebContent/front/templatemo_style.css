@@ -73,7 +73,7 @@ em { font-size: 14px;color: #2d7ad1; }
 }
 
 #templatemo_wrapper { 
-	width: 980px;
+	width: /* 980px */1050px;
 	margin: 0 auto;
 }
 
@@ -149,7 +149,7 @@ em { font-size: 14px;color: #2d7ad1; }
 
 #templatemo_content {
 	float: right;
-	width: 600px;
+	width: 650px;
 	padding: 0 20px 20px;
 }
 
