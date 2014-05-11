@@ -12,14 +12,14 @@
 
 <div id="templatemo_sidebar">   
 	<div id="site_title">
-           <a href="http://www.hevttc.edu.cn/"><img src="images/xiaohui.jpg"  alt="logo" />
+           <a href="http://www.hevttc.edu.cn/" target="blank"><img src="images/xiaohui.jpg"  alt="logo" />
 	    <h4></h4>
            <h3><strong>河北科技师范学院</strong></h3></a>
         </div> <!-- end of site_title --> 
         
         <div class="sidebar_box">
         	
-        	<a href="#"><h3><strong>科师教室动态</strong></h3></a>
+        	<h3><strong>科师教室动态</strong></h3>
         	<h6>&nbsp;&nbsp;<%=Helper.changeTime(Helper.getCurrentDateTime()) %>&nbsp;&nbsp;<%=Helper.getWeekOfDate(dt) %></h6>
         	<div class="sidebar_content">
         	
