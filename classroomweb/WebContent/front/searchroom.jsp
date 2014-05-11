@@ -6,18 +6,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>空教室查询</title>
 <link href="css/templatemo_style.css" rel="stylesheet" type="text/css" />
-
+<!-- <script src="/classroomweb/jslib/jquery-1.7.2.min.js" type="text/javascript"></script> -->
+<link href="/classroomweb/inc/artdlg/skins/blue.css" rel="stylesheet" />
+<script src="/classroomweb/inc/artdlg/artDialog.min.js"></script>
 <style type="text/css">
-/* body {
- margin: 5px auto;
-} */
-.bb{
+#share{
     width:30px;height:80px;
     background:#2d7ad1;float:right;    
     position:fixed !important; top:50%;    
-    position:absolute; z-index:100; 
+    position:relative; z-index:100; 
+    cursor:pointer;
     top:expression(offsetParent.scrollTop+20);right:20px;
-    line-height:30px;
+    line-height:35px;
     text-align:center;
     font-family:楷体;
     font-size: 16px;
@@ -27,7 +27,6 @@
 #myform{
  font-family:楷体/* Times New Roman */;
  font-size: 16px;
- /* margin-top: 5px; */
  margin-left: 40px;
  margin-bottom: 20px;
  font-weight:bold;
@@ -124,6 +123,38 @@ function gs(d,a){
   }
   return curVal;
 }
+
+function share(){	
+	
+	art.dialog({
+		title: '分享到',
+		width:'100',
+		height:'100',
+		follow: document.getElementById('share'),
+		left: '100%',
+	    top: '100%',
+	    fixed: true,
+	    drag: false,
+	    resize: false,
+	    padding: 0,
+		content:
+		'<table bgcolor="white" width="90" height="100"  cellSpacing="0" cellPadding="10" id="mytable" border="0">'+
+	    '<tr>'+
+		'<td><img src="images/xinlangshare.jpg" alt="image" title="新浪微博" /></td>'+
+   		'<td><img src="images/tengxunshare.jpg" alt="image" title="腾讯微博" /></td>'+
+   		'</tr>'+
+   		'<tr>'+
+   			'<td><img src="images/QQshare.jpg" alt="image" title="QQ空间"/></td>'+
+   			'<td><img src="images/weixinshare.jpg" alt="image" title="微信" /></td>'+
+   		'</tr>'+
+   		'<tr>'+
+   			'<td><img src="images/doubanshare.jpg" alt="image" title="豆瓣网"/></td>'+
+   			'<td><img src="images/huabanshare.jpg" alt="image" title="花瓣网"/></td>'+
+   		'</tr></table>'
+	}); 
+	
+}
+
 </script>
 </head>
 <%
@@ -209,10 +240,10 @@ function gs(d,a){
 			<%} %>		 
 		 </ul>                      
        </div>
-       <div class="bb">
-                分享
-       </div> 
-             
+       <div id="share">
+       <a href="javascript:void(0)" onclick="share()" style="color:#fff; a hover:text-decoration:none;">分享</a>
+       </div>
+           
     </div> 
     
     <div class="cleaner"></div>
