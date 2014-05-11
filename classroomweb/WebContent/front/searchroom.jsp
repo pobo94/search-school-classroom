@@ -78,7 +78,7 @@ ul {
 #faq dd {
  height:50px;
  display:block;
- border:1px /* #f19005 */ #2d7ad1 solid;
+ border:1px #2d7ad1 solid;
  margin:0;
  padding: 5px 0 5px 10px;
  /* background:#CCC/* #E5ECF9 */; */
