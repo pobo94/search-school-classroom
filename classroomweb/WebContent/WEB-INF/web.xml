@@ -37,4 +37,12 @@
     <servlet-name>front_roomServlet</servlet-name>
     <url-pattern>/front_roomServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>luntan</servlet-name>
+    <servlet-class>com.room.data.service.luntanServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>luntan</servlet-name>
+    <url-pattern>/luntanServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

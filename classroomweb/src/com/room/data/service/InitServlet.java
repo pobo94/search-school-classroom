@@ -12,9 +12,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.room.data.dao.DbAnnouncement;
+import com.room.data.dao.DbBBS_Section;
+import com.room.data.dao.DbBBS_Topic;
 import com.room.data.dao.DbClassRoom;
 import com.room.data.dao.DbConnection;
 import com.room.data.model.Announcement;
+import com.room.data.model.BBS_Section;
 import com.room.data.model.ClassRoom;
 import com.room.data.tools.Helper;
 
@@ -61,9 +64,19 @@ public class InitServlet extends HttpServlet {
 		
 		DbClassRoom dbRoom=new DbClassRoom(dbconn);
 		roomList=dbRoom.getCurDayEmptyRoom(buildNum, weekday, week);
-		dbconn.disConnect();
 		
-
+		
+		//获取论坛板块列表
+		DbBBS_Section dbSection=new DbBBS_Section(dbconn);	
+		DbBBS_Topic dbTopic=new DbBBS_Topic(dbconn);
+		List<BBS_Section> sectionList=new ArrayList<BBS_Section>();
+		List<Integer> tCountList=new ArrayList<Integer>();//存放不同板块内帖子总数数列表
+		
+		sectionList=dbSection.getBBS_SecList(1);
+		tCountList=dbTopic.getEachTopicCount();
+		System.out.println("板块个数："+sectionList.size());
+		
+		dbconn.disConnect();
 		//显示数据
 		HttpSession session=request.getSession();
 		session.setAttribute("annList", annList);
@@ -71,6 +84,8 @@ public class InitServlet extends HttpServlet {
 		session.setAttribute("buildNum", buildNum);
 		session.setAttribute("weekday", weekday);
 		session.setAttribute("week", week);
+		session.setAttribute("sectionList", sectionList);
+		session.setAttribute("tCountList", tCountList);
 		try {
 
 			getServletContext().getRequestDispatcher("/front/home.jsp").forward(request, response);
