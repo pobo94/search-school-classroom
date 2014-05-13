@@ -99,6 +99,9 @@
 <%
 	List<Announcement> annList=(List<Announcement>)session.getAttribute("annList");
     List<ClassRoom> roomList=(List<ClassRoom>)session.getAttribute("roomList");
+    List<BBS_Section> sectionList=(List<BBS_Section>)session.getAttribute("sectionList");
+    List<Integer> tCountList=(List<Integer>)session.getAttribute("tCountList");
+    
     String buildNum=(String)session.getAttribute("buildNum");
     int weekday=(Integer)session.getAttribute("weekday");
     int week=(Integer)session.getAttribute("week");
@@ -107,6 +110,8 @@
 	session.setAttribute("buildNum", buildNum);
 	session.setAttribute("weekday", weekday);
 	session.setAttribute("week", week);
+	session.setAttribute("sectionList", sectionList);
+	session.setAttribute("tCountList", tCountList);
 %>
 <div id="templatemo_wrapper">
  <jsp:include page="share_web/sidebar.jsp" flush="true" />     
