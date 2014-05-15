@@ -6,9 +6,20 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>校友论坛</title>
 <link href="css/templatemo_style.css" rel="stylesheet" type="text/css" />
-<script language="javascript" type="text/javascript">
+<link rel="stylesheet" type="text/css" href="css/default_blue.css"/>
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script language="javascript" src="js/jquery.Sonline.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("body").Sonline({
+		Position:"right",//left或right
+		Top:200,//顶部距离，默认200px
+		Effect:true, //滚动或者固定两种方式，布尔值：true或false
+		DefaultsOpen:true, //默认展开：true,默认收缩：false
+		Qqlist:"2682038202|客服01,2682038202|客服02,2682038202|客服03,2682038202|客服04,2682038202|客服05" //多个QQ用','隔开，QQ和客服名用'|'隔开
+	});
+})	
 </script>
-
 <style type="text/css">
 #main {
 	margin: auto;
@@ -57,7 +68,7 @@
 	background:#6CC;
 }
 .1colum{
-	width:100px;
+	width:200px;
 	
 }
 .2colum{
@@ -75,7 +86,7 @@ table{
 
 
 .ad_float_left,.ad_float_right{
- 	float:right;position:fixed;top:300px;z-index:300;
+ 	float:right;position:fixed;top:540px;z-index:300;
  }
 * html .ad_float_left,* html .ad_float_right{
 	 position:absolute;
@@ -85,7 +96,7 @@ table{
 	right:15px;
 }
 .ad_float_right{
-	right:15px;top:240px;
+	right:15px;top:480px;
 }
 #buttion{outline:0;} 
 }
@@ -118,8 +129,9 @@ List<BBS_Topic> topicList=new ArrayList<BBS_Topic>();
         	<div id="main">
 				<div id="basic">
 			    	<div id="first">
-			    	<a href="#"><img src="images/home_green.png" alt="img" />&nbsp;&nbsp;论坛首页&nbsp;&nbsp;&nbsp;&nbsp;</a>
-			    	<a href="#"><img src="images/add.png" alt="img" />&nbsp;&nbsp;添加收藏&nbsp;&nbsp;</a>
+			    	<a href="tucao_chat.jsp"><img src="images/home_green.png" alt="img" />&nbsp;&nbsp;论坛首页&nbsp;&nbsp;&nbsp;&nbsp;</a>
+			    	<!-- <a href="#"><img src="images/add.png" alt="img" />&nbsp;&nbsp;添加收藏&nbsp;&nbsp;</a> -->
+			    	<a href="javascript:void(0)" onclick="window.external.AddFavorite(location.href, document.title)"><img src="images/add.png" alt="img" />&nbsp;&nbsp;加入收藏夹&nbsp;&nbsp;</a>
 			    	<a href="#"><img src="images/contact_blue.png" alt="img" />&nbsp;&nbsp;登录</a><a href="#">|立即注册&nbsp;&nbsp;</a>
 			    	<a href="#"><img src="images/documents_edit.png" alt="img" />&nbsp;我要发帖</a>
 			    	</div>
@@ -140,7 +152,7 @@ List<BBS_Topic> topicList=new ArrayList<BBS_Topic>();
         <div class="session">
 	    	<div class="Stitle">
 	    	<span style="float:left;margin-left:5px;"><img src="images/star_full.png" alt="" />&nbsp;&nbsp;<%=secName %></span>
-	    	<span style="float:left;margin-left:5px;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/documents.png" alt="" />&nbsp;&nbsp;帖子总数：<%=total%></span>
+	    	<span style="float:left;margin-left:70px;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/documents.png" alt="" />&nbsp;&nbsp;帖子总数：<%=total%></span>
 	    	<span style="float:right;padding-right:5px;"><img src="images/female.png" alt="img" />&nbsp;&nbsp;分区版主：妮妮</span>
 	    	</div>
 	        <div class="topic">
@@ -156,17 +168,19 @@ List<BBS_Topic> topicList=new ArrayList<BBS_Topic>();
 	    				System.out.println("    帖子"+(j+1)+"  "+topicName+"   回复总数："+num);
 	          	%>
 	          	<tr height="40">
-	            	<td class="1colum" align="center"><img style="width:20px;height:20px;" src="images/comments_reply.png" alt="img" /></td>
-	                <td class="2colum" align="center"><%=topicName %></td>
-	                <td class="3coloum" align="center"><img src="images/document_a4.png" alt="" />&nbsp;&nbsp;帖子总数：<%=num %></td>
+	            	<td width="150" ><img style="width:20px;height:20px;margin-left:40px;" src="images/comments_reply.png" alt="img" /></td>
+	                <td width="350" align="left"><a href="tiezi.jsp" style="disply:none;margin-left:10px; color:purple ;"><%=topicName %></a></td>
+	                <td width="150" align="center"><img src="images/document_a4.png" alt="" />&nbsp;&nbsp;回复总数：<%=num %></td>
 	            </tr>
 	            <%} %>
 	          </table>
-	          <div class="conclude">&nbsp;&nbsp;<img src="images/arrow_large_right.png" alt="img" />&nbsp;&nbsp;板块介绍：欢迎进入<%=secName %>世界，互相交流，互相学习。</div>
+	          <div class="conclude">&nbsp;&nbsp;<img src="images/arrow_large_right.png" alt="img" />&nbsp;&nbsp;板块介绍：欢迎进入<%=secName %>板块</div>
 	        </div>
        </div>
       <% }%>
       <%dbconn.disConnect(); %>
+      
+     <!--  返回顶部，底部快速标签 -->
        <p><a  id="buttom"></a></p>
 	   <div class="ad_float_right ad_couplebanner">
 	      <a href="#top"><img src="images/up-026.png" title="返回顶部" width="48" height="48" border="0" /></a>
@@ -174,6 +188,7 @@ List<BBS_Topic> topicList=new ArrayList<BBS_Topic>();
 	   <div class="ad_float_left ad_couplebanner">
 	      <a href="#buttom"><img src="images/down-026.png" title="回到底部" width="48" height="48" border="0" /></a>
 	   </div>
+	 <!--  end -->
       </div>
      </div>
     </div>
