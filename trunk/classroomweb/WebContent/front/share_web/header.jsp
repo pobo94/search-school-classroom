@@ -43,9 +43,9 @@
 			resize:false,
 			
 		    content:
-		    '<form action='+page+'.jsp method="post"><center>'+
-		    '<p><label>账号</label>：<input class="myinput" type="text" value="" ><lable class="labright">立即注册</label></p>'+
-		    '<p><label>密码：<input class="myinput" type="password" value="" ><lable class="labright" >忘记密码</label></p>'+
+		    '<form action="/classroomweb/userServlet?action=frontlogin&&page='+page+'" method="post"><center>'+
+		    '<p><label>账号</label>：<input class="myinput"  name="username" type="text" value="" ><lable class="labright">立即注册</label></p>'+
+		    '<p><label>密码：<input class="myinput" type="password" name="password" value="" ><lable class="labright" >忘记密码</label></p>'+
 		    '<p><input type="checkbox" id="checkbox" ><label class="labright" >记住密码</label>'+
 		    '&nbsp;&nbsp;<input type="checkbox" id="checkbox" ><label class="labright">自动登录</label></p>'+
 		    '<p><input type="submit" value="登录" class="mybtn">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value="取消" class="mybtn"></p>'+
@@ -58,15 +58,11 @@
 	}
 </script>
 
-
-
 <div id="templatemo_menu" style="float:left;">
 			<ul>
                 <li><a href="home.jsp" <%if(menu==1){ %>class="current"<%} %>>首页</a></li>
                 <li><a href="searchroom.jsp"  <%if(menu==2){ %>class="current"<%} %>>空教室查询</a></li>
                 <li><a href="javascript:void(0)" id="applyroom" onclick="test(this)" <%if(menu==3){ %>class="current"<%} %>>教室申请</a></li>
-                <%-- <li><a href="javascript:void(0)" id="tucao_chat" onclick="test(this)" <%if(menu==4){ %>class="current"<%} %>>校友吐槽</a></li> --%>
-                <%-- <li><a href="applyroom.jsp" <%if(menu==3){ %>class="current"<%} %>>教室申请</a></li> --%>
                 <li><a href="tucao_chat.jsp" <%if(menu==4){ %>class="current"<%} %>>校友论坛</a></li>
                 <li><a href="app_recommended.jsp" <%if(menu==5){ %>class="current"<%} %>>精品应用</a></li>              
             </ul>    	

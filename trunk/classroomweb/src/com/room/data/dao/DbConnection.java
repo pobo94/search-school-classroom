@@ -5,15 +5,15 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DbConnection {
-//	public String DBDRIVER="org.gjt.mm.mysql.Driver";
-//	public String DBURL="jdbc:mysql://localhost:3306/ksdb";
-//	public String DBUSER="root";
-//	public String DBPASS="mysqladmin";
-
 	public String DBDRIVER="org.gjt.mm.mysql.Driver";
-	public String DBURL="jdbc:mysql://192.168.100.1:3306/ksdb";
-	public String DBUSER="wangweijuan";
-	public String DBPASS="wwj12345";
+	public String DBURL="jdbc:mysql://localhost:3306/ksdb";
+	public String DBUSER="root";
+	public String DBPASS="123";
+
+//	public String DBDRIVER="org.gjt.mm.mysql.Driver";
+//	public String DBURL="jdbc:mysql://192.168.100.1:3306/ksdb";
+//	public String DBUSER="wangweijuan";
+//	public String DBPASS="wwj12345";
 	private Connection conn=null;
 	private boolean isConnected=false;
 	
