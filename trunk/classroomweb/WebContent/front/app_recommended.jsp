@@ -27,15 +27,26 @@ function clearText(field)
         <div class="content_box last" style="float:left;">     	
             <h2>应用推荐</h2>
             <div id="myform" >                       
-               <p>
-           <a href="http://www.hevttc.edu.cn/"> <img src="images/application/chaojikechengbiao.PNG" alt="image" />
-           </a>
+           <p>
+           <a href="http://www.super.cn/"> <img src="images/application/chaojikechengbiao.PNG" alt="image" />  超级课程表下载 </a>
            </p>  
             
-          </div>  
+           <p>
+           <a href="http://cidian.youdao.com/multi.html"> <img src="images/application/youdao.PNG" alt="image" />有道词典下载 </a>
+           </p>   
+           <p>
+           <a href="http://download.feixin.10086.cn/pc/new.html"> <img src="images/application/feixin.PNG" alt="image" />飞信下载 </a>
+           </p>  
             
-            
-            
+           <p>
+           <a href="http://weixin.qq.com/cgi-bin/readtemplate?uin=&stype=&promot"> <img src="images/application/weixin.PNG" alt="image" />微信下载 </a>
+           </p> 
+           
+            <p>
+           <a href="http://im.qq.com/download/pc.shtml"> <img src="images/application/qq.PNG" alt="image" />QQ下载 </a>
+           </p> 
+           
+          </div>            
        </div>
        </div>
     <div class="cleaner"></div>
