@@ -27,13 +27,24 @@ function clearText(field)
             <jsp:param value="3" name="menu"/> 
         </jsp:include>
         
-        <div class="content_box" style="float:left;">         	
+        <div class="content_box last" style="float:left;">         	
             <h2>教室申请</h2>            
         </div>
+        
+        
+        
+        
+        
+        
             
         </div>
     
-    <div class="cleaner"></div>
+    <div class="cleaner">
+    
+    
+    
+    
+    </div>
 </div>
 <div id="templatemo_footer_wrapper">
 	<jsp:include page="share_web/footer.jsp" flush="true" /> 

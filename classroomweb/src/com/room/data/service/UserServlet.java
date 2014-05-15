@@ -48,7 +48,37 @@ public class UserServlet extends HttpServlet {
 			userlist(request, response);
 		} else if (action.equalsIgnoreCase("adduser")) {
 			adduser(request, response);
-		}
+		} else if (action.equalsIgnoreCase("frontlogin")) {
+			frontlogin(request, response);
+			}
+		
+	}
+
+	private void frontlogin(HttpServletRequest request,
+			HttpServletResponse response) throws IOException {
+		String pageStr=request.getParameter("page").trim();
+		
+		String username=request.getParameter("username");
+		String password=request.getParameter("password");
+		
+		if(username==null||username.equals("")){
+			 response.sendRedirect("front/error.jsp");
+		}else{
+		
+		DbConnection conn = new DbConnection();
+		dbUser = new DbUser(conn);
+		user = dbUser.getUserByAccount(username);
+
+		conn.disConnect();
+		
+	   System.out.println("ccccc"+pageStr);
+	 if(password.equals(user.getPassWord())) {
+		
+	   response.sendRedirect("front/"+pageStr+".jsp");
+	 }else{
+		 response.sendRedirect("front/index.jsp");
+	 }
+	}
 	}
 
 	private void adduser(HttpServletRequest request,

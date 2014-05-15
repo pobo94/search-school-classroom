@@ -17,22 +17,27 @@ function clearText(field)
 <body>
 
 <div id="templatemo_wrapper">
-
-  <jsp:include page="share_web/sidebar.jsp" flush="true" />
-        
+  <jsp:include page="share_web/sidebar.jsp" flush="true" />       
 </div>
     
-    <div id="templatemo_content">
-    	
+    <div id="templatemo_content">    	
        <jsp:include page="share_web/header.jsp" flush="true">
        		 <jsp:param value="5" name="menu"/> 
-       </jsp:include> 
-        
-        <div class="content_box" style="float:left;">
-        	
+       </jsp:include>         
+        <div class="content_box last" style="float:left;">     	
             <h2>应用推荐</h2>
-        </div>
-        </div>
+            <div id="myform" >                       
+               <p>
+           <a href="http://www.hevttc.edu.cn/"> <img src="images/application/chaojikechengbiao.PNG" alt="image" />
+           </a>
+           </p>  
+            
+          </div>  
+            
+            
+            
+       </div>
+       </div>
     <div class="cleaner"></div>
 
 </div>
