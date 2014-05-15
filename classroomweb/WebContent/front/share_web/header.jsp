@@ -1,7 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ page language="java" import="java.util.*,com.room.data.tools.*"%>
 <%
-	int menu=Helper.strToint(request.getParameter("menu"));
+
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+
+int menu=Helper.strToint(request.getParameter("menu"));
 %>
 <link href="../front/templatemo_style.css" rel="stylesheet" type="text/css" />
 <link href="/classroomweb/inc/artdlg/skins/blue.css" rel="stylesheet" />
@@ -44,7 +48,7 @@
 			
 		    content:
 		    '<form action="/classroomweb/userServlet?action=frontlogin&&page='+page+'" method="post"><center>'+
-		    '<p><label>账号</label>：<input class="myinput"  name="username" type="text" value="" ><lable class="labright">立即注册</label></p>'+
+		    '<p><label>账号</label>：<input class="myinput"  name="username" type="text" value="" ><lable class="labright"><a href="front/addUser.jsp">立即注册</a></label></p>'+
 		    '<p><label>密码：<input class="myinput" type="password" name="password" value="" ><lable class="labright" >忘记密码</label></p>'+
 		    '<p><input type="checkbox" id="checkbox" ><label class="labright" >记住密码</label>'+
 		    '&nbsp;&nbsp;<input type="checkbox" id="checkbox" ><label class="labright">自动登录</label></p>'+
