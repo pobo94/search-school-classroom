@@ -52,7 +52,9 @@ public class TesstSection {
 		BBS_Topic topic=dbTopic.getTopic(8);
 		String name=topic.gettTopic();
 		String content=topic.gettContents();
-		System.out.println(name+"  "+content);
+		String tPubTime=Helper.changeSimpleTime(topic.gettPubTime());
+		System.out.println("["+name+"] "+content);
+		System.out.println("发表于："+tPubTime);
 		
 		replyList=dbreply.getReplyList(8);
 		BBS_Reply reply=new BBS_Reply();

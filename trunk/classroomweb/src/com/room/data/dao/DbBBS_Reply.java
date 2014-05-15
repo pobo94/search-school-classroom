@@ -23,7 +23,7 @@ public class DbBBS_Reply {
 		
 		List<BBS_Reply> replyList=new ArrayList<BBS_Reply>();
 		
-		String sql="select * from bbs_reply where RTId=?";
+		String sql="select * from bbs_reply where RTId=? order by RTime desc";
 		try {
 			pstmt=dbconn.getConn().prepareStatement(sql);
 			pstmt.setInt(1, tId);
