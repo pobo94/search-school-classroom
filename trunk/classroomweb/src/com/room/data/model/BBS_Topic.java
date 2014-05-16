@@ -6,7 +6,7 @@ import java.util.Date;
 
 import javax.xml.crypto.Data;
 
-public class BBS_Topic {
+public class BBS_Topic implements java.io.Serializable{
 
 	private int tId;
 	private int tSId;

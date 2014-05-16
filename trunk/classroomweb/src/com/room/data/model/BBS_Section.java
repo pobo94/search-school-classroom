@@ -3,7 +3,7 @@ package com.room.data.model;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class BBS_Section {
+public class BBS_Section implements java.io.Serializable {
 	
 	
 	private int sId;

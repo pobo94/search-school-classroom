@@ -21,6 +21,7 @@
 	margin:auto;
 }
 .fatie{
+	width: 650px;	
 	height:40px;
 	background-color:#C9C;
 	margin:0px;
@@ -37,9 +38,12 @@
 	cursor:pointer;
 }
 #tiezi {
+	
 	background-color: #F96;
+	width: 650px;	
 	height: 120px;	
 	line-height:60px;
+	margin-bottom:5px;
 }
 #tiezi_left{
 	float:left;
@@ -76,21 +80,23 @@
 }
 .reply{
 	
+	width: 650px;	
 	height: 130px;
 	background-color: #FF9;
-	margin-top:20px;
-	margin-bottom:20px;
+	/* margin-top:5px; */
+	margin-bottom:5px;
 	
 }
 #pubReply {
 	background-color: pink;
-	height: 350px; 
+	width: 650px;	
+	height: 340px; 
 }
 .pubReply_left{
 
 	float:left;
 	width:120px;
-	height: 350px;
+	height: 340px;
 	line-height:100px;
 	text-align:center;
 	border-right:1px dotted;
@@ -99,7 +105,7 @@
 .pubReply_right{
 	float:left;
 	line-height:50px;
-	height: 350px;
+	height: 340px;
 }
 .floorNum{
 	float:left;
@@ -128,6 +134,7 @@
 }
 #page_content {
 	background-color: #CFC;
+	width: 650px;	
 	height: 40px;
 	line-height:40px;
 	text-align:center;
