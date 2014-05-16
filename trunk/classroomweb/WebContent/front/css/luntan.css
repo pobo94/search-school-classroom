@@ -1,0 +1,80 @@
+@CHARSET "UTF-8";
+#main {
+	margin: auto;
+	width: 650px;
+	
+}
+#basic {
+	height: 50px;
+	/* background:#FCF; */
+}
+#first {
+	height: 20px;
+	font-family:宋体/* Verdana, Geneva, sans-serif */;
+	font-size:14px;
+}
+#second {
+	margin-top:5px;
+	height: 20px;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:14px;
+}
+.session{
+	/* height: 300px; */
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #CCC;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:14px;
+}
+.Stitle{
+	height:40px;
+	line-height:40px;
+	background:#6CC;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:14px;
+	 
+}
+.conclude{
+	margin-top: 8px;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #CCC;
+	background-color: #AD8DAB;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:14px;
+	background:#6CC;
+}
+.1colum{
+	width:200px;
+	
+}
+.2colum{
+	width:450px;
+	
+}
+.3colum{
+	width:100px;
+	
+}
+table{
+	font-family:宋体;
+	font-size:14px;
+}
+
+
+.ad_float_left,.ad_float_right{
+ 	float:right;position:fixed;top:540px;z-index:300;
+ }
+* html .ad_float_left,* html .ad_float_right{
+	 position:absolute;
+	 top:expression(offsetParent.scrollTop+350);
+}
+.ad_float_left{
+	right:15px;
+}
+.ad_float_right{
+	right:15px;top:480px;
+}
+#buttion{outline:0;} 
+}

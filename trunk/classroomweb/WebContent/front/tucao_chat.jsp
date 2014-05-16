@@ -6,118 +6,28 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>校友论坛</title>
 <link href="css/templatemo_style.css" rel="stylesheet" type="text/css" />
+<link href="css/luntan.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="css/default_blue.css"/>
 <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
 <script language="javascript" src="js/jquery.Sonline.js"></script>
-<script type="text/javascript">
-$(function(){
-	$("body").Sonline({
-		Position:"right",//left或right
-		Top:200,//顶部距离，默认200px
-		Effect:true, //滚动或者固定两种方式，布尔值：true或false
-		DefaultsOpen:true, //默认展开：true,默认收缩：false
-		Qqlist:"2682038202|客服01,2682038202|客服02,2682038202|客服03,2682038202|客服04,2682038202|客服05" //多个QQ用','隔开，QQ和客服名用'|'隔开
-	});
-})	
-</script>
-<style type="text/css">
-#main {
-	margin: auto;
-	width: 650px;
-	
-}
-#basic {
-	height: 50px;
-	/* background:#FCF; */
-}
-#first {
-	height: 20px;
-	font-family:宋体/* Verdana, Geneva, sans-serif */;
-	font-size:14px;
-}
-#second {
-	margin-top:5px;
-	height: 20px;
-	font-family:Verdana, Geneva, sans-serif;
-	font-size:14px;
-}
-.session{
-	/* height: 300px; */
-	margin-top: 10px;
-	margin-bottom: 10px;
-	border: 1px solid #CCC;
-	font-family:Verdana, Geneva, sans-serif;
-	font-size:14px;
-}
-.Stitle{
-	height:40px;
-	line-height:40px;
-	background:#6CC;
-	font-family:Verdana, Geneva, sans-serif;
-	font-size:14px;
-	 
-}
-.conclude{
-	margin-top: 8px;
-	border-top-style: solid;
-	border-top-width: 1px;
-	border-top-color: #CCC;
-	background-color: #AD8DAB;
-	font-family:Verdana, Geneva, sans-serif;
-	font-size:14px;
-	background:#6CC;
-}
-.1colum{
-	width:200px;
-	
-}
-.2colum{
-	width:450px;
-	
-}
-.3colum{
-	width:100px;
-	
-}
-table{
-	font-family:宋体;
-	font-size:14px;
-}
-
-
-.ad_float_left,.ad_float_right{
- 	float:right;position:fixed;top:540px;z-index:300;
- }
-* html .ad_float_left,* html .ad_float_right{
-	 position:absolute;
-	 top:expression(offsetParent.scrollTop+350);
-}
-.ad_float_left{
-	right:15px;
-}
-.ad_float_right{
-	right:15px;top:480px;
-}
-#buttion{outline:0;} 
-}
-</style>
+<script language="javascript" src="js/kefu.js"></script>
 </head>
 <%
-DbConnection dbconn=new DbConnection();
-List<BBS_Section> sectionList=(List<BBS_Section>)session.getAttribute("sectionList");
-List<Integer> tCountList=(List<Integer>)session.getAttribute("tCountList");
-DbBBS_Topic dbTopic=new DbBBS_Topic(dbconn);
-DbBBS_Reply dbreply=new DbBBS_Reply(dbconn);
-List<BBS_Topic> topicList=new ArrayList<BBS_Topic>();
-%>
+	DbConnection dbconn=new DbConnection();
+	List<BBS_Section> sectionList=(List<BBS_Section>)session.getAttribute("sectionList");
+	List<Integer> tCountList=(List<Integer>)session.getAttribute("tCountList");
+	DbBBS_Topic dbTopic=new DbBBS_Topic(dbconn);
+	DbBBS_Reply dbreply=new DbBBS_Reply(dbconn);
+	List<BBS_Topic> topicList=new ArrayList<BBS_Topic>();
+	%>
 <body>
 
 
-<div id="templatemo_wrapper">
-
-  <jsp:include page="share_web/sidebar.jsp" flush="true" />
-        
-</div>
+	<div id="templatemo_wrapper">
+	
+	  <jsp:include page="share_web/sidebar.jsp" flush="true" />
+	        
+	</div>
     
     <div id="templatemo_content">
     	
@@ -198,7 +108,6 @@ List<BBS_Topic> topicList=new ArrayList<BBS_Topic>();
 
 <div id="templatemo_footer_wrapper">
 	<jsp:include page="share_web/footer.jsp" flush="true" /> 
-
 </div>
     
 </body>

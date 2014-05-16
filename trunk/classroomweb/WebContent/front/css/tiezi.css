@@ -1,0 +1,164 @@
+@CHARSET "UTF-8";
+#basic {
+	height: 50px;
+	/* background:#FCF; */
+}
+#first {
+	height: 20px;
+	font-family:宋体/* Verdana, Geneva, sans-serif */;
+	font-size:14px;
+}
+#second {
+	margin-top:5px;
+	height: 20px;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:14px;
+}
+
+#reply_content {
+	width: 650px;	
+	border: 1px solid #FCC;
+	margin:auto;
+}
+.fatie{
+	height:40px;
+	background-color:#C9C;
+	margin:0px;
+	
+}
+.fatie_button1{
+	margin:10px;
+	display:block;
+	background-color:#693;
+	width:100px;
+	height:40px;
+	text-align:center;
+	line-height:40px;
+	cursor:pointer;
+}
+#tiezi {
+	background-color: #F96;
+	height: 120px;	
+	line-height:60px;
+}
+#tiezi_left{
+	float:left;
+	width:120px;
+	height:120px;
+	text-align:center;
+	border-right-style:dotted;
+	border-right-width:1px;
+	border-right-color:#666;
+}
+.adminImage{
+	margin-top:10px;
+	height:85px;
+}
+.name{
+	height:25px;
+	line-height:25px;
+}
+#tiezi_right{
+	width:520px;
+	float:left;
+	height:120px;
+}
+#tiezi_content{
+	margin-top:10px;
+	height:85px;
+	padding-left:20px;
+}
+#tiezi_date{
+	height:25px;
+	line-height:25px;
+	padding-left:20px;
+	border-top:1px dashed #999;
+}
+.reply{
+	
+	height: 130px;
+	background-color: #FF9;
+	margin-top:20px;
+	margin-bottom:20px;
+	
+}
+#pubReply {
+	background-color: pink;
+	height: 350px; 
+}
+.pubReply_left{
+
+	float:left;
+	width:120px;
+	height: 350px;
+	line-height:100px;
+	text-align:center;
+	border-right:1px dotted;
+	border-right-color:#999;
+}
+.pubReply_right{
+	float:left;
+	line-height:50px;
+	height: 350px;
+}
+.floorNum{
+	float:left;
+	width:120px;
+	height: 130px;
+	line-height:100px;
+	text-align:center;
+	border-right:1px dotted;
+	border-right-color:#999;
+}
+.userImage{
+	margin-top:10px;
+	width:120px;
+	height:90px;
+	text-align:center;
+}
+.userName{
+	height:30px;
+	line-height:30px;
+	
+}
+.floorContent{
+	float:left;
+	width:520px;
+	height: 130px;	
+}
+#page_content {
+	background-color: #CFC;
+	height: 40px;
+	line-height:40px;
+	text-align:center;
+}
+.huifu_content{
+	margin-top:10px;
+	height:90px;
+	line-height:60px;
+	padding-left:20px;
+	
+}
+.huifu_date{
+	height: 30px;
+	line-height: 30px;
+	padding-left: 20px;
+	border-top: 1px dashed #66F;
+}
+
+
+.ad_float_left,.ad_float_right{
+ 	float:right;position:fixed;top:540px;z-index:300;
+ }
+* html .ad_float_left,* html .ad_float_right{
+	 position:absolute;
+	 top:expression(offsetParent.scrollTop+350);
+}
+.ad_float_left{
+	right:15px;
+}
+.ad_float_right{
+	right:15px;top:480px;
+}
+#buttion{outline:0;} 
+}
