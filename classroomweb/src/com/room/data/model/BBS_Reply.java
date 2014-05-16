@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
 
-public class BBS_Reply {
+public class BBS_Reply implements java.io.Serializable{
 	
 	private int rId;//回复编号
 	private int rTId;//回复帖子编号
