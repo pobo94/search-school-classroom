@@ -21,6 +21,7 @@
 </head>
 <%
     BBS_Topic topic=(BBS_Topic)session.getAttribute("topic");
+    int num=(Integer)session.getAttribute("num");
 	List<BBS_Reply> replyList=(List<BBS_Reply>)session.getAttribute("replyList");
 	if(topic==null||replyList==null){
 		response.sendRedirect("front/index.jsp");
@@ -63,11 +64,12 @@
 					%>
 					<div id="tiezi_left">
 						<div class="adminImage"><img src="images/touxiang.jpg" /></div>
-						<div class="name">贴主：妮妮</div>
+						<div class="name">妮妮 &nbsp;&nbsp;&nbsp;&nbsp;回复：<%=num %></div>
 					</div>
 					<div id="tiezi_right">
 						<div id="tiezi_content"><%=name %>&nbsp;&nbsp;<%=topic_content%></div>
-						<div id="tiezi_date">发帖日期：<%=topic_date%><a href="#" style="padding-left:50px;">回复</a></div>
+						<div id="tiezi_date">楼主&nbsp;&nbsp;发帖日期：<%=topic_date%>
+						<a href=".pubReply_right" style="padding-left:50px;">回复</a></div>
 					</div>				
 				</div>
 				<%for(int i=0;i<replyList.size();i++){

@@ -44,7 +44,8 @@ public class luntanServlet extends HttpServlet {
 			HttpServletResponse response) throws IOException {
 		
 		int topicId=Helper.strToint(request.getParameter("topicId"));
-		System.out.println("topicId="+topicId);
+		int num=Helper.strToint(request.getParameter("num"));
+		System.out.println("topicId="+topicId+"回复数="+num);
 		DbConnection dbconn=new DbConnection();
 		DbBBS_Topic dbTopic=new DbBBS_Topic(dbconn);
 		DbBBS_Reply dbreply=new DbBBS_Reply(dbconn);				
@@ -74,6 +75,7 @@ public class luntanServlet extends HttpServlet {
 		HttpSession session=request.getSession();
 		session.setAttribute("topic", topic);
 		session.setAttribute("replyList", replyList);
+		session.setAttribute("num", num);
 		response.sendRedirect("front/tiezi.jsp");
 		
 		/*try {
