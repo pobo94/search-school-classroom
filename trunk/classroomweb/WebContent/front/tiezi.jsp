@@ -69,7 +69,7 @@
 					<div id="tiezi_right">
 						<div id="tiezi_content"><%=name %>&nbsp;&nbsp;<%=topic_content%></div>
 						<div id="tiezi_date">楼主&nbsp;&nbsp;发帖日期：<%=topic_date%>
-						<a href=".pubReply_right" style="padding-left:50px;">回复</a></div>
+						<a href="#pubReply" style="padding-left:50px;">回复</a></div>
 					</div>				
 				</div>
 				<%for(int i=0;i<replyList.size();i++){
@@ -97,7 +97,7 @@
 				<div id="page_content"> 
 				       [第一页]&nbsp;&nbsp;[上一页]
 						[下一页]&nbsp;&nbsp;[最后一页 ]
-						Go<select>
+						Go<select style="width:70px;">
 						<%for(int i=1;i<5;i++){ %>
 						<option value="<%=i%>"><%=i%></option>
 						<%} %>
