@@ -17,20 +17,22 @@
 
 #reply_content {
 	width: 650px;	
-	border: 1px solid #FCC;
+	/* border: 1px solid #FCC; */
 	margin:auto;
+	background:url(../images/sky.jpg); 
 }
 .fatie{
 	width: 650px;	
 	height:40px;
-	background-color:#C9C;
+	/* background-color: #CEE; */
 	margin:0px;
+	border-bottom:1px dashed #66F; 
 	
 }
 .fatie_button1{
 	margin:10px;
 	display:block;
-	background-color:#693;
+	background-color:pink;;
 	width:100px;
 	height:40px;
 	text-align:center;
@@ -39,11 +41,12 @@
 }
 #tiezi {
 	
-	background-color: #F96;
+	/* background-color: #F96; */
 	width: 650px;	
 	height: 120px;	
 	line-height:60px;
-	margin-bottom:5px;
+	/* margin-bottom:5px; */
+	border-bottom:1px dotted #999;
 }
 #tiezi_left{
 	float:left;
@@ -77,14 +80,16 @@
 	line-height:25px;
 	padding-left:20px;
 	border-top:1px dashed #999;
+	border-bottom:1px dashed #66F; 
 }
 .reply{
 	
 	width: 650px;	
 	height: 130px;
-	background-color: #FF9;
+	/* background-color: #FF9; */
 	/* margin-top:5px; */
 	margin-bottom:5px;
+	/* border-bottom:2px dashed #999; */
 	
 }
 #pubReply {
@@ -115,6 +120,8 @@
 	text-align:center;
 	border-right:1px dotted;
 	border-right-color:#999;
+	/* border-top: 1px dashed #999; */
+	border-bottom:1px dashed #999; 
 }
 .userImage{
 	margin-top:10px;
@@ -133,7 +140,8 @@
 	height: 130px;	
 }
 #page_content {
-	background-color: #CFC;
+	/* background-color: #CFC; */
+	/* background:url(../images/sky.jpg); */ 
 	width: 650px;	
 	height: 40px;
 	line-height:40px;
@@ -151,6 +159,7 @@
 	line-height: 30px;
 	padding-left: 20px;
 	border-top: 1px dashed #66F;
+	border-bottom:1px dashed #66F; 
 }
 
 
