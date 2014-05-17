@@ -95,7 +95,7 @@
 </style>
 
 </head>
-<body>
+<body onload="showLeftTime()">
 <%
 	List<Announcement> annList=(List<Announcement>)session.getAttribute("annList");
     List<ClassRoom> roomList=(List<ClassRoom>)session.getAttribute("roomList");

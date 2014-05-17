@@ -16,7 +16,7 @@
 	}
 </script>
 </head>
-<body>
+<body onload="showLeftTime()">
 	<%
 		String account = request.getParameter("account");
 		String password = request.getParameter("password");

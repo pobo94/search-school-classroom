@@ -14,7 +14,7 @@ function clearText(field)
 }
 </script>
 </head>
-<body>
+<body onload="showLeftTime()">
 
 <div id="templatemo_wrapper">
 	<jsp:include page="share_web/sidebar.jsp" flush="true" />        

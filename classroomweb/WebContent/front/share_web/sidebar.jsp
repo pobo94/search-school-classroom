@@ -16,14 +16,32 @@
 
 <link href="/classroomweb/front/templatemo_style.css" rel="stylesheet"
 	type="text/css" />
-
+<script language="javascript" type="text/javascript">
+<!--
+//获得当前时间,刻度为一千分一秒
+var initializationTime=(new Date()).getTime();
+function showLeftTime()
+{
+var now=new Date();
+var year=now.getYear();
+var month=now.getMonth();
+var day=now.getDate();
+var hours=now.getHours();
+var minutes=now.getMinutes();
+var seconds=now.getSeconds();
+document.all.show.innerHTML=""+year+"年"+month+"月"+day+"日 "+hours+":"+minutes+":"+seconds+"";
+//一秒刷新一次显示时间
+var timeID=setTimeout(showLeftTime,1000);
+}
+//-->
+</script>
 
 <div id="templatemo_sidebar">
 	   <div id="site_title">
-		<a href="http://www.hevttc.edu.cn/" target="blank"><img
+		<a href="http://www.hevttc.edu.cn/" target="self"><img
 			src="<%=basePath%>/front/images/xiaohui.jpg" alt="logo" />
 			<h3>
-				<strong>河北科技师范学院</strong>
+				<strong style="cursor:pointer;color:blue;">河北科技师范学院</strong>
 			
 			</h3></a>
 	</div>
@@ -31,12 +49,8 @@
 
 	<div class="sidebar_box">
 
-		<h3>
-			<strong>科师教室动态</strong>
-	
-		</h3>
-		<h6>
-			&nbsp;&nbsp;<%=Helper.changeTime(Helper.getCurrentDateTime())%>&nbsp;&nbsp;<%=Helper.getWeekOfDate(dt)%></h6>
+		<h3><strong style="cursor:pointer;color:blue;">科师教室动态公告</strong></h3>
+		<h6><font color="black"><label id="show">显示时间的位置</label><%=Helper.getWeekOfDate(dt)%></font></h6>
 		<div class="sidebar_content">
 
 			<marquee direction="up" width="255" height="370" loop="-1" vspace="6"
@@ -67,18 +81,11 @@
 		</div>
 
 	</div>
-	<div class="sidebar_box">
-
-		<a href="contact.jsp"><h3>
-				<strong>联系我们</strong>
-			</h3></a> <a href="about.jsp"><h3>
-				<strong>关于我们</strong>
-			</h3></a> <a href="help.jsp"><h3>
-				<strong>帮助</strong>
-			</h3></a>
-	</div>
 	<div class="sidebar_box last">
-		<a href="setting.jsp"><h3>
-				<strong>设置与反馈<strong>
-			</h3></a>
+
+		<a href="contact.jsp"><h3><strong style="cursor:pointer;color:blue;">联系我们</strong></h3></a> 
+		<a href="about.jsp"><h3><strong style="cursor:pointer;color:blue;">关于我们</strong></h3></a> 
+		<a href="help.jsp"><h3><strong style="cursor:pointer;color:blue;">点击帮助</strong></h3></a>
+		<a href="shi_jian_zhou.jsp"><h3><strong style="cursor:pointer;color:blue;">网站时间轴</strong></h3></a>
+		
 	</div>
