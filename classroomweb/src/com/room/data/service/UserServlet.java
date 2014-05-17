@@ -12,8 +12,10 @@ import javax.servlet.http.HttpSession;
 
 import com.room.data.dao.DbClassRoom;
 import com.room.data.dao.DbConnection;
+import com.room.data.dao.DbManager;
 import com.room.data.dao.DbUser;
 import com.room.data.model.ClassRoom;
+import com.room.data.model.Manager;
 import com.room.data.model.User;
 import com.room.data.tools.Helper;
 import com.room.data.tools.RandomValidateCode;
@@ -62,18 +64,29 @@ public class UserServlet extends HttpServlet {
 		String password=request.getParameter("password");
 		
 		if(username==null||username.equals("")){
-			 response.sendRedirect("front/error.jsp");
+			 response.sendRedirect("front/information/error.jsp");
 		}else{
 		
 		DbConnection conn = new DbConnection();
 		dbUser = new DbUser(conn);
 		user = dbUser.getUserByAccount(username);
+		
+	//	DbManager dbManager=new DbManager(conn);
+	//	List<Manager> managerlist=dbManager.getManagerList();
+   		DbClassRoom dbClassRoom=new DbClassRoom(conn);
+		List<String> roomlist=dbClassRoom.getRoomNumList();
+		
 
 		conn.disConnect();
 		
-	   System.out.println("ccccc"+pageStr);
 	 if(password.equals(user.getPassWord())) {
-		
+		 
+		 HttpSession session=request.getSession();
+		 request.setAttribute("account",username);
+		 request.setAttribute("password", password);
+		 session.setAttribute("roomlist", roomlist);
+		 session.setAttribute("user", user);
+		 
 	   response.sendRedirect("front/"+pageStr+".jsp");
 	 }else{
 		 response.sendRedirect("front/index.jsp");
@@ -82,9 +95,27 @@ public class UserServlet extends HttpServlet {
 	}
 
 	private void adduser(HttpServletRequest request,
-			HttpServletResponse response) {
+			HttpServletResponse response) throws IOException {
+				
+		String username=request.getParameter("username");
+		String password=request.getParameter("password");
 		
+		User user=new User();
+		user.setAccount(username);
+		user.setPassWord(password);
+			
+		DbConnection conn = new DbConnection();
+		dbUser = new DbUser(conn);
+		if(dbUser.exit(username)){
+			
+			 response.sendRedirect("front/information/addUserError.jsp");
+		}else{
+			dbUser.insertUser(user);
+			 response.sendRedirect("front/information/addUserSucceed.jsp");
+		}
 
+		conn.disConnect();
+		
 	}
 
 	private void userlist(HttpServletRequest request,
