@@ -99,7 +99,30 @@ public class DbBBS_Topic {
 		
 		return topicList;
 	}
-	
+	//获取所有的帖子总数
+	public int getCountAll(){
+		int countAll=0;
+		String sql="select count(*) as totalCount from bbs_topic";
+		try {
+			pstmt=dbconn.getConn().prepareStatement(sql);
+			rs=pstmt.executeQuery(sql);
+			if(rs.next()){
+				countAll = rs.getInt("totalCount");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				rs.close();
+				pstmt.close();
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return countAll;
+	}
 	//获取不同板块中帖子的总数
 	public List<Integer> getEachTopicCount(){
 		

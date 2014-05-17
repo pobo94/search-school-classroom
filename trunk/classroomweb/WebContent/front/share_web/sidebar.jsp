@@ -11,10 +11,11 @@
 
 
 <div id="templatemo_sidebar">   
-	<div id="site_title">
+	   <div id="site_title">
            <a href="http://www.hevttc.edu.cn/" target="blank"><img src="images/xiaohui.jpg"  alt="logo" />
-	    <h4></h4>
-           <h3><strong>河北科技师范学院</strong></h3></a>
+	       <h4></h4>
+           <h3><strong>河北科技师范学院</strong></h3>
+           </a>
         </div> <!-- end of site_title --> 
         
         <div class="sidebar_box">
@@ -45,12 +46,10 @@
             </div>
             
         </div>   
-         <div class="sidebar_box">
-        	
-        	<a href="contact.jsp"><h3><strong>联系我们</strong></h3></a>
-                <a href="about.jsp"><h3><strong>关于我们</strong></h3></a>
-                <a href="help.jsp"><h3><strong>帮助</strong></h3></a>
-        </div>
         <div class="sidebar_box last">
-        	<a href="setting.jsp"><h3><strong>设置与反馈<strong></h3></a>
+            
+            <a href="contact.jsp"><h3><strong>联系我们</strong></h3></a>
+            <a href="about.jsp"><h3><strong>关于我们</strong></h3></a>
+            <a href="help.jsp"><h3><strong>点击帮助</strong></h3></a>
+        	<a href="timescroll/shi_jian_zhou.html"><h3><strong>网站时间轴<strong></h3></a>
         </div>

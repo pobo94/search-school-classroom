@@ -22,6 +22,8 @@
 <%
     BBS_Topic topic=(BBS_Topic)session.getAttribute("topic");
     int num=(Integer)session.getAttribute("num");
+    String userName=(String)session.getAttribute("userName");
+    String userName1=new String(userName.getBytes("ISO8859_1"),"utf-8");
 	List<BBS_Reply> replyList=(List<BBS_Reply>)session.getAttribute("replyList");
 	if(topic==null||replyList==null){
 		response.sendRedirect("front/index.jsp");
@@ -64,7 +66,7 @@
 					%>
 					<div id="tiezi_left">
 						<div class="adminImage"><img src="images/touxiang.jpg" /></div>
-						<div class="name">妮妮 &nbsp;&nbsp;&nbsp;&nbsp;回复：<%=num %></div>
+						<div class="name"><%=userName1 %>&nbsp;&nbsp;&nbsp;&nbsp;回复：<%=num %></div>
 					</div>
 					<div id="tiezi_right">
 						<div id="tiezi_content"><%=name %>&nbsp;&nbsp;<%=topic_content%></div>
