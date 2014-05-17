@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
   <display-name>classroomweb</display-name>
+  
+  <servlet>
+    <servlet-name>applicationFormServlet</servlet-name>
+    <servlet-class>com.room.data.service.applicationFormServlet</servlet-class>
+  </servlet>
+  
+  
   <servlet>
     <servlet-name>roomServlet</servlet-name>
     <servlet-class>com.room.data.service.roomServlet</servlet-class>
@@ -42,5 +49,9 @@
   <servlet-mapping>
     <servlet-name>front_roomServlet</servlet-name>
     <url-pattern>/front_roomServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>applicationFormServlet</servlet-name>
+    <url-pattern>/applicationFormServlet</url-pattern>
   </servlet-mapping>
 </web-app>

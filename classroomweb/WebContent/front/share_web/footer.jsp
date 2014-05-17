@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-<link href="../front/templatemo_style.css" rel="stylesheet" type="text/css" />
+<link href="/classroomweb/front/templatemo_style.css" rel="stylesheet" type="text/css" />
 <div id="templatemo_footer">
 
         Copyright © 2014 KuaiRenYiBu. All Rights Reserved. 快人一步 版权所有. 
