@@ -6,7 +6,7 @@
 <title>错误提示</title>
 <link href="css/templatemo_style.css" rel="stylesheet" type="text/css" />
 </head>
-<body>
+<body onload="showLeftTime()">
 	<%response.setHeader("refresh", "3;URL=/classroomweb/front/index.jsp");// %>	
 	<div id="templatemo_wrapper">    
      <jsp:include page="share_web/sidebar.jsp" flush="true" />        

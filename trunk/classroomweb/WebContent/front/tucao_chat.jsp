@@ -26,7 +26,7 @@
 	saNameList=dbseAdmin.getSANames();
 	int total_tieze=dbTopic.getCountAll();
 	%>
-<body>
+<body onload="showLeftTime()">
 
 
 	<div id="templatemo_wrapper">

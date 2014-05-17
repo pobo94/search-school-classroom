@@ -12,7 +12,7 @@ function clearText(field)
 }
 </script>
 </head>
-<body>
+<body onload="showLeftTime()">
 
 <div id="templatemo_wrapper">
 

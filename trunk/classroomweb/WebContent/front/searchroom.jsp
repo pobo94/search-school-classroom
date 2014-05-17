@@ -169,7 +169,7 @@ function share(){
  System.out.println("空教室的个数："+roomList.size());
  
 %>
-<body>
+<body onload="showLeftTime()">
 
 <div id="templatemo_wrapper">
 
