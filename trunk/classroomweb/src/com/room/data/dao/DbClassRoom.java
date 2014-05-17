@@ -3,7 +3,6 @@ package com.room.data.dao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -324,8 +323,7 @@ public class DbClassRoom {
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}				
-			}
-			
+			}			
 			try {
 				pstmt.close();
 			} catch (SQLException e) {
@@ -352,13 +350,37 @@ public class DbClassRoom {
 					roomList.add(room);
 				}
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			
 			return roomList;
 		}
 		
-	
+public List<String> getRoomNumList(){
+	       List<String> roomList=new ArrayList();
+			String sql="select RoomNum from classroom group by RoomNum  ";
+			try {
+				pstmt=dbconn.getConn().prepareStatement(sql);
+				rs=pstmt.executeQuery();
+				
+				while(rs.next()){	
+					String roomNum=rs.getString(1);
+					roomList.add(roomNum);
+//					ClassRoom room=new ClassRoom(rs);
+//					roomList.add(room);
+				}
+			} catch (SQLException e) {
+				
+				e.printStackTrace();
+			}finally{
+				try {
+					rs.close();
+					pstmt.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}				
+			}
+			return roomList;
+		}
 	
 }
