@@ -19,6 +19,24 @@ public class DbUser {
 		this.dbconn = db;
 	}
 
+	//根据用户ID，获取用户名
+	public String getUserNameById(int tid,int uid){
+		String userName=null;
+		String sql="select Account from user a,bbs_topic b where a.UserId=? and TId=?";
+		try {
+			pstmt=dbconn.getConn().prepareStatement(sql);
+			pstmt.setInt(1, uid);
+			pstmt.setInt(2, tid);
+			rs=pstmt.executeQuery();
+			if(rs.next()){
+				userName=rs.getString(1);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return userName;
+	}
 	// 根据用戶名匹配密码；
 	public User getUserByAccount(String account) {
 		User user = null;

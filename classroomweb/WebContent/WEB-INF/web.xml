@@ -28,21 +28,19 @@
     <url-pattern>/InitServlet</url-pattern>
   </servlet-mapping>
   <servlet>
-    <description></description>
-    <display-name>front_roomServlet</display-name>
-    <servlet-name>front_roomServlet</servlet-name>
-    <servlet-class>com.room.data.service.front_roomServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>front_roomServlet</servlet-name>
-    <url-pattern>/front_roomServlet</url-pattern>
-  </servlet-mapping>
-  <servlet>
     <servlet-name>lunTan</servlet-name>
     <servlet-class>com.room.data.service.luntanServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>lunTan</servlet-name>
     <url-pattern>/luntanServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>front_roomServlet</servlet-name>
+    <servlet-class>com.room.data.service.front_roomServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>front_roomServlet</servlet-name>
+    <url-pattern>/front_roomServlet</url-pattern>
   </servlet-mapping>
 </web-app>

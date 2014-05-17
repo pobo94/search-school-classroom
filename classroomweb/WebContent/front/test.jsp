@@ -11,56 +11,37 @@
 <!-- <script src="/classroomweb/front/js/popup.js"></script> -->
 <style type="text/css">
 
-  .labright{
-  	font-size:13px;color:#2d7ad1;padding:4px;
-  }
-  .myinput{
-  	width:10em; padding:4px;
-  }
-  .mybtn{
-  	width:75px;height:30px;
-  }
-  #other{
-  	margin-left:25px;
-  }
-  .other_login{
-  	margin-left:20px;
-  }
+  #textarea{
+       border:1px solid #999;
+       font-size:12px;
+       font-family: Verdana, Arial, Helvetica, sans-serif;
+       padding:1px;
+       width:400px;
+       height:100px;
+       overflow:auto;
+       width:100%;
+       text-align:left;
+       padding:5px;
+       
+}
+  
 </style>
 <script type="text/javascript">
 
 	function test(){
 		art.dialog({
-			id:'msg',
-			title:'请首先登录您的账号',
-			lock: true,
-		    background: '#ffffff', // 背景色
-		    opacity: 0.7,	// 透明度		    
-		    width:350,
-			height:240,
-			fixed:true,
-			drag:false,
-			resize:false,
-			
-		    content: 
-		    '<form action="index.jsp" method="post"><center>'+
-		    '<p><label>账号</label>：<input class="myinput" type="text" value="" ><lable class="labright">立即注册</label></p>'+
-		    '<p><label>密码：<input class="myinput" type="password" value="" ><lable class="labright" >忘记密码</label></p>'+
-		    '<p><input type="checkbox" id="checkbox" ><label class="labright" >记住密码</label>'+
-		    '&nbsp;&nbsp;<input type="checkbox" id="checkbox" ><label class="labright">自动登录</label></p>'+
-		    '<p><input type="submit" value="登录" class="mybtn">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value="取消" class="mybtn"></p>'+
-		    '<p align="left"><lable id="other">使用其他账号登录</label></p>'+
-		    '<img alt="QQ登录" src="/classroomweb/front/images/qq_login_logo.png" class="other_login">'+
-            '<img alt="新浪微博登录" src="/classroomweb/front/images/sinaweibo_login_logo.png" class="other_login">'+
-		    '</center></form>',		
-		}); 
+			 content: 
+				 '<form><table width="400" border="1"><tr height="30"><td>标题：</td><td><input type="text"/></td></tr>'+
+				 '<tr height="30"><td>内容：</td><td><input type="textarea" id="textarea" wrap="physical" ></td></tr>'+
+				 '<tr height="30"><td colspan="2"><input type="button" value="提交"/></td></tr>'+
+				 '</table></form>'
+
+		});
 		
 	}
 </script>
 </head>
 <body>
-<input type="button" onclick="test();"value="测试"> 
-<img alt="QQ登录" src="/classroomweb/front/images/qq_login_logo.png">
-<img alt="新浪微博登录" src="/classroomweb/front/images/sinaweibo_login_logo.png">
+<input type="button" onclick="test();"value="发帖"> 
 </body>
 </html>

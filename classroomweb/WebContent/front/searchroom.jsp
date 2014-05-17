@@ -189,7 +189,7 @@ function share(){
            	  <img src="images/volume_quiet.png" alt="image" />
                                 系统默认为您显示今天所有的空闲教室，您可以通过以下方式自己筛选查询。
              </p> 
-			  <form action="searchForm.jsp" method="post">
+			  <form action="/classroomweb/front_roomServlet?action=list" method="post">
 			     <select class="myselect" name="week">	
 					<%for(int i=1;i<=16;i++) {%>
 				        <option value="<%=i%>" <%if(week==i) {%>selected="selected"<%} %>>第<%=i %>周</option>
@@ -205,7 +205,8 @@ function share(){
 			        <option value="B">B教学楼</option>
 			     </select>
 			     &nbsp;&nbsp;<input type="submit" name="mysubmit" value="查询" class="mybutton">&nbsp;&nbsp;
-			     <input type="submit" name="mybutton" value="刷新" class="mybutton">
+			     <a href="/classroomweb/front_roomServlet?action=list&&buildNum=A&&weekday=2&&week=1">刷新</a>
+			     
 			  </form>
 		</div>
 

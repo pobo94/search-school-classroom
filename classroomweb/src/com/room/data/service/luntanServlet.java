@@ -45,7 +45,9 @@ public class luntanServlet extends HttpServlet {
 		
 		int topicId=Helper.strToint(request.getParameter("topicId"));
 		int num=Helper.strToint(request.getParameter("num"));
-		System.out.println("topicId="+topicId+"回复数="+num);
+		String userName=request.getParameter("userName");//发帖人
+		String userName1=new String(userName.getBytes("ISO8859_1"),"utf-8");//解决中文乱码
+		
 		DbConnection dbconn=new DbConnection();
 		DbBBS_Topic dbTopic=new DbBBS_Topic(dbconn);
 		DbBBS_Reply dbreply=new DbBBS_Reply(dbconn);				
@@ -63,6 +65,7 @@ public class luntanServlet extends HttpServlet {
 		replyList=dbreply.getReplyList(topicId);
 		
 		BBS_Reply reply=new BBS_Reply();
+		
 		for(int m=0;m<replyList.size();m++){
 			reply=replyList.get(m);
 			String rcontent=reply.getrContent();
@@ -76,6 +79,7 @@ public class luntanServlet extends HttpServlet {
 		session.setAttribute("topic", topic);
 		session.setAttribute("replyList", replyList);
 		session.setAttribute("num", num);
+		session.setAttribute("userName", userName);
 		response.sendRedirect("front/tiezi.jsp");
 		
 		/*try {

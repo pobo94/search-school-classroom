@@ -16,9 +16,15 @@
 	DbConnection dbconn=new DbConnection();
 	List<BBS_Section> sectionList=(List<BBS_Section>)session.getAttribute("sectionList");
 	List<Integer> tCountList=(List<Integer>)session.getAttribute("tCountList");
+	List<String> saNameList=new ArrayList<String>();//版块管理者名字列表
+	List<BBS_Topic> topicList=new ArrayList<BBS_Topic>();
 	DbBBS_Topic dbTopic=new DbBBS_Topic(dbconn);
 	DbBBS_Reply dbreply=new DbBBS_Reply(dbconn);
-	List<BBS_Topic> topicList=new ArrayList<BBS_Topic>();
+	DbSectionAdmin dbseAdmin=new DbSectionAdmin(dbconn);
+	DbUser dbuser=new DbUser(dbconn);
+	
+	saNameList=dbseAdmin.getSANames();
+	int total_tieze=dbTopic.getCountAll();
 	%>
 <body>
 
@@ -45,7 +51,7 @@
 			    	<a href="#"><img src="images/contact_blue.png" alt="img" />&nbsp;&nbsp;登录</a><a href="#">|立即注册&nbsp;&nbsp;</a>
 			    	<a href="#"><img src="images/documents_edit.png" alt="img" />&nbsp;我要发帖</a>
 			    	</div>
-			        <div id="second"><img src="images/group_green.png" alt="img" />&nbsp;&nbsp;今日访问量：13|昨日访问量：71|帖子：3168937|会员：457163</div>
+			        <div id="second"><img src="images/group_green.png" alt="img" />&nbsp;&nbsp;今日访问量：13|&nbsp;&nbsp;昨日访问量：71|&nbsp;&nbsp;帖子：<%=total_tieze %>|&nbsp;&nbsp;会员：457163</div>
 			    </div>
         <%
     		for(int i=0;i<sectionList.size();i++){
@@ -55,6 +61,7 @@
     			String secName=section.getsName();//获取板块名称
     			String secStatement=section.getsStatement();//获取板块描述
     			int total=tCountList.get(i);//帖子数
+    			String section_admin=saNameList.get(i);
     			
     			System.out.println(secName+"      "+secStatement+"   帖子总数："+total);   			
     			topicList=dbTopic.getList(secId);//根据板块Id,获取该版内的帖子列表   			
@@ -63,7 +70,7 @@
 	    	<div class="Stitle">
 	    	<span style="float:left;margin-left:5px;"><img src="images/star_full.png" alt="" />&nbsp;&nbsp;<%=secName %></span>
 	    	<span style="float:left;margin-left:70px;">&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/documents.png" alt="" />&nbsp;&nbsp;帖子总数：<%=total%></span>
-	    	<span style="float:right;padding-right:5px;"><img src="images/female.png" alt="img" />&nbsp;&nbsp;分区版主：妮妮</span>
+	    	<span style="float:right;padding-right:5px;"><img src="images/female.png" alt="img" />&nbsp;&nbsp;分区版主：<%=section_admin %></span>
 	    	</div>
 	        <div class="topic">
 	          <table width="650" >
@@ -74,13 +81,16 @@
 	    				int topicId=bbs_topic.gettId();//获取帖子ID
 	    				String topicName=bbs_topic.gettTopic();//获取帖子名称；    				
 	    				int num=dbreply.getReplyCount(topicId);//根据帖子ID获取每个帖子对应的回复数
+	    				int userId=bbs_topic.gettUId();
+	    				String userName=dbuser.getUserNameById(topicId, userId);//发帖子人名字
 	    				
 	    				System.out.println("    帖子"+(j+1)+"  "+topicName+"   回复总数："+num);
 	          	%>
 	          	<tr height="40">
 	            	<td width="150" ><img style="width:20px;height:20px;margin-left:40px;" src="images/comments_reply.png" alt="img" /></td>
-	                <%-- <td width="350" align="left"><a href="tiezi.jsp" style="disply:none;margin-left:10px; color:purple ;"><%=topicName %></a></td> --%>
-	                <td width="350" align="left"><a href="/classroomweb/luntanServlet?action=enter_reply&&topicId=<%=topicId %>&&num=<%=num %>" style="disply:none;margin-left:10px; color:purple ;"><%=topicName %></a></td>
+	                <td width="350" align="left">
+	                <a href="/classroomweb/luntanServlet?action=enter_reply&&topicId=<%=topicId %>&&num=<%=num %>&&userName=<%=userName %>" 
+	                style="disply:none;margin-left:10px; color:purple ;"><%=topicName %></a></td>
 	                <td width="150" align="center"><img src="images/document_a4.png" alt="" />&nbsp;&nbsp;回复总数：<%=num %></td>
 	            </tr>
 	            <%} %>
