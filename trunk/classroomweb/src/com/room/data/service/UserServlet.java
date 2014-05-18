@@ -13,8 +13,10 @@ import javax.servlet.http.HttpSession;
 import com.room.data.dao.DbApplicationForm;
 import com.room.data.dao.DbClassRoom;
 import com.room.data.dao.DbConnection;
+import com.room.data.dao.DbManager;
 import com.room.data.dao.DbUser;
 import com.room.data.model.ApplicationForm;
+import com.room.data.model.Manager;
 import com.room.data.model.User;
 import com.room.data.tools.Helper;
 import com.room.data.tools.RandomValidateCode;
@@ -188,11 +190,18 @@ public class UserServlet extends HttpServlet {
 				String pssword = request.getParameter("password");
 
 				DbConnection conn = new DbConnection();
-				dbUser = new DbUser(conn);
-				user = dbUser.getUserByAccount(account);
+				DbManager dbManager=new DbManager(conn);
+				
+//				dbUser = new DbUser(conn);
+//				user = dbUser.getUserByAccount(account);
+				
+				Manager manager=new Manager();
+				manager=dbManager.getManagerByAccount(account);
 
 				conn.disConnect();
-				if (pssword.equals(user.getPassWord())) {
+				if (pssword.equals(manager.getPassWord())) {
+					session.setAttribute("manager",manager );
+				
 					response.sendRedirect("behind/home.jsp");
 				} else {
 					response.sendRedirect("behind/login.jsp");
