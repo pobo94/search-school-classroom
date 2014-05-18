@@ -1,6 +1,7 @@
 eclipse.preferences.version=1
 encoding//WebContent/front/about.jsp=UTF-8
 encoding//WebContent/front/contact.jsp=UTF-8
+encoding//WebContent/front/help.jsp=UTF-8
 encoding//WebContent/front/information/error.jsp=UTF-8
 encoding//src/com/room/data/dao/CalendarDemo.java=UTF-8
 encoding//src/com/room/data/dao/DbAnnouncement.java=UTF-8
