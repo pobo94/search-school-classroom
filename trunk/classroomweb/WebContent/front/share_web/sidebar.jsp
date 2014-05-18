@@ -38,17 +38,17 @@ var timeID=setTimeout(showLeftTime,1000);
 
 <div id="templatemo_sidebar">
 	   <div id="site_title">
-		<a href="http://www.hevttc.edu.cn/" target="self"><img
-			src="<%=basePath%>/front/images/xiaohui.jpg" alt="logo" />
-			<h3>
-				<strong style="cursor:pointer;color:blue;">河北科技师范学院</strong>
-			
-			</h3></a>
-	</div>
+		<a href="http://www.hevttc.edu.cn/">
+		<img src="<%=basePath%>/front/images/xiaohui.jpg" alt="logo" />
+		</a>	
+		<a href="searchroom.jsp" >
+			<img src="<%=basePath%>/front/images/quna.png" alt="logo" title="快速查询" />
+		</a>				
+	   </div>
 	<!-- end of site_title -->
 
 	<div class="sidebar_box">
-
+        <a href="http://www.hevttc.edu.cn/" target="self"><h3><strong style="cursor:pointer;color:blue;">河北科技师范学院</strong></h3></a>
 		<h3><strong style="cursor:pointer;color:blue;">科师教室动态公告</strong></h3>
 		<h6><font color="black"><label id="show">显示时间的位置</label><%=Helper.getWeekOfDate(dt)%></font></h6>
 		<div class="sidebar_content">
