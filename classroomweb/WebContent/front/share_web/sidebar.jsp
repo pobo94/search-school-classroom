@@ -86,6 +86,6 @@ var timeID=setTimeout(showLeftTime,1000);
 		<a href="contact.jsp"><h3><strong style="cursor:pointer;color:blue;">联系我们</strong></h3></a> 
 		<a href="about.jsp"><h3><strong style="cursor:pointer;color:blue;">关于我们</strong></h3></a> 
 		<a href="help.jsp"><h3><strong style="cursor:pointer;color:blue;">点击帮助</strong></h3></a>
-		<a href="shi_jian_zhou.jsp"><h3><strong style="cursor:pointer;color:blue;">网站时间轴</strong></h3></a>
+		<a href="timescroll/shi_jian_zhou.html"><h3><strong style="cursor:pointer;color:blue;">网站时间轴</strong></h3></a>
 		
 	</div>
