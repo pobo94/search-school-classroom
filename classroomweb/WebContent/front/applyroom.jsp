@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
-<%@ page language="java" import="java.util.*,com.room.data.dao.*,com.room.data.model.*,com.room.data.tools.*"%>
+<%@ page language="java"
+	import="java.util.*,com.room.data.dao.*,com.room.data.model.*,com.room.data.tools.*"%>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>教室申请</title>
+<title>教室申请查看和提交</title>
 <link href="css/templatemo_style.css" rel="stylesheet" type="text/css" />
 <script language="javascript" type="text/javascript">
 	function clearText(field) {
@@ -20,14 +21,12 @@
 	<%
 		String account = request.getParameter("account");
 		String password = request.getParameter("password");
-		
-		List<String> roomlist=(List<String>) session.getAttribute("roomlist");
-		User user = (User) session.getAttribute("user");
 
-		String[] strLesson = { "1-2节", "3-4节", "5-6节", "7-8节", "9-10节" };
-		String[] strWeekday = { "星期一", "星期二", "星期三", "星期四", "星期五" };
-		String buildNum = "";
-		String roomNum = "";
+		List<ApplicationForm> applicationList = (List<ApplicationForm>) session
+				.getAttribute("applicationList");
+	//	User user = (User) session.getAttribute("user");
+
+		//		session.setAttribute("user", user);
 	%>
 	<div id="templatemo_wrapper">
 
@@ -42,45 +41,117 @@
 		</jsp:include>
 
 		<div class="content_box last" style="float: left;">
-			<h2>教室申请</h2>
-		</div>
-
-		<p>
-		<form method="post"
-			action="/classroomweb/applicationFormServlet?action=applicationForm">
+			<h2>教室申请查看</h2>
+			
+			ddd
 			<table>
-				<tr>
-					<td>申请人：</td>
-					<td><input name="account" type="text" size="30"
-						value="<%=user.getAccount()%>" /></td>
-				</tr>
-				<tr>
-					<td>教学楼号：</td>
-					<td><select class="myselect" name="buildNum">
-							<option value="A" selected="selected">A教学楼</option>
-							<option value="B">B教学楼</option>
-					</select></td>
-				</tr>
+			<tr>
+				<td  width="150">申请状态</td>
+				<td  width="100">周数</td>
+				<td width="100">教学楼号</td>
+				<td width="100">教室号</td>
+				<td width="100">申请理由</td>
+				<td width="100">开始</td>
+				<td width="100">结束</td>
+			</tr>
 
-				<tr>
-					<td>教室号：</td>
-					<td><select class="myselect" name="roomNum">
-							<% for (int i=0;i<roomlist.size();i++){ %>
-							<option value="<%=roomlist.get(i)%>"><%=roomlist.get(i)%></option>
-							<%} %>
-					</select></td>
-				</tr>
+			 <%
+					for (int j = 0; j < applicationList.size(); j++) {
+				%>
+			<tr>
+				<td width="150">
+					<%
+							if (applicationList.get(j).getResult() == 0) {
+						%> <input style="width：10px;" name="account" type="text" value="未通过" />
+					<%
+ 	} else {
+ %> <input name="account" type="text" value="通过" /> <%
+ 	}
+ %>
+				</td>
+				<td width="100"><input type="text"
+					value="<%=applicationList.get(j).getWeek()%>" /></td>
+
+				<td width="100"><input type="text"
+					value=" <%=applicationList.get(j).getBuildingNum()%>" /></td>
+
+				<td width="100"><input type="text"
+					value="<%=applicationList.get(j).getRoomNum()%>" /></td>
 
 
-			</table>
-
-		</form>
-		</p>
+				<td width="100"><input type="text"
+					value="<%=applicationList.get(j).getReason()%>" /></td>
 
 
+				<td width="100"><input type="text"
+					value="第<%=applicationList.get(j).getLessonStart()%>节课" /></td>
+
+				<td width="100"><input type="text"
+					value="第<%=applicationList.get(j).getLessonEnd()%>节课" /></td>
+			</tr>
+			<%
+					}
+				%>
+			<tr>
+				<td colspan="7"><a href="/classroomweb/front/applyroomsubmit.jsp" />教室申请提交</td>
+			</tr>
+		</table>
+		
+		</div>
+		<p>
+		<%-- <table>
+			<tr>
+				<td>申请状态</td>
+				<td>周数</td>
+				<td>教学楼号</td>
+				<td>教室号</td>
+				<td>申请理由</td>
+				<td>开始</td>
+				<td>结束</td>
+			</tr>
+
+			<%
+					for (int j = 0; j < applicationList.size(); j++) {
+				%>
+			<tr>
+				<td>
+					<%
+							if (applicationList.get(j).getResult() == 0) {
+						%> <input name="account" type="text" value="未通过" />
+					<%
+ 	} else {
+ %> <input name="account" type="text" value="通过" /> <%
+ 	}
+ %>
+				</td>
+				<td><input type="text"
+					value="<%=applicationList.get(j).getWeek()%>" /></td>
+
+				<td><input type="text"
+					value=" <%=applicationList.get(j).getBuildingNum()%>" /></td>
+
+				<td><input type="text"
+					value="<%=applicationList.get(j).getRoomNum()%>" /></td>
 
 
+				<td><input type="text"
+					value="<%=applicationList.get(j).getReason()%>" /></td>
 
+
+				<td><input type="text"
+					value="第<%=applicationList.get(j).getLessonStart()%>节课" /></td>
+
+				<td><input type="text"
+					value="第<%=applicationList.get(j).getLessonEnd()%>节课" /></td>
+			</tr>
+			<%
+					}
+				%>
+			<tr>
+				<td><a href="/classroomweb/front/applyroomsubmit.jsp" />教室申请提交</td>
+			</tr>
+		</table>
+ --%>		</p>
 	</div>
 
 	<div class="cleaner"></div>

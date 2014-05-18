@@ -3,7 +3,7 @@ package com.room.data.model;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class ApplicationForm {
+public class ApplicationForm implements java.io.Serializable {
 
 	private int applyId;
 	private int adminId;
@@ -18,26 +18,9 @@ public class ApplicationForm {
 
 	public ApplicationForm() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	public ApplicationForm(ResultSet rs) {
-		try {
-			setApplyId(rs.getInt(1));
-			setAdminId(rs.getInt(2));
-			setUserId(rs.getInt(3));
-			setBuildingNum(rs.getString(4));
-			setRoomNum(rs.getString(5));
-			setReason(rs.getString(6));
-			setLessonEnd(rs.getInt(7));
-			setResult(rs.getInt(8));
-			setWeek(rs.getInt(9));
-			setLessonStart(rs.getInt(10));
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
-
+	
 	public ApplicationForm(int applyId, int adminId, int userId,
 			String buildingNum, String roomNum, String reason,
 			int lessonEnd, int result, int week, int lessonStart) {
@@ -54,6 +37,27 @@ public class ApplicationForm {
 		this.lessonStart = lessonStart;
 	}
 
+	public ApplicationForm(ResultSet rs) {	
+		try {
+			
+			setApplyId(rs.getInt(1));
+			setAdminId(rs.getInt(2));
+			setUserId(rs.getInt(3));
+			setBuildingNum(rs.getString(4));
+			setRoomNum(rs.getString(5));
+			setReason(rs.getString(6));
+			setLessonEnd(rs.getInt(7));
+			setResult(rs.getInt(8));
+			setWeek(rs.getInt(9));
+			setLessonStart(rs.getInt(10));
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	
+	
 	public int getApplyId() {
 		return applyId;
 	}
@@ -74,8 +78,8 @@ public class ApplicationForm {
 		return userId;
 	}
 
-	public void setUserId(int userId) {
-		this.userId = userId;
+	public void setUserId(int userId) {	
+	this.userId = userId;		
 	}
 
 	public String getBuildingNum() {
@@ -102,13 +106,20 @@ public class ApplicationForm {
 		this.reason = reason;
 	}
 
+	public int getLessonEnd() {
+		return lessonEnd;
+	}
+
+	public void setLessonEnd(int lessonEnd) {
+		this.lessonEnd = lessonEnd;
+	}
 
 	public int getResult() {
 		return result;
 	}
 
 	public void setResult(int result) {
-		result = result;
+		this.result = result;
 	}
 
 	public int getWeek() {
@@ -119,17 +130,6 @@ public class ApplicationForm {
 		this.week = week;
 	}
 
-	
-	
-
-	public int getLessonEnd() {
-		return lessonEnd;
-	}
-
-	public void setLessonEnd(int lessonEnd) {
-		this.lessonEnd = lessonEnd;
-	}
-
 	public int getLessonStart() {
 		return lessonStart;
 	}
@@ -137,5 +137,7 @@ public class ApplicationForm {
 	public void setLessonStart(int lessonStart) {
 		this.lessonStart = lessonStart;
 	}
+
+	
 
 }
