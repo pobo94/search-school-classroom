@@ -2,15 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>精品应用</title>
+<title>联系我们</title>
 <link href="css/templatemo_style.css" rel="stylesheet" type="text/css" />
-<script language="javascript" type="text/javascript">
-function clearText(field)
-{
-	if (field.defaultValue == field.value) field.value = '';
-	else if (field.value == '') field.value = field.defaultValue;
-}
-</script>
 </head>
 <body onload="showLeftTime()">
 
@@ -32,15 +25,13 @@ function clearText(field)
         
         <div class="content_box" style="float:left;">
         	
-            <h2>联系我们</h2>
+            
             <div class="content_box_inner">
-            
-            <div class="image_wrapper image_fl"><img src="images/templatemo_image_04.jpg" alt="image 4" /></div>
-            
-                <p>科师小团队时刻准备着为您服务!!!</p>
-                <p>通过以下两种方式您可以我们取得联系：</p>
-		<p>——电联，我们有固定的客服人员将与您实时沟通。</p>
-  		<p>——发送邮件，我们的工作人员每天定期会查看邮箱，与您联系。</p>
+          
+               <h3><strong><img src="images/tag_violet.png" alt="imge" />&nbsp;科师小团队时刻准备着为您服务!</strong></h3>
+                <p><font size="3" color="purple">通过以下两种方式您可以我们取得联系：</font></p>
+				<p><font size="3" color="purple">——电联，我们有固定的客服人员将与您实时沟通。</font></p>
+  				<p><font size="3" color="purple">——发送邮件，我们的工作人员每天定期会查看邮箱，与您联系。</font></p>
                 
                 <div class="cleaner"></div>
             </div>
@@ -50,23 +41,18 @@ function clearText(field)
          <div class="content_box">
                 
             <div class="col_w280">
- 		<h4>电话联系</h4>
-                <h3>位置一</h3>
-                河北科技师范学院, <br />
-                信息管理与信息系统11级6号楼102<br />
-                王伟娟<br />
-                <br />
-                Tel: 010-090-1230<br />
-                Fax: 010-090-4560
-            </div>
-            <div class="col_w280 last">
-                <h3>位置二</h3>
-                河北科技师范学院, <br />
-                 信息管理与信息系统11级6号楼106<br />
-                程禄元<br />
-                <br />
-                Tel: 020-080-4400<br />
-                Fax: 020-080-7700
+ 		    <h3><strong><img src="images/smartphone_iphone.png" alt="imge" />&nbsp;电话联系</strong></h3>
+ 		    <table border="0" cellspacing="7" width="300">
+ 		    <tr>
+ 		    	<td><font size="3" color="purple">王伟娟</font></td>
+ 		    	<td><font size="3" color="purple">手机:18233581896</font></td>
+ 		    </tr>
+ 		    <tr>
+ 		    	<td><font size="3" color="purple">程禄元</font></td>
+ 		    	<td><font size="3" color="purple">手机:18233581665</font></td>
+ 		    </tr>
+ 		    </table>
+              
             </div>
             
             <div class="cleaner"></div>
@@ -74,7 +60,7 @@ function clearText(field)
         
         <div class="content_box last">
         	<div id="contact_form">
-                <h4>发送邮件</h4>
+                <h3><strong><img src="images/mail_dark_right.png" alt="" />&nbsp;发送邮件</strong></h3>
                 
                 	<form method="post" name="contact" action="#">
         
