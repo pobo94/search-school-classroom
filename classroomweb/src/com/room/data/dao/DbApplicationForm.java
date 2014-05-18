@@ -3,8 +3,11 @@ package com.room.data.dao;
 import java.sql.ResultSet;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.room.data.model.ApplicationForm;
+import com.room.data.model.User;
 
 public class DbApplicationForm {
 
@@ -31,7 +34,7 @@ public class DbApplicationForm {
 		int week = applicationForm.getWeek();
 		int lessonStart = applicationForm.getLessonStart();
 
-		String sql = "insert into application_form(adminId,userId,buildingNum,roomNum,reason,lessEnd,result,week,lessonStart)values(?,?,?,?,?,?,?,?,?)";
+		String sql = "insert into application_form(adminId,userId,buildingNum,roomNum,reason,lessonEnd,result,week,lessonStart)values(?,?,?,?,?,?,?,?,?)";
 
 		try {
 			pstmt = dbconn.getConn().prepareStatement(sql);
@@ -64,105 +67,33 @@ public class DbApplicationForm {
 		return flag;
 	}
 
-	/*
-	 * // 根据用戶名匹配密码； public ApplicationForm getApplicationFormByAccount(String
-	 * account) { ApplicationForm user = null; String sql =
-	 * "select * from user where account=?"; try { pstmt =
-	 * dbconn.getConn().prepareStatement(sql); pstmt.setString(1, account); rs =
-	 * pstmt.executeQuery();
-	 * 
-	 * while (rs.next()) { user = new User(rs); } } catch (SQLException e) {
-	 * e.printStackTrace(); } return user; }
-	 * 
-	 * // 判断用戶名是否村存在，根据返回的布尔值确定是否添加 public boolean exit(String account) {
-	 * 
-	 * boolean flag = false; String sql = "select * from user where Account=?";
-	 * try { pstmt = dbconn.getConn().prepareStatement(sql); pstmt.setString(1,
-	 * account); rs = pstmt.executeQuery();
-	 * 
-	 * if (rs.next()) { flag = true; } } catch (SQLException e) {
-	 * e.printStackTrace(); } finally { try { rs.close(); pstmt.close(); } catch
-	 * (SQLException e) { e.printStackTrace(); }
-	 * 
-	 * }
-	 * 
-	 * return flag; }
-	 */
+	public List<ApplicationForm> getListByUserId(int userId) {
+		
+		 String sql="select * from application_form where userId=? ";
+		 List<ApplicationForm> applicationFormList=new ArrayList();
+		 try {
+		 pstmt=dbconn.getConn().prepareStatement(sql);
+		 pstmt.setInt(1, userId);
+		 rs=pstmt.executeQuery();
+		
+		 while(rs.next()){
+		 ApplicationForm applicationForm=new ApplicationForm(rs);
+		 applicationFormList.add(applicationForm);
+		 }
+		 } catch (SQLException e) {
+		
+		 e.printStackTrace();
+		 }finally{
+		 try {
+		 rs.close();
+		 pstmt.close();
+		 } catch (SQLException e) {
+		 e.printStackTrace();
+		 }
+		 }
+		 return applicationFormList;
+	}
 
-	// 返回user列表
-	// public List<User> getUserList(List<User> userList,int page,int
-	// page_size){
-	//
-	// String
-	// sql="select * from user limit "+(page-1)*page_size+","+page_size;
-	// try {
-	// pstmt=dbconn.getConn().prepareStatement(sql);
-	// rs=pstmt.executeQuery();
-	//
-	// while(rs.next()){
-	// User user=new User(rs);
-	// userList.add(user);
-	// }
-	// } catch (SQLException e) {
-	//
-	// e.printStackTrace();
-	// }finally{
-	// try {
-	// rs.close();
-	// pstmt.close();
-	// } catch (SQLException e) {
-	// e.printStackTrace();
-	// }
-	// }
-	// return userList;
-	// }
 
-	// // 返回总列表数
-	// public int countAll() {
-	//
-	// String sql = "select count(*) as totalCount  from user ";
-	// int rowcount = 0;
-	// try {
-	// pstmt=dbconn.getConn().prepareStatement(sql);
-	// rs=pstmt.executeQuery();
-	// if (rs.next()) {
-	// rowcount = rs.getInt("totalCount");
-	// }
-	// } catch (Exception e) {
-	// e.printStackTrace();
-	// }finally{
-	// try {
-	// rs.close();
-	// pstmt.close();
-	// } catch (SQLException e) {
-	// e.printStackTrace();
-	// }
-	// }
-	// return rowcount;
-	// }
-
-	// //根据教室ID，删除一条记录
-	// public boolean deleteRoom(int roomId){
-	//
-	// boolean flag=false;
-	// String sql="delete from classroom where RoomId=?";
-	// try {
-	// pstmt=dbconn.getConn().prepareStatement(sql);
-	// pstmt.setInt(1, roomId);
-	// int num=pstmt.executeUpdate();
-	// if(num>0){
-	// flag=true;
-	// }
-	// } catch (SQLException e) {
-	// e.printStackTrace();
-	// }finally{
-	// try {
-	// pstmt.close();
-	// } catch (SQLException e) {
-	// e.printStackTrace();
-	// }
-	// }
-	// return flag;
-	// }
 
 }
