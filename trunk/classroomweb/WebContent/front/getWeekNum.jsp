@@ -4,36 +4,30 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Insert title here</title>
+<title>获取当前周数</title>
 
-	   <script type="text/javascript">
-
-function weekOfYear(year, month, day){ 
-	 // year 年 
-	// month 月 
-	// day 日 
-	// 每周从周日开始 
-	var date1 = new Date(year, 0, 1); 
-	 var date2 = new Date(year, month-1, day, 1); 
-	 var dayMS = 24*60*60*1000; 
-	 var firstDay = (7-date1.getDay())*dayMS; 
-	 var weekMS = 7*dayMS; 
-	 date1 = date1.getTime(); 
-	 date2 = date2.getTime(); 
-	 //return Math.ceil((date2-date1-firstDay)/weekMS)+1; 
-	 alert(Math.ceil((date2-date1-firstDay)/weekMS)+1-9);
-	 } 
+<script type="text/javascript">
+	function getYearWeek(date){  
+    var date2=new Date(date.getFullYear(), 0, 1);  
+    var day1=date.getDay();  
+    if(day1==0) day1=7;  
+    var day2=date2.getDay();  
+    if(day2==0) day2=7;  
+    d = Math.round((date.getTime() - date2.getTime()+(day2-day1)*(24*60*60*1000)) / 86400000);     
+    return Math.ceil(d /7)+1-9;
+    //document.getElementById("week").innerHTML=Math.ceil(d /7)+1-9;
+    
+    
+    var today;
+    today = new Date();
+    document.getElementById("week").innerHTML = showLocale(today);
+} 
 </script>
 </head>
-<body>
-	<%
-		Calendar cal=Calendar.getInstance();
-		cal.setTime(new Date());
-		int year=cal.get(Calendar.YEAR);
-		int month=cal.get(Calendar.MONTH)+1;
-		int day=cal.get(Calendar.DAY_OF_MONTH);
+<body onload="getYearWeek();">
 	
-	%>
-	<input type="button" onclick="weekOfYear(<%=year%>, <%=month %>, <%=day%>)">
+	<div id="week">week</div>
+	<a href="timescroll/shi_jian_zhou.html">shijian</a>
+
 </body>
 </html>
