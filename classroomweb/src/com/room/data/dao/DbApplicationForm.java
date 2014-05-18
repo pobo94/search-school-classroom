@@ -94,6 +94,52 @@ public class DbApplicationForm {
 		 return applicationFormList;
 	}
 
+	public List<ApplicationForm> getListByResult(int i) {
+		 String sql="select * from application_form where adminId=? ";
+		 List<ApplicationForm> applicationFormList=new ArrayList();
+		 try {
+		 pstmt=dbconn.getConn().prepareStatement(sql);
+		 pstmt.setInt(1, i);
+		 rs=pstmt.executeQuery();
+		
+		 while(rs.next()){
+		 ApplicationForm applicationForm=new ApplicationForm(rs);
+		 applicationFormList.add(applicationForm);
+		 }
+		 } catch (SQLException e) {
+		
+		 e.printStackTrace();
+		 }finally{
+		 try {
+		 rs.close();
+		 pstmt.close();
+		 } catch (SQLException e) {
+		 e.printStackTrace();
+		 }
+		 }
+		 return applicationFormList;
+	}
+
+	public void updateByApplyId(ApplicationForm applicationForm) {
+		
+		int applyId=applicationForm.getApplyId();
+		int adminId = applicationForm.getAdminId();		
+		int result = applicationForm.getResult();	
+		String sql="update application_form set adminId=?,result=? where applyId=?";
+		try {
+			pstmt = dbconn.getConn().prepareStatement(sql);
+		
+		pstmt.setInt(1, adminId);
+		pstmt.setInt(2, result);
+		pstmt.setInt(3, applyId);
+		pstmt.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
 
 
 }
