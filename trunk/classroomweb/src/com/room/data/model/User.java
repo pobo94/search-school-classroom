@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
 
-public class User {
+public class User implements java.io.Serializable{
 	
 	private int userId;
 	private String account;
