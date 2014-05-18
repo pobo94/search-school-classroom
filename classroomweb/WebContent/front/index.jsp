@@ -9,7 +9,7 @@
 <body>
   <jsp:forward page="/InitServlet?action=init">
   	<jsp:param value="A" name="buildNum"/>
-  	<jsp:param value="2" name="weekday"/>
+  	<jsp:param value="1" name="weekday"/>
   	<jsp:param value="1" name="week"/>
   </jsp:forward>
 </body>

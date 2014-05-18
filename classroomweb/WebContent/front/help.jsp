@@ -25,7 +25,7 @@
         
         <div class="content_box" style="float:left;">
         	
-            <h2> 教室查询说明<img src="images/hot.png" alt="" /></h2>
+            <h3><strong>教室查询说明&nbsp;<img src="images/hot-007.gif" alt="" /></strong></h3>
             <div class="content_box_inner">
              <!--    <div class="image_wrapper image_fl"><img src="images/templatemo_image_03.jpg" alt="image" /></div> -->
               
@@ -39,7 +39,7 @@
         </div>
         <div class="content_box" style="float:left;">
         	
-            <h2> 教室申请说明<img src="images/hot.png" alt="" /></h2>
+            <h3><strong>教室申请说明&nbsp;<img src="images/hot-007.gif" alt="image" /></strong></h3>
             <div class="content_box_inner">
              <!--    <div class="image_wrapper image_fl"><img src="images/templatemo_image_03.jpg" alt="image" /></div> -->
               
@@ -55,7 +55,7 @@
         
         <div class="content_box" style="float:left;">
         	
-            <h2> 精品应用下载<img src="images/tuijian.png" alt="" /></h2>
+            <h3><strong>精品应用下载&nbsp;<img src="images/tuijian.png" alt="" /></strong></h3>
             <div class="content_box_inner">
                <!--  <div class="image_wrapper image_fl"><img src="images/templatemo_image_05.jpg" alt="image" /></div> -->
               
@@ -68,7 +68,7 @@
         
          <div class="content_box last" style="float:left;">
                 
-               <h2>论坛使用说明</h2>
+               <h3><strong>论坛使用说明&nbsp;&nbsp;<img src="images/new_1.png" alt="" /></strong></h3>
                <div class="content_box_inner">
                   <!-- <div class="image_wrapper image_fl"><img src="images/templatemo_image_01.jpg" alt="image" /></div> -->
                    <p>(1)进入校友论坛页面后，您可以选择浏览不同板块的帖子，或者相关回复信息。</p>
