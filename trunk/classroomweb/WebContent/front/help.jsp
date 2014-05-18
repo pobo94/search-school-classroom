@@ -6,13 +6,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>帮助</title>
 <link href="css/templatemo_style.css" rel="stylesheet" type="text/css" />
-<script language="javascript" type="text/javascript">
-function clearText(field)
-{
-	if (field.defaultValue == field.value) field.value = '';
-	else if (field.value == '') field.value = field.defaultValue;
-}
-</script>
 </head>
 <body onload="showLeftTime()">
 
@@ -30,7 +23,7 @@ function clearText(field)
 	        <div class="cleaner"></div> 
       </div> <!-- end of templatemo_menu -->
         
-        <div class="content_box" style="float:left;">
+        <div class="content_box last" style="float:left;">
         	
             <h2> 我们的公司</h2>
             <div class="content_box_inner">
