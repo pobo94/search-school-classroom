@@ -3,6 +3,7 @@ package com.room.data.dao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.room.data.model.User;
@@ -37,6 +38,24 @@ public class DbUser {
 		}
 		return userName;
 	}
+	
+	public String getUserNameById(int uid){
+		String userName=null;
+		String sql="select Account from user where UserId=?";
+		try {
+			pstmt=dbconn.getConn().prepareStatement(sql);
+			pstmt.setInt(1, uid);			
+			rs=pstmt.executeQuery();
+			if(rs.next()){
+				userName=rs.getString(1);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return userName;
+	}
+	
 	// 根据用戶名匹配密码；
 	public User getUserByAccount(String account) {
 		User user = null;
@@ -168,51 +187,32 @@ public class DbUser {
 	 return flag;
 	 }
 
+	 //返回user列表
+	 public List<User> getUserList(){
+		 List<User>	 userList=new ArrayList();
+	 String sql="select * from user ";
+	 try {
+	 pstmt=dbconn.getConn().prepareStatement(sql);
+	 rs=pstmt.executeQuery();
+	
+	 while(rs.next()){
+	 User user=new User(rs);
+	 userList.add(user);
+	 }
+	 } catch (SQLException e) {
+	
+	 e.printStackTrace();
+	 }finally{
+	 try {
+	 rs.close();
+	 pstmt.close();
+	 } catch (SQLException e) {
+	 e.printStackTrace();
+	 }
+	 }
+	 return userList;
+	 }	
 	
 	
-	//根据教室ID，更新记录
-	// public boolean updateRoom(ClassRoom room){
-	//
-	// boolean flag=false;
-	// int adminId=room.getAdminId();
-	// String roomNum=room.getRoomNum();
-	// String buildNum=room.getBuildingNum();
-	// int isEmpty=room.getIsEmpty();
-	// int lesson=room.getLesson();
-	// int day=room.getDay();
-	// int week=room.getWeek();
-	// String term=room.getTerm();
-	//
-	// String
-	// sql="update classroom set AdminId=?,RoomNum=?,BuildingNum=?,IsEmpty=?,Lesson=?,Day=?,Week=?,Term=? where RoomId=?";
-	// try {
-	// pstmt=dbconn.getConn().prepareStatement(sql);
-	// pstmt.setInt(1, adminId);
-	// pstmt.setString(2, roomNum);
-	// pstmt.setString(3, buildNum);
-	// pstmt.setInt(4, isEmpty);
-	// pstmt.setInt(5, lesson);
-	// pstmt.setInt(6, day);
-	// pstmt.setInt(7, week);
-	// pstmt.setString(8, term);
-	// pstmt.setInt(9, room.getRoomId());
-	//
-	// int num=pstmt.executeUpdate();
-	// if(num>0){
-	// flag=true;
-	// }
-	//
-	// } catch (SQLException e) {
-	// e.printStackTrace();
-	// }finally{
-	// try {
-	// pstmt.close();
-	// } catch (SQLException e) {
-	// e.printStackTrace();
-	// }
-	// }
-	//
-	// return flag;
-	// }
-		
+
 }

@@ -41,7 +41,8 @@
          <li><a href="/classroomweb/userServlet?action=userlist&page=1" target="main">用户管理</a></li>
           <li><a href="/classroomweb/userServlet?action=managelist" target="main">管理员管理</a></li>
           <li><a href="roomManage/Index.jsp" target="main">教室管理</a></li>
-          <li><a href="/classroomweb/applicationFormServlet?action=classrequest" target="main">教室申请管理</a></li>
+          <li><a href="/classroomweb/applicationFormServlet?action=classrequest" target="main">查看未通过的申请</a></li>
+          <li><a href="/classroomweb/applicationFormServlet?action=classrequested" target="main">查看以通过的申请</a></li>    
           <li><a href="index.jsp" target="main">公告管理</a></li>
           <li><a href="index.jsp" target="main">吐槽管理</a></li>
           <li><a href="index.jsp" target="main">应用管理</a></li>
