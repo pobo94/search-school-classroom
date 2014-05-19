@@ -42,8 +42,27 @@ public class applicationFormServlet extends HttpServlet {
 			classrequest(request, response);
 		}else if (action.equalsIgnoreCase("managerRequest")) {
 			managerRequest(request, response);
-		}
+		}else if (action.equalsIgnoreCase("classrequested")) {
+			classrequested(request, response);
+			}
+	}
 
+	private void classrequested(HttpServletRequest request,
+			HttpServletResponse response) throws IOException {
+		HttpSession session = request.getSession();
+		Manager manager = new Manager();
+		manager = (Manager) session.getAttribute("manager");
+
+		DbConnection conn = new DbConnection();
+		DbApplicationForm dbApplicationForm = new DbApplicationForm(conn);
+//		ApplicationForm applicationForm = new ApplicationForm();
+		List<ApplicationForm> applicationList = dbApplicationForm
+				.getListByResult(1);
+
+		conn.disConnect();
+		session.setAttribute("applicationList", applicationList);
+
+		response.sendRedirect("behind/classrequest.jsp");
 	}
 
 	private void managerRequest(HttpServletRequest request,
@@ -52,15 +71,25 @@ public class applicationFormServlet extends HttpServlet {
 		String id=request.getParameter("id");
 		Manager manager=(Manager) session.getAttribute("manager");
 		
+		System.out.println(manager.getAdminId());
+		System.out.println(manager.getAccount());
+		
 		DbConnection conn = new DbConnection();
 		DbApplicationForm dbApplicationForm = new DbApplicationForm(conn);
 		ApplicationForm applicationForm = new ApplicationForm();
 		
 		applicationForm.setAdminId(manager.getAdminId());
 		applicationForm.setResult(1);
-		applicationForm.setApplyId(Helper.strToint(id));	
+		applicationForm.setApplyId(Helper.strToint(id));
+		
 		dbApplicationForm.updateByApplyId(applicationForm);
-		classrequest(request,response);
+		
+		List<ApplicationForm> applicationList = dbApplicationForm
+				.getListByResult(0);
+		conn.disConnect();
+		
+		session.setAttribute("applicationList", applicationList);
+		response.sendRedirect("behind/classrequest.jsp");
 		
 	}
 
@@ -73,10 +102,11 @@ public class applicationFormServlet extends HttpServlet {
 
 		DbConnection conn = new DbConnection();
 		DbApplicationForm dbApplicationForm = new DbApplicationForm(conn);
-//		ApplicationForm applicationForm = new ApplicationForm();
+        
+       
 		List<ApplicationForm> applicationList = dbApplicationForm
 				.getListByResult(0);
-
+		
 		conn.disConnect();
 		session.setAttribute("applicationList", applicationList);
 

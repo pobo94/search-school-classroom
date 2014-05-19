@@ -95,7 +95,7 @@ public class DbApplicationForm {
 	}
 
 	public List<ApplicationForm> getListByResult(int i) {
-		 String sql="select * from application_form where adminId=? ";
+		 String sql="select * from application_form where result=? ";
 		 List<ApplicationForm> applicationFormList=new ArrayList();
 		 try {
 		 pstmt=dbconn.getConn().prepareStatement(sql);
@@ -124,7 +124,8 @@ public class DbApplicationForm {
 		
 		int applyId=applicationForm.getApplyId();
 		int adminId = applicationForm.getAdminId();		
-		int result = applicationForm.getResult();	
+		int result = applicationForm.getResult();
+		System.out.println(applyId+"dsf"+adminId +result);
 		String sql="update application_form set adminId=?,result=? where applyId=?";
 		try {
 			pstmt = dbconn.getConn().prepareStatement(sql);
@@ -132,6 +133,7 @@ public class DbApplicationForm {
 		pstmt.setInt(1, adminId);
 		pstmt.setInt(2, result);
 		pstmt.setInt(3, applyId);
+		pstmt.executeUpdate();
 		pstmt.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
