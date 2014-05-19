@@ -19,14 +19,12 @@
 </head>
 <body onload="showLeftTime()">
 	<%
-		String account = request.getParameter("account");
-		String password = request.getParameter("password");
 
 		List<ApplicationForm> applicationList = (List<ApplicationForm>) session
 				.getAttribute("applicationList");
-	//	User user = (User) session.getAttribute("user");
+		User user = (User) session.getAttribute("user");
 
-		//		session.setAttribute("user", user);
+				session.setAttribute("user", user);
 	%>
 	<div id="templatemo_wrapper">
 
@@ -41,7 +39,7 @@
 		</jsp:include>
 
 		<div class="content_box last" style="float: left;">	
-			<h3><strong>您申请的教室列表如下 &nbsp;&nbsp;<a href="index.jsp">注销登录</a></strong></h3>
+			<h3><strong>你好,<%=user.getAccount() %>。您申请的教室列表如下 &nbsp;&nbsp;<a href="index.jsp">注销登录</a></strong></h3>
 			<div id="shenqing_liebiao" style="width:500px;">
 			<table border="0" style="margin-top:10px;background-image:url(images/sky.jpg)">
 			<tr height="30" >
