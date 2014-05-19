@@ -20,11 +20,15 @@
 		</jsp:include>
 
 		<div class="content_box last" style="float: left;">
-			<h2>错误提示</h2>
-			<p>
-				输入的用户名或密码有误，3秒钟后将自动跳转到首页，你也可以手动点击 <a
-					href="/classroomweb/front/index.jsp">首页</a>
-			</p>
+			<h3><strong><font color="red" size="3">错误提示：</font></strong></h3>
+			<h3>
+			<strong>
+			<a href="images/05.gif"></a>输入的用户名或密码有误，3秒钟后将自动跳转到首页，你也可以手动点击 
+			<h4></h4>
+			<a href="/classroomweb/front/index.jsp">首页</a>
+			</strong>
+			</h3>
+			
 		</div>
 	</div>
 	<div class="cleaner"></div>

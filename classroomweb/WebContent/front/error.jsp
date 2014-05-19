@@ -7,7 +7,7 @@
 <link href="css/templatemo_style.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="showLeftTime()">
-	<%response.setHeader("refresh", "3;URL=/classroomweb/front/index.jsp");// %>	
+	<%response.setHeader("refresh", "5;URL=/classroomweb/front/index.jsp");// %>	
 	<div id="templatemo_wrapper">    
      <jsp:include page="share_web/sidebar.jsp" flush="true" />        
      </div>
@@ -19,12 +19,14 @@
         </jsp:include>
         
         <div class="content_box last" style="float:left;">         	
-            <h2>错误提示</h2>
+            <div id="biaotou" style="padding-left:200px;margin-top:30px;">
+            <h3><strong><font color="red" size="3">错误提示</font></strong></h3>
+            </div>
             <p>
-                       输入的用户名或密码有误，3秒钟后将自动跳转到首页，你也可以手动点击
+                                 输入的用户名或密码有误，5秒钟后将自动跳转到首页，你也可以手动点击
                <a href="/classroomweb/front/index.jsp">首页</a>
        
-       </p> 
+            </p> 
                     
         </div>
         
