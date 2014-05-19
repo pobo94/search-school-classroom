@@ -24,7 +24,7 @@ jQuery(document).ready(function ($) {
     //$(".mumu").jrumble({rangeX: 2,rangeY: 2,rangeRot: 1});
     $(".mumu").mouseover(function () {
        $(".mumu").fadeTo("300", 0.3);
-       msgs = ["我隐身了，你看不到我", "我会隐身哦！嘿嘿！", "别动手动脚的，把手拿开！", "把手拿开我才出来！"];
+       msgs = ["我隐身了，你看不到我", "我会隐身哦！嘿嘿！", "别点击我，把手拿开！", "把手拿开我才出来！"];
        var i = Math.floor(Math.random() * msgs.length);
         showMessage(msgs[i]);
     });
@@ -40,7 +40,7 @@ jQuery(document).ready(function ($) {
         if (now > 0 && now <= 6) {
             showMessage(visitor + ' 你是夜猫子呀？还不睡觉，明天起的来么你？', 6000);
         } else if (now > 6 && now <= 11) {
-            showMessage(visitor + ' 早上好，早起的鸟儿有虫吃噢！欢迎了解我们嘻嘻！', 6000);
+            showMessage( ' 早上好，早起的鸟儿有虫吃噢！欢迎了解我们嘻嘻！', 6000);
         } else if (now > 11 && now <= 14) {
             showMessage(visitor + ' 中午了，吃饭了么？不要饿着了，我们会继续努力的！', 6000);
         } else if (now > 14 && now <= 18) {
@@ -221,7 +221,7 @@ jQuery(document).ready(function ($) {
         if (!ismove) {
             stat_click++;
             if (stat_click > 4) {
-                msgs = ["你有完没完呀？", "你已经摸我" + stat_click + "次了", "非礼呀！救命！OH，My ladygaga"];
+                msgs = ["你有完没完呀？", "你已经点击我" + stat_click + "次了", "非礼呀！救命！OH，My ladygaga"];
                 var i = Math.floor(Math.random() * msgs.length);
                 //showMessage(msgs[i]);
             } else {
