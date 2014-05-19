@@ -33,7 +33,7 @@ int menu=Helper.strToint(request.getParameter("menu"));
 	function test(btn){
 		
 		var page=btn.id;
-		alert("要跳转的页面为："+page);
+		//alert("要跳转的页面为："+page);
 		art.dialog({
 			id:'msg',
 			title:'请首先登录您的账号',
