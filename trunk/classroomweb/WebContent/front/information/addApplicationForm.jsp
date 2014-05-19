@@ -21,11 +21,10 @@
 		</jsp:include>
 
 		<div class="content_box last" style="float: left;">
-			<h2>成功提示</h2>
-			<p>
-				申请提交成功 <a href="/classroomweb/front/applyroom.jsp">申请教室</a>
-
-			</p>
+			<h3><strong><font color="yellow" size="3">成功提示：</font></strong></h3>
+			<h3></h3>
+			<h3><strong>申请提交成功 <a href="/classroomweb/front/applyroom.jsp">申请教室</a></strong></h3>
+			
 		</div>
 	</div>
 

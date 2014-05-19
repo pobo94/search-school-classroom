@@ -21,7 +21,7 @@
 		</jsp:include>
 
 		<div class="content_box last" style="float: left;">
-			<h2>错误提示</h2>
+			<h3><strong><font color="red" size="3">错误提示：</font></strong></h3>
 			<p>
 				用户已存在，请重新填写；3秒钟后跳转到注册用户页面 <a href="/classroomweb/front/adduser.jsp">注册新用户</a>
 
