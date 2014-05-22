@@ -11,6 +11,7 @@
 <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
 <script language="javascript" src="js/jquery.Sonline.js"></script>
 <script language="javascript" src="js/kefu.js"></script>
+<script language="javascript" src="js/mylogin.js"></script>
 
 <link href="ueditor/themes/default/css/umeditor.css" type="text/css" rel="stylesheet"/>
 <link href="ueditor/themes/default/css/button.css" type="text/css" rel="stylesheet"/>
@@ -18,6 +19,7 @@
 <script type="text/javascript" charset="utf-8" src="ueditor/umeditor.config.js"></script>
 <script type="text/javascript" charset="utf-8" src="ueditor/umeditor.min.js"></script>
 <script type="text/javascript" src="ueditor/lang/zh-cn/zh-cn.js"></script>
+
 </head>
 <%
     BBS_Topic topic=(BBS_Topic)session.getAttribute("topic");
@@ -27,6 +29,11 @@
 	List<BBS_Reply> replyList=(List<BBS_Reply>)session.getAttribute("replyList");
 	if(topic==null||replyList==null){
 		response.sendRedirect("front/index.jsp");
+	}
+	
+	User user = (User) session.getAttribute("user");
+	if(user==null){
+		System.out.println("用户为空");
 	}
 	
 %>
@@ -43,12 +50,29 @@
        </jsp:include> 
         
         <div class="content_box last" style="float:left; margin-top:0px;">
+        
+            <div id="loginInformation">
+        	   		<%if(user==null){ %>
+        	   		您还没有登录
+        	   		<%}else{ %>
+        	   		欢迎<%=user.getAccount() %>您的登录
+        	   		<%} %>
+        	   </div>
 		    <div id="basic">
 			    	<div id="first">
 			    	<a href="tucao_chat.jsp"><img src="images/home_green.png" alt="img" />&nbsp;&nbsp;返回列表&nbsp;&nbsp;&nbsp;&nbsp;</a>
 			    	<a href="javascript:void(0)" onclick="window.external.AddFavorite(location.href, document.title)"><img src="images/add.png" alt="img" />&nbsp;&nbsp;加入收藏夹&nbsp;&nbsp;</a>
-			    	<a href="#"><img src="images/contact_blue.png" alt="img" />&nbsp;&nbsp;登录</a><a href="#">|立即注册&nbsp;&nbsp;</a>
-			    	<a href="#"><img src="images/documents_edit.png" alt="img" />&nbsp;我要发帖</a>
+			    	<a href="javascript:void(0)" id="tiezi" onclick="test(this)"><img src="images/contact_blue.png" alt="img" />&nbsp;&nbsp;登录</a><a href="#">|立即注册&nbsp;&nbsp;</a>
+			    	<!-- <a href="#"><img src="images/documents_edit.png" alt="img" />&nbsp;我要发帖</a> -->
+			    	<%if(user==null){ %> 
+			    	<a onclick="alert('请登录后，在发帖！')" style="cursor:pointer;">
+				    	<img src="images/documents_edit.png" alt="img" />&nbsp;我要发帖
+				     </a>
+			    	<%}else{ %>
+			    	 <a href="fatie.jsp?userId=<%=user.getUserId()%>&&account=<%=user.getAccount() %>" style="cursor:pointer;">
+				    	<img src="images/documents_edit.png" alt="img" />&nbsp;我要发帖
+				      </a>
+			    	<%} %>
 			    	</div>			       
 			</div>				
         	<div id="reply_content">
@@ -109,7 +133,7 @@
 					<div class="pubReply_left">
 				        <div class="userImage"><img src="images/touxiang.jpg" /></div>
 					</div>	
-					<div class="pubReply_right">
+					<div class="pubReply_right" >
 				       	 <script type="text/plain" id="myEditor" style="width:525px;height:200px;overflow:auto;">
    							 回复之前请先<a href="#" style="cursor:pointer;">登录</a>
 						</script>
@@ -125,6 +149,7 @@
 						 </div>
 						<script type="text/javascript" charset="utf-8" src="ueditor/index.js"></script>
 					</div>
+					<div id="content"></div>
 				</div>
 			</div>
             <!--  返回顶部，底部快速标签 -->

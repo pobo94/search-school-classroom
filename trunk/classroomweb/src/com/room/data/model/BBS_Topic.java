@@ -16,7 +16,6 @@ public class BBS_Topic implements java.io.Serializable{
 	private Date tPubTime;
 	private int tReplyCount;
 	private int tClickCount;
-	private Date tLastClickTime;
 	
 	private BBS_Section bbs_section;
 	
@@ -35,7 +34,7 @@ public class BBS_Topic implements java.io.Serializable{
 			settPubTime(rs.getTimestamp(6));
 			settReplyCount(rs.getInt(7));
 			settClickCount(rs.getInt(8));
-			settLastClickTime(rs.getTimestamp(9));
+			//settLastClickTime(rs.getTimestamp(9));
 		} catch (SQLException e) {
 
 			e.printStackTrace();
@@ -105,14 +104,6 @@ public class BBS_Topic implements java.io.Serializable{
 
 	public void settClickCount(int tClickCount) {
 		this.tClickCount = tClickCount;
-	}
-
-	public Date gettLastClickTime() {
-		return tLastClickTime;
-	}
-
-	public void settLastClickTime(Date tLastClickTime) {
-		this.tLastClickTime = tLastClickTime;
 	}
 
 	public BBS_Section getBbs_section() {
