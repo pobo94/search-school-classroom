@@ -11,6 +11,7 @@
 <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
 <script language="javascript" src="js/jquery.Sonline.js"></script>
 <script language="javascript" src="js/kefu.js"></script>
+<script language="javascript" src="js/mylogin.js"></script>
 </head>
 <%
 	DbConnection dbconn=new DbConnection();
@@ -25,6 +26,13 @@
 	
 	saNameList=dbseAdmin.getSANames();
 	int total_tieze=dbTopic.getCountAll();
+	
+	/* User user = (User) session.getAttribute("user");
+	if(user==null){
+		System.out.println("dddddddddddd");
+	}
+	String account=user.getAccount();
+	System.out.println("account==="+account); */
 	%>
 <body onload="showLeftTime()">
 
@@ -48,10 +56,10 @@
 			    	<a href="tucao_chat.jsp"><img src="images/home_green.png" alt="img" />&nbsp;&nbsp;论坛首页&nbsp;&nbsp;&nbsp;&nbsp;</a>
 			    	<!-- <a href="#"><img src="images/add.png" alt="img" />&nbsp;&nbsp;添加收藏&nbsp;&nbsp;</a> -->
 			    	<a href="javascript:void(0)" onclick="window.external.AddFavorite(location.href, document.title)"><img src="images/add.png" alt="img" />&nbsp;&nbsp;加入收藏夹&nbsp;&nbsp;</a>
-			    	<a href="#"><img src="images/contact_blue.png" alt="img" />&nbsp;&nbsp;登录</a><a href="#">|立即注册&nbsp;&nbsp;</a>
+			    	<a href="javascript:void(0)" id="tucao_chat" onclick="test(this)"><img src="images/contact_blue.png" alt="img" />&nbsp;&nbsp;登录</a><a href="#">|立即注册&nbsp;&nbsp;</a>
 			    	<a href="#"><img src="images/documents_edit.png" alt="img" />&nbsp;我要发帖</a>
 			    	</div>
-			        <div id="second"><img src="images/group_green.png" alt="img" />&nbsp;&nbsp;今日访问量：13|&nbsp;&nbsp;昨日访问量：71|&nbsp;&nbsp;帖子：<%=total_tieze %>|&nbsp;&nbsp;会员：457163</div>
+			        <div id="second"><img src="images/group_green.png" alt="img" />&nbsp;&nbsp;今日访问量：13|&nbsp;&nbsp;昨日访问量：71|&nbsp;&nbsp;帖子：<%=total_tieze %>|&nbsp;&nbsp;会员：<%=dbuser.countAll() %></div>
 			    </div>
         <%
     		for(int i=0;i<sectionList.size();i++){
