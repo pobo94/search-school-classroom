@@ -4,9 +4,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import com.room.data.model.BBS_Topic;
+import com.room.data.tools.Helper;
 
 public class DbBBS_Topic {
 	
@@ -17,7 +19,37 @@ public class DbBBS_Topic {
 	public DbBBS_Topic(DbConnection dbconn) {
 		this.dbconn = dbconn;
 	}
-	
+	//添加帖子
+	 public boolean addTopic(BBS_Topic topic) throws SQLException{
+		 
+		 boolean flag=false;
+		 int sessionId=topic.gettSId();//获取板块ID
+		 int userId=topic.gettUId();//获取发帖用户ID
+		 String biaoti=topic.gettTopic();
+		 String content=topic.gettContents();
+		 String pubTime=Helper.changeTime(topic.gettPubTime());
+		 
+		 String sql="insert into bbs_topic (TSId,TUId,TTopic,TContents,TPubTime) values (?,?,?,?,?)";
+		 try {
+			pstmt=dbconn.getConn().prepareStatement(sql);
+			pstmt.setInt(1, sessionId);
+			pstmt.setInt(2, userId);
+			pstmt.setString(3, biaoti);
+			pstmt.setString(4, content);
+			pstmt.setString(5, pubTime);;
+			
+			if(pstmt.executeUpdate()>0){
+				return true;
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			pstmt.close();
+		}
+		 return flag;
+		 
+	 }
 	//根据帖子ID，获取帖子对象
 	 public BBS_Topic getTopic(int tId){
 		 

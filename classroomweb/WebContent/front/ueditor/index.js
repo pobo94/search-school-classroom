@@ -33,9 +33,10 @@
 
     function getContentTxt() {
         var arr = [];
-        arr.push("使用editor.getContentTxt()方法可以获得编辑器的纯文本内容");
-        arr.push("编辑器的纯文本内容为：");
+        /*arr.push("使用editor.getContentTxt()方法可以获得编辑器的纯文本内容");
+        arr.push("编辑器的纯文本内容为：");*/
         arr.push(UM.getEditor('myEditor').getContentTxt());
+        document.getElementById("content").innerHTML=arr;
         alert(arr.join("\n"));
     }
     function hasContent() {

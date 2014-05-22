@@ -1,6 +1,8 @@
 package com.room.data.dao;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import com.room.data.model.BBS_Reply;
@@ -67,7 +69,21 @@ public class TesstSection {
 			System.out.println(rTime);
 		}
 		
-		
+	   //添加帖子；
+		boolean flag=false;
+		BBS_Topic t1=new BBS_Topic();
+		t1.settSId(1);
+		t1.settUId(5);
+		t1.settTopic("教学楼暑假安排");
+		t1.settContents("只有一二楼教室开放，其他的教室关闭");
+		t1.settPubTime(new Date());
+		try {
+			flag=dbTopic.addTopic(t1);
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		System.out.println("添加帖子="+flag);
 
 	}
 

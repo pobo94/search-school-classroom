@@ -1,7 +1,10 @@
 package com.room.data.service;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -34,11 +37,64 @@ public class luntanServlet extends HttpServlet {
 			action="list";
 		}else if(action.equalsIgnoreCase("list")){
 			getLunTanList(request,response);
-		}if(action.equalsIgnoreCase("enter_reply")){
+		}else if(action.equalsIgnoreCase("enter_reply")){
 			getReplyList(request,response);
+		}else if(action.equalsIgnoreCase("addTopic")){
+			addTopic(request,response);
 		}
 	}
 	
+	private void addTopic(HttpServletRequest request,
+			HttpServletResponse response) throws IOException {
+		
+		int userId=Helper.strToint(request.getParameter("userId"));//获取用户ID
+		int sessionId=Helper.strToint(request.getParameter("myradio"));//获取板块ID
+		String biaoti=new String(request.getParameter("biaoti").getBytes("ISO8859_1"),"utf-8");//解决中文乱码
+		String content=new String(request.getParameter("mytextarea").getBytes("ISO8859_1"),"utf-8");//解决中文乱码
+		Calendar calendar = Calendar.getInstance();
+		Date pubTime=calendar.getTime();//获取帖子发布时间
+		
+		System.out.println("用户ID="+userId);
+		System.out.println("板块ID="+sessionId);
+		System.out.println("标题="+biaoti);
+		System.out.println("内容="+content);
+		System.out.println("发表日期="+pubTime);
+		
+		BBS_Topic topic=new BBS_Topic();
+		topic .settUId(userId);
+		topic.settSId(sessionId);
+		topic.settTopic(biaoti);
+		topic.settContents(content);
+		topic.settPubTime(pubTime);
+		
+		DbConnection dbconn=new DbConnection();
+		DbBBS_Topic dbTopic=new DbBBS_Topic(dbconn);
+		
+		DbBBS_Section dbSection=new DbBBS_Section(dbconn);	
+		List<BBS_Section> sectionList=new ArrayList<BBS_Section>();
+		List<Integer> tCountList=new ArrayList<Integer>();//存放不同板块内帖子总数数列表
+		
+		sectionList=dbSection.getBBS_SecList(1);
+		tCountList=dbTopic.getEachTopicCount();
+		System.out.println("板块个数："+sectionList.size());
+		
+		HttpSession session=request.getSession();
+		session.setAttribute("sectionList", sectionList);
+		session.setAttribute("tCountList", tCountList);
+		
+		boolean flag=false;
+		try {
+			flag = dbTopic.addTopic(topic);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		if(flag){
+			response.sendRedirect("front/tucao_chat.jsp");
+		}
+		
+		
+	}
+
 	//获取指定帖子的回复列表
 	private void getReplyList(HttpServletRequest request,
 			HttpServletResponse response) throws IOException {
