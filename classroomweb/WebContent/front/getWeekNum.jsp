@@ -13,18 +13,19 @@
     if(day1==0) day1=7;  
     var day2=date2.getDay();  
     if(day2==0) day2=7;  
-    d = Math.round((date.getTime() - date2.getTime()+(day2-day1)*(24*60*60*1000)) / 86400000);     
-    return Math.ceil(d /7)+1-9;
+    d = Math.round((date.getTime() - date2.getTime()+(day2-day1)*(24*60*60*1000)) / 86400000);
+    alert(Math.ceil(d /7)+1-9);
+    //return Math.ceil(d /7)+1-9;
     //document.getElementById("week").innerHTML=Math.ceil(d /7)+1-9;
     
     
     var today;
     today = new Date();
-    document.getElementById("week").innerHTML = showLocale(today);
+    document.getElementById("week").innerHTML = Math.ceil(d /7)+1-9;
 } 
 </script>
 </head>
-<body onload="getYearWeek();">
+<body onload=" Date date=new Date();getYearWeek(date);">
 	
 	<div id="week">week</div>
 	<a href="timescroll/shi_jian_zhou.html">shijian</a>
