@@ -14,8 +14,8 @@
 		//以下是帖子标题不为空
 		if (document.form.biaoti.value == "")
 		{
-		//alert("用户名不能为空,请您输入!");
-		document.getElementById("info_biao").innerHTML="帖子标题不能为空";
+		alert("用户名不能为空,请您输入!");
+		//document.getElementById("info_biao").innerHTML="帖子标题不能为空";
 		return false;
 		}
 		//以下是帖子长度限制
@@ -30,8 +30,7 @@
 </head>
 <%
 	int userId=Helper.strToint(request.getParameter("userId"));
-    String account=request.getParameter("account");
-/*     System.out.println("用户Id="+userId); */
+    String account=new String(request.getParameter("account").getBytes("ISO8859_1"),"utf-8");
 %>
 <body onload="showLeftTime()">
 
@@ -49,7 +48,7 @@
             <a href="tucao_chat.jsp"><img src="images/home_green.png" alt="img" />&nbsp;&nbsp;论坛首页&nbsp;&nbsp;&nbsp;&nbsp;</a>  	
             <div id="wrapper">	
             
-				  <form  name="form" id="form" action="/classroomweb/luntanServlet?action=addTopic" method="post" >	
+				  <form  name="form" id="form" onsubmit="return check()" action="/classroomweb/luntanServlet?action=addTopic" method="post" >	
 				    <input type="hidden" value="<%=userId%>" name="userId">
 					<div id="session">
 						<label><strong>论坛板块：</strong></label>
