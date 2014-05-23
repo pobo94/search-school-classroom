@@ -51,30 +51,30 @@
         
         <div class="content_box last" style="float:left; margin-top:0px;">
         	<div id="main">
-        	   <div id="loginInformation">
-        	   		<%if(user==null){ %>
-        	   		您还没有登录
-        	   		<%}else{ %>
-        	   		欢迎<%=user.getAccount() %>您的登录
-        	   		<%} %>
-        	   </div>
 				<div id="basic">
 			    	<div id="first">
-			    	<a href="tucao_chat.jsp"><img src="images/home_green.png" alt="img" />&nbsp;&nbsp;论坛首页&nbsp;&nbsp;&nbsp;&nbsp;</a>
-			    	<!-- <a href="#"><img src="images/add.png" alt="img" />&nbsp;&nbsp;添加收藏&nbsp;&nbsp;</a> -->
-			    	<a href="javascript:void(0)" onclick="window.external.AddFavorite(location.href, document.title)"><img src="images/add.png" alt="img" />&nbsp;&nbsp;加入收藏夹&nbsp;&nbsp;</a>
-			    	<a href="javascript:void(0)" id="tucao_chat" onclick="test(this)"><img src="images/contact_blue.png" alt="img" />&nbsp;&nbsp;登录</a><a href="#">|立即注册&nbsp;&nbsp;
-			    	<%if(user==null){ %> 
-			    	<a onclick="alert('请登录后，在发帖！')" style="cursor:pointer;">
-				    	<img src="images/documents_edit.png" alt="img" />&nbsp;我要发帖
-				     </a>
-			    	<%}else{ %>
-			    	 <a href="fatie.jsp?userId=<%=user.getUserId()%>&&account=<%=user.getAccount() %>" style="cursor:pointer;">
-				    	<img src="images/documents_edit.png" alt="img" />&nbsp;我要发帖
-				      </a>
-			    	<%} %>
+				    	<%if(user==null){ %>
+	        	   		<font size="2" color="green">Hi,欢迎您，您还没有登录！</font>
+	        	   		<a href="javascript:void(0)" id="tucao_chat" onclick="test(this)"><img src="images/contact_blue.png" alt="img" />&nbsp;&nbsp;登录</a><a href="#">|立即注册&nbsp;&nbsp;
+	        	   		<%}else{ %>
+	        	   		<font size="2" color="green">你好：<%=user.getAccount() %>，欢迎登陆！</font>
+	        	   		<%} %>
+			    	
+				    	<%if(user==null){ %> 
+				    	<a onclick="alert('对不起，您还未登陆，无权发帖！')" style="cursor:pointer;">
+					    	<img src="images/documents_edit.png" alt="img" />&nbsp;我要发帖
+					     </a>
+				    	<%}else{ %>
+				    	 <a href="fatie.jsp?userId=<%=user.getUserId()%>&&account=<%=user.getAccount() %>" style="cursor:pointer;">
+					    	<img src="images/documents_edit.png" alt="img" />&nbsp;我要发帖
+					      </a>
+				    	<%} %>
 			    	</div>
-			        <div id="second"><img src="images/group_green.png" alt="img" />&nbsp;&nbsp;今日访问量：13|&nbsp;&nbsp;昨日访问量：71|&nbsp;&nbsp;帖子：<%=total_tieze %>|&nbsp;&nbsp;会员：<%=dbuser.countAll() %></div>
+			        <div id="second">
+				        <a href="tucao_chat.jsp"><img src="images/home_green.png" alt="img" />&nbsp;&nbsp;论坛首页&nbsp;&nbsp;&nbsp;&nbsp;</a>
+				    	<a href="javascript:void(0)" onclick="window.external.AddFavorite(location.href, document.title)"><img src="images/add.png" alt="img" />&nbsp;&nbsp;加入收藏夹&nbsp;&nbsp;</a>
+				        <img src="images/group_green.png" alt="img" />&nbsp;&nbsp;今日访问量：13|&nbsp;&nbsp;昨日访问量：71|&nbsp;&nbsp;帖子：<%=total_tieze %>|&nbsp;&nbsp;会员：<%=dbuser.countAll() %>
+			        </div>
 			    </div>
         <%
     		for(int i=0;i<sectionList.size();i++){
