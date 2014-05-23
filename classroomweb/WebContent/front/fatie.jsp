@@ -8,11 +8,30 @@
 <link href="css/templatemo_style.css" rel="stylesheet" type="text/css" />
 <link href="css/fatie.css" type="text/css" rel="stylesheet">
 <title>发帖</title>
+<script type="text/javascript">
+	function check(){
+		
+		//以下是帖子标题不为空
+		if (document.form.biaoti.value == "")
+		{
+		//alert("用户名不能为空,请您输入!");
+		document.getElementById("info_biao").innerHTML="帖子标题不能为空";
+		return false;
+		}
+		//以下是帖子长度限制
+		if(document.form.biaoti.value.length<3||document.form1.biaoti.value.length>20){ 
+			//alert("用户名长度必须在3-20位之间！"); 
+			document.getElementById("info_biao").innerHTML="帖子标题度必须在3-20位之间！";
+			return false; 
+		} 
+
+	}
+</script>
 </head>
 <%
 	int userId=Helper.strToint(request.getParameter("userId"));
     String account=request.getParameter("account");
-    System.out.println("用户Id="+userId);
+/*     System.out.println("用户Id="+userId); */
 %>
 <body onload="showLeftTime()">
 
@@ -25,31 +44,33 @@
        		 <jsp:param value="4" name="menu"/> 
        </jsp:include>         
        <div class="content_box last" style="float:left;"> 
-            <img src="images/attention.png" alt="" />
-            <font size="3" color="red"><strong>您好<%=account %>，请您不要恶意发帖，不要发表非法言论。</strong>  </font> 
+            <img style="height:20px;width:20px;" src="images/attention.png" alt="img" />
+            <font size="2" color="red">您好<%=account %>，请不要恶意发帖，不要发表非法言论。</font> 
             <a href="tucao_chat.jsp"><img src="images/home_green.png" alt="img" />&nbsp;&nbsp;论坛首页&nbsp;&nbsp;&nbsp;&nbsp;</a>  	
             <div id="wrapper">	
             
-				  <form action="/classroomweb/luntanServlet?action=addTopic" method="post">	
+				  <form  name="form" id="form" action="/classroomweb/luntanServlet?action=addTopic" method="post" >	
 				    <input type="hidden" value="<%=userId%>" name="userId">
 					<div id="session">
 						<label><strong>论坛板块：</strong></label>
 						<input type="radio" value='1' name="myradio" class="myradio">教学楼区
 						<input type="radio" value='2' name="myradio" class="myradio">图书馆区
 						<input type="radio" value='3' name="myradio" class="myradio">食堂宿舍区
-						<font color="red">*必选</font>
+						<label id="info_session"></label>
 					</div>
 					<div id="biaoti">
-						<label><strong>标题：</strong></label>
-						<input type="text" value="最多输入20个字" name="biaoti" class="mytext"><font color="red">*必填</font>
+						<label ><strong>标题：</strong></label>
+						<input type="text" value="最多输入20个字" name="biaoti" id="mytext" emptyInfo="字段不能为空！">
+					    <div id="info_biaoti"></div>
 					</div>
 					<div id="content">
-						<textarea id="mytextarea" name="mytextarea" rows="18" cols="63" class="required"></textarea>			
+						<textarea id="mytextarea" name="mytextarea" rows="18" cols="63" class="required"></textarea>
+						<div id="info_biaoti"></div>			
 					</div>
-					<div id="sure">	
-						<font color="red">*必填</font>					
+					<div id="sure">						
 						<input type="submit" class="submit_btn" name="submit" id="submit" value="发表帖子" />
-			            <input type="reset" class="submit_btn" name="reset" id="reset" value="清空内容" />								 
+			            <input type="reset" class="submit_btn" name="reset" id="reset" value="清空内容" />	
+			            							 
 					</div>
 				</form>  
 				  

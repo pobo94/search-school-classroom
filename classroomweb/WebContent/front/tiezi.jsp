@@ -53,19 +53,20 @@
         
             <div id="loginInformation">
         	   		<%if(user==null){ %>
-        	   		您还没有登录
+        	   		   <font size="2" color="green">Hi,欢迎您，您还没有登录！</font>
+        	   			<a href="javascript:void(0)" id="tiezi" onclick="test(this)"><img src="images/contact_blue.png" alt="img" />&nbsp;&nbsp;登录</a>
+        	   			<a href="#">|立即注册&nbsp;&nbsp;</a>
         	   		<%}else{ %>
-        	   		欢迎<%=user.getAccount() %>您的登录
+        	   		<font size="2" color="green">你好：<%=user.getAccount() %>，欢迎登录！</font>
         	   		<%} %>
         	   </div>
 		    <div id="basic">
 			    	<div id="first">
 			    	<a href="tucao_chat.jsp"><img src="images/home_green.png" alt="img" />&nbsp;&nbsp;返回列表&nbsp;&nbsp;&nbsp;&nbsp;</a>
 			    	<a href="javascript:void(0)" onclick="window.external.AddFavorite(location.href, document.title)"><img src="images/add.png" alt="img" />&nbsp;&nbsp;加入收藏夹&nbsp;&nbsp;</a>
-			    	<a href="javascript:void(0)" id="tiezi" onclick="test(this)"><img src="images/contact_blue.png" alt="img" />&nbsp;&nbsp;登录</a><a href="#">|立即注册&nbsp;&nbsp;</a>
-			    	<!-- <a href="#"><img src="images/documents_edit.png" alt="img" />&nbsp;我要发帖</a> -->
+			   
 			    	<%if(user==null){ %> 
-			    	<a onclick="alert('请登录后，在发帖！')" style="cursor:pointer;">
+			    	<a onclick="alert('对不起，您还未登陆，无权发帖！')" style="cursor:pointer;">
 				    	<img src="images/documents_edit.png" alt="img" />&nbsp;我要发帖
 				     </a>
 			    	<%}else{ %>
