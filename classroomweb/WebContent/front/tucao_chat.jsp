@@ -110,11 +110,18 @@
 	    				System.out.println("    帖子"+(j+1)+"  "+topicName+"   回复总数："+num);
 	          	%>
 	          	<tr height="40">
-	            	<td width="150" ><img style="width:20px;height:20px;margin-left:40px;" src="images/comments_reply.png" alt="img" /></td>
+	            	<td width="150" >
+	            		<img style="width:20px;height:20px;margin-left:40px;" src="images/comments_reply.png" alt="img" />
+	            	</td>
 	                <td width="350" align="left">
-	                <a href="/classroomweb/luntanServlet?action=enter_reply&&topicId=<%=topicId %>&&num=<%=num %>&&userName=<%=userName %>" 
-	                style="disply:none;margin-left:10px; color:purple ;"><%=topicName %></a></td>
-	                <td width="150" align="center"><img src="images/document_a4.png" alt="" />&nbsp;&nbsp;回复总数：<%=num %></td>
+		                <a href="/classroomweb/luntanServlet?action=enter_reply&&topicId=<%=topicId %>&&num=<%=num %>&&userName=<%=userName %>&secName=<%=secName%>" 
+		                style="disply:none;margin-left:10px; color:purple ;">
+		                	<%=topicName %>
+		                </a>
+	                </td>
+	                <td width="150" align="center">
+	                	<img src="images/document_a4.png" alt="" />&nbsp;&nbsp;回复总数：<%=num %>
+	                </td>
 	            </tr>
 	            <%} %>
 	          </table>

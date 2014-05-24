@@ -22,16 +22,21 @@
 
 </head>
 <%
-    BBS_Topic topic=(BBS_Topic)session.getAttribute("topic");
-    int num=(Integer)session.getAttribute("num");
-    String userName=(String)session.getAttribute("userName");
-    String userName1=new String(userName.getBytes("ISO8859_1"),"utf-8");
-	List<BBS_Reply> replyList=(List<BBS_Reply>)session.getAttribute("replyList");
+    DbConnection dbconn=new DbConnection();
+    DbBBS_Reply dbreply=new DbBBS_Reply(dbconn);
+    
+    String secName=(String)session.getAttribute("secName");//获取板块名称
+    BBS_Topic topic=(BBS_Topic)session.getAttribute("topic");//获取帖子对象
+    int num=(Integer)session.getAttribute("num");//获取帖子对应的回复数量
+    String topicUser=(String)session.getAttribute("topicUser");//获取发帖人的名字
+    
+	List<BBS_Reply> replyList=(List<BBS_Reply>)session.getAttribute("replyList");//获取帖子对应的回复列表
 	if(topic==null||replyList==null){
 		response.sendRedirect("front/index.jsp");
 	}
 	
 	User user = (User) session.getAttribute("user");
+	int userId=0;
 	if(user==null){
 		System.out.println("用户为空");
 	}
@@ -56,13 +61,14 @@
         	   		   <font size="2" color="green">Hi,欢迎您，您还没有登录！</font>
         	   			<a href="javascript:void(0)" id="tiezi" onclick="test(this)"><img src="images/contact_blue.png" alt="img" />&nbsp;&nbsp;登录</a>
         	   			<a href="#">|立即注册&nbsp;&nbsp;</a>
-        	   		<%}else{ %>
+        	   		<%}else{ userId=user.getUserId();%>
         	   		<font size="2" color="green">你好：<%=user.getAccount() %>，欢迎登录！</font>
         	   		<%} %>
         	   </div>
 		    <div id="basic">
 			    	<div id="first">
-			    	<a href="tucao_chat.jsp"><img src="images/home_green.png" alt="img" />&nbsp;&nbsp;返回列表&nbsp;&nbsp;&nbsp;&nbsp;</a>
+			    	<img src="images/star_full.png" alt="" />&nbsp;<%=secName%><!-- 所属板块名称 -->
+			    	<a href="tucao_chat.jsp"><img src="images/home_green.png" alt="img" />&nbsp;返回列表&nbsp;</a>
 			    	<a href="javascript:void(0)" onclick="window.external.AddFavorite(location.href, document.title)"><img src="images/add.png" alt="img" />&nbsp;&nbsp;加入收藏夹&nbsp;&nbsp;</a>
 			   
 			    	<%if(user==null){ %> 
@@ -77,12 +83,6 @@
 			    	</div>			       
 			</div>				
         	<div id="reply_content">
-				<div class="fatie">
-					<div class="fatie_button1">
-						发帖
-					</div>
-					
-				</div>
 				<div id="tiezi">
 					<%
 						String name=topic.gettTopic();
@@ -91,7 +91,7 @@
 					%>
 					<div id="tiezi_left">
 						<div class="adminImage"><img src="images/touxiang.jpg" /></div>
-						<div class="name"><%=userName1 %>&nbsp;&nbsp;&nbsp;&nbsp;回复：<%=num %></div>
+						<div class="name"><%=topicUser%>&nbsp;&nbsp;&nbsp;&nbsp;回复：<%=num %></div>
 					</div>
 					<div id="tiezi_right">
 						<div id="tiezi_content"><%=name %>&nbsp;&nbsp;<%=topic_content%></div>
@@ -101,13 +101,15 @@
 				</div>
 				<%for(int i=0;i<replyList.size();i++){
 					BBS_Reply reply=replyList.get(i);
+					int replyUserID=reply.getrUId();
+					String replyAccount=dbreply.getReplyUser(replyUserID);
 					String replyContent=reply.getrContent();
 					String replyDate=Helper.changeTime(reply.getrTime());
 				%>
 				<div class="reply">
 					<div class="floorNum">
 						<div class="userImage"><img src="images/touxiang.jpg" /></div>
-						<div class="userName"><%=i+1%>楼&nbsp;&nbsp;&nbsp;小飞</div>
+						<div class="userName"><%=i+1%>楼&nbsp;&nbsp;&nbsp;<%=replyAccount %></div>
 					</div>
 					<div class="floorContent">
 						<div class="huifu_content">
@@ -135,22 +137,23 @@
 				        <div class="userImage"><img src="images/touxiang.jpg" /></div>
 					</div>	
 					<div class="pubReply_right" >
-				       	 <script type="text/plain" id="myEditor" style="width:525px;height:200px;overflow:auto;">
-   							 回复之前请先<a href="#" style="cursor:pointer;">登录</a>
-						</script>
-						 <div id="btns">
-						    <table>
-						        <tr>
-						        <td>
-						        <button class="btn" onclick="getContentTxt()">获得纯文本</button>&nbsp;
-						        <button class="btn" onclick="hasContent()">判断是否有内容</button>
-						        </td>
-						        </tr>
-						    </table>
-						 </div>
-						<script type="text/javascript" charset="utf-8" src="ueditor/index.js"></script>
-					</div>
-					<div id="content"></div>
+						 <div style="margin-top:5px; font:10px;">温馨提示：请您不要恶意回复，回复内容不要包括非法信息。</div>
+						 <form action="/classroomweb/luntanServlet?action=addReply" method="post">
+						 
+							 <input type="hidden" value="<%=topic.gettSId() %>" name="sectionId" /><!-- 板块D -->
+							 <input type="hidden" value="<%=topic.gettId() %>" name="topicId" /><!-- 帖子ID -->
+							 <input type="hidden" value="<%=topicUser %>" name="topic_user" /><!-- 发帖人 -->
+							 <input type="hidden" value="<%=userId%>" name="userId" /><!-- 登录用户ID -->
+							 <input type="hidden" value="<%=secName%>" name="secName" /><!-- 板块名字 -->
+							 
+							 
+					       	 <textarea id="mytextarea" name="mytextarea" rows="13" cols="63" class="required">请先登录，在发表回复！</textarea>
+					       	 <div style="margin-top:5px; font:10px;">
+					       	 	<input type="submit" class="submit_btn" name="submit" id="submit" value="发表回复" />
+				                <input type="reset" class="submit_btn" name="reset" id="reset" value="清空内容" />	
+					       	 </div>
+				       	 </form>
+					</div>					
 				</div>
 			</div>
             <!--  返回顶部，底部快速标签 -->
@@ -165,7 +168,7 @@
         </div>
     </div>
     
-    <div class="cleaner"></div>
+    <div class="cleaner"><input type= /></div>
 </div>
 
 <div id="templatemo_footer_wrapper">
