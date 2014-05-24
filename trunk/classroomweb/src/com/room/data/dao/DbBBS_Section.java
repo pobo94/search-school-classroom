@@ -18,7 +18,29 @@ public class DbBBS_Section {
 	public DbBBS_Section(DbConnection dbconn) {
 		this.dbconn = dbconn;
 	}
-	
+	//根据板块ID获取板块的名字
+	public String getSNameBySId(int sid){
+		String sname=null;
+		String sql="select SName from bbs_section where SId=?";
+		try {
+			pstmt=dbconn.getConn().prepareStatement(sql);
+			pstmt.setInt(1, sid);
+			rs=pstmt.executeQuery();
+			if(rs.next()){
+				sname=rs.getString(1);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				rs.close();
+				pstmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return sname;
+	}
 	//获取板块列表
 	public List<BBS_Section> getBBS_SecList(int page){
 		

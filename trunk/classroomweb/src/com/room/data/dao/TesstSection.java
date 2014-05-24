@@ -70,20 +70,32 @@ public class TesstSection {
 		}
 		
 	   //添加帖子；
+//		boolean flag=false;
+//		BBS_Topic t1=new BBS_Topic();
+//		t1.settSId(1);
+//		t1.settUId(5);
+//		t1.settTopic("教学楼暑假安排");
+//		t1.settContents("只有一二楼教室开放，其他的教室关闭");
+//		t1.settPubTime(new Date());
+//		try {
+//			flag=dbTopic.addTopic(t1);
+//		} catch (SQLException e) {
+//			
+//			e.printStackTrace();
+//		}
+//		System.out.println("添加帖子="+flag);
+		
+		//添加回复
 		boolean flag=false;
-		BBS_Topic t1=new BBS_Topic();
-		t1.settSId(1);
-		t1.settUId(5);
-		t1.settTopic("教学楼暑假安排");
-		t1.settContents("只有一二楼教室开放，其他的教室关闭");
-		t1.settPubTime(new Date());
-		try {
-			flag=dbTopic.addTopic(t1);
-		} catch (SQLException e) {
-			
-			e.printStackTrace();
-		}
-		System.out.println("添加帖子="+flag);
+		BBS_Reply r1=new BBS_Reply();
+		r1.setrTId(18);
+		r1.setrSId(1);
+		r1.setrUId(7);
+		r1.setrContent("我也喜欢在教学楼上自习，在图书馆人太多，干什么的都有。");
+		r1.setrTime(new Date());	
+	    flag=dbreply.addReply(r1);
+		
+		System.out.println("发表回复="+flag);
 
 	}
 
