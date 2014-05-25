@@ -12,14 +12,7 @@
 <script language="javascript" src="js/jquery.Sonline.js"></script>
 <script language="javascript" src="js/kefu.js"></script>
 <script language="javascript" src="js/mylogin.js"></script>
-
-<link href="ueditor/themes/default/css/umeditor.css" type="text/css" rel="stylesheet"/>
-<link href="ueditor/themes/default/css/button.css" type="text/css" rel="stylesheet"/>
-<script type="text/javascript" src="ueditor/third-party/jquery.min.js"></script>
-<script type="text/javascript" charset="utf-8" src="ueditor/umeditor.config.js"></script>
-<script type="text/javascript" charset="utf-8" src="ueditor/umeditor.min.js"></script>
-<script type="text/javascript" src="ueditor/lang/zh-cn/zh-cn.js"></script>
-
+<script language="javascript" src="js/validate_replyForm.js"></script>
 </head>
 <%
     DbConnection dbconn=new DbConnection();
@@ -137,17 +130,19 @@
 				        <div class="userImage"><img src="images/touxiang.jpg" /></div>
 					</div>	
 					<div class="pubReply_right" >
-						 <div style="margin-top:5px; font:10px;">温馨提示：请您不要恶意回复，回复内容不要包括非法信息。</div>
-						 <form action="/classroomweb/luntanServlet?action=addReply" method="post">
+						 <div style="margin-top:5px; font:10px;">
+						 温馨提示：请您不要恶意回复，回复内容不要包括非法信息。
+						 <a href="javascript:void(0)" id="tiezi" onclick="test(this)">登录|立即注册</a>
+						 </div>
+						 <div style="font:10px;color:red;"id="textareaMark"></div>
+						 <form action="/classroomweb/luntanServlet?action=addReply" method="post" onsubmit="return validate_form(this)">
 						 
 							 <input type="hidden" value="<%=topic.gettSId() %>" name="sectionId" /><!-- 板块D -->
 							 <input type="hidden" value="<%=topic.gettId() %>" name="topicId" /><!-- 帖子ID -->
 							 <input type="hidden" value="<%=topicUser %>" name="topic_user" /><!-- 发帖人 -->
-							 <input type="hidden" value="<%=userId%>" name="userId" /><!-- 登录用户ID -->
+							 <input type="hidden" value="<%=userId%>" id="userId" name="userId" /><!-- 登录用户ID -->
 							 <input type="hidden" value="<%=secName%>" name="secName" /><!-- 板块名字 -->
-							 
-							 
-					       	 <textarea id="mytextarea" name="mytextarea" rows="13" cols="63" class="required">请先登录，在发表回复！</textarea>
+					       	 <textarea id="mytextarea" name="mytextarea" rows="13" cols="63" id="mytextarea" onfocus="focusTextarea()" onblur="blurTextarea()"></textarea>
 					       	 <div style="margin-top:5px; font:10px;">
 					       	 	<input type="submit" class="submit_btn" name="submit" id="submit" value="发表回复" />
 				                <input type="reset" class="submit_btn" name="reset" id="reset" value="清空内容" />	
