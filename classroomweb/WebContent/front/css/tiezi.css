@@ -17,7 +17,7 @@
 
 #reply_content {
 	width: 650px;	
-	/* border: 1px solid #FCC; */
+	border: 2px solid #FCC;
 	margin:auto;
 	background:url(../images/sky.jpg); 
 }
@@ -93,15 +93,19 @@
 	
 }
 #pubReply {
-	background-color: pink;
+	/* background-color: pink; */
+	background-image: url(images/hui.jpg);
+	background-repeat: repeat;
 	width: 650px;	
-	height: 340px; 
+	height: 370px; 
+	bordder-top:1px solid ;
+	bordder-bottom:1px solid ;
 }
 .pubReply_left{
 
 	float:left;
 	width:120px;
-	height: 340px;
+	height: 370px;
 	line-height:100px;
 	text-align:center;
 	border-right:1px dotted;
@@ -110,7 +114,7 @@
 .pubReply_right{
 	float:left;
 	line-height:50px;
-	height: 340px;
+	height: 370px;
 }
 .floorNum{
 	float:left;
@@ -146,6 +150,7 @@
 	height: 40px;
 	line-height:40px;
 	text-align:center;
+	border-bottom:1px dashed #66F; 
 }
 .huifu_content{
 	margin-top:10px;
