@@ -23,6 +23,39 @@
 		List<ApplicationForm> applicationList = (List<ApplicationForm>) session
 				.getAttribute("applicationList");
 		User user = (User) session.getAttribute("user");
+<div id="templatemo_wrapper">
+    
+     <jsp:include page="share_web/sidebar.jsp" flush="true" />
+        
+</div>
+    
+    <div id="templatemo_content">
+    	
+       <jsp:include page="share_web/header.jsp" flush="true">  
+            <jsp:param value="3" name="menu"/> 
+        </jsp:include>
+        
+        <div class="content_box last" style="float:left;">         	
+            <h2>教室申请</h2>            
+        </div>
+        
+        
+        
+        
+        
+        
+            
+        </div>
+    
+    <div class="cleaner">
+    
+    
+    
+    
+    </div>
+</div>
+<div id="templatemo_footer_wrapper">
+	<jsp:include page="share_web/footer.jsp" flush="true" /> 
 
 				session.setAttribute("user", user);
 	%>
