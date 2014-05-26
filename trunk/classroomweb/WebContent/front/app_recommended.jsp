@@ -49,6 +49,18 @@ function clearText(field)
           </div>            
        </div>
        </div>
+            <div id="myform" >                       
+               <p>
+           <a href="http://www.hevttc.edu.cn/"> <img src="images/application/chaojikechengbiao.PNG" alt="image" />
+           </a>
+           </p>  
+            
+          </div>  
+            
+            
+            
+       </div>
+       </div>
     <div class="cleaner"></div>
 
 </div>
