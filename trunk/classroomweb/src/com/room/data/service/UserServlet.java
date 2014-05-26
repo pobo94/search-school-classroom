@@ -53,10 +53,16 @@ public class UserServlet extends HttpServlet {
 			adduser(request, response);
 		} else if (action.equalsIgnoreCase("frontlogin")) {
 			frontlogin(request, response);
+			}
+		
+		} else if (action.equalsIgnoreCase("frontlogin")) {
+			frontlogin(request, response);
 		}
 
 	}
 
+	private void frontlogin(HttpServletRequest request,
+			HttpServletResponse response) throws IOException {
 	private void frontlogin(HttpServletRequest request,
 			HttpServletResponse response) throws IOException {
 		String pageStr = request.getParameter("page").trim();
@@ -72,6 +78,19 @@ public class UserServlet extends HttpServlet {
 			dbUser = new DbUser(conn);
 			user = dbUser.getUserByAccount(username);
 
+		String pageStr=request.getParameter("page").trim();
+		
+		String username=request.getParameter("username");
+		String password=request.getParameter("password");
+		
+		if(username==null||username.equals("")){
+			 response.sendRedirect("front/error.jsp");
+		}else{
+		
+		DbConnection conn = new DbConnection();
+		dbUser = new DbUser(conn);
+		user = dbUser.getUserByAccount(username);
+
 			DbApplicationForm dbApplicationForm = new DbApplicationForm(conn);
 			ApplicationForm applicationForm = new ApplicationForm();
 			List<ApplicationForm> applicationList=dbApplicationForm.getListByUserId(user.getUserId());
@@ -80,6 +99,18 @@ public class UserServlet extends HttpServlet {
 			List<String> roomlist = dbClassRoom.getRoomNumList();
 
 			conn.disConnect();
+
+		conn.disConnect();
+		
+	   System.out.println("ccccc"+pageStr);
+	 if(password.equals(user.getPassWord())) {
+		
+	   response.sendRedirect("front/"+pageStr+".jsp");
+	 }else{
+		 response.sendRedirect("front/index.jsp");
+	 }
+	}
+	}
 
 			if (password.equals(user.getPassWord())) {
 
