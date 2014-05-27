@@ -43,7 +43,7 @@
 	
 	/* background-color: #F96; */
 	width: 650px;	
-	height: 120px;	
+	height: 150px;	
 	line-height:60px;
 	/* margin-bottom:5px; */
 	border-bottom:1px dotted #999;
@@ -51,7 +51,7 @@
 #tiezi_left{
 	float:left;
 	width:120px;
-	height:120px;
+	height:150px;
 	text-align:center;
 	border-right-style:dotted;
 	border-right-width:1px;
@@ -68,11 +68,12 @@
 #tiezi_right{
 	width:520px;
 	float:left;
-	height:120px;
+	height:150px;
 }
 #tiezi_content{
-	margin-top:10px;
-	height:85px;
+	/* padding-top:10px; */
+	height:125px;
+	line-height:30px;
 	padding-left:20px;
 }
 #tiezi_date{
@@ -85,7 +86,7 @@
 .reply{
 	
 	width: 650px;	
-	height: 130px;
+	height: 150px;
 	/* background-color: #FF9; */
 	/* margin-top:5px; */
 	margin-bottom:5px;
@@ -119,7 +120,7 @@
 .floorNum{
 	float:left;
 	width:120px;
-	height: 130px;
+	height: 150px;
 	line-height:100px;
 	text-align:center;
 	border-right:1px dotted;
@@ -129,19 +130,19 @@
 }
 .userImage{
 	margin-top:10px;
-	width:120px;
+	width:130px;
 	height:90px;
 	text-align:center;
 }
 .userName{
-	height:30px;
-	line-height:30px;
+	height:20px;
+	line-height:20px;
 	
 }
 .floorContent{
 	float:left;
 	width:520px;
-	height: 130px;	
+	height: 150px;	
 }
 #page_content {
 	/* background-color: #CFC; */
@@ -154,7 +155,7 @@
 }
 .huifu_content{
 	margin-top:10px;
-	height:90px;
+	height:110px;
 	line-height:60px;
 	padding-left:20px;
 	
