@@ -90,7 +90,7 @@ function batch_del(){//批量删除
 	} else {
 		
 		var url="/classroomweb/userServlet?action=deleteAll";
-		if(confirm("确定要删除所选中的教室吗？")){
+		if(confirm("确定要删除所选中的用户吗？")){
 			 $.get(url,function(data,status){
 		  			
 				     table.deleteRow(trNode.rowIndex);
@@ -122,21 +122,21 @@ function batch_del(){//批量删除
     	<td>&nbsp;&nbsp;&nbsp;&nbsp;
     	<input type="hidden" id=SelectAllHidden value=1> 
     	<a href="javaScript:void(0)" onclick="selectAll(myform)">全选</a>&nbsp;&nbsp;&nbsp;&nbsp;
-    	<a href="/classroomweb/behind/userManage/UserEdit.jsp?type=0"">添加用户</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    	<a href="/classroomweb/behind/userManage/UserEdit.jsp?type=0">添加用户</a>&nbsp;&nbsp;&nbsp;&nbsp;
     	<a href="javaScript:void(0)" onclick="batch_add()">批量添加</a>&nbsp;&nbsp;&nbsp;&nbsp;
     	<a href="javaScript:void(0)" onclick="batch_del()">批量删除</a>&nbsp;&nbsp;&nbsp;&nbsp;
-    	<a href="javaScript:void(0)" onclick="location.href='/userServlet?action=list&&page=1'">刷新</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    	<a href="javaScript:void(0)" onclick="location.href='/classroomweb/userServlet?action=list&page=1'">刷新</a>&nbsp;&nbsp;&nbsp;&nbsp;
     	</td>
     	<td align="right">
     	查询用户：<input type="text"
-						name="selectBuildNum" id="selectBuildNum" value="教室号/教学楼号"
+						name="selectAccound" id="selectAccound" value="用户名"
 						
-						onfocus="if(this.value=='教室号/教学楼号') this.value='';"
-						onblur="if(this.value=='') {this.value='教室号/教学楼号';}" />&nbsp;&nbsp;
+						onfocus="if(this.value=='用户名') this.value='';"
+						onblur="if(this.value=='') {this.value='用户名';}" />&nbsp;&nbsp;
 						<input type=submit name="selectBtn1" value="搜索" class="button"
-						onclick="selectBtn(thisform)" /> 
+						onclick="location.href='/classroomweb/userServlet?action=searchlist'" /> 
 						<input class="button" type="button" name="selectAllBtn" value="全部"
-						onclick="location.href='/userServlet?action=list&&page=1'" />
+						onclick="location.href='/classroomweb/userServlet?action=userlist&page=1'" />
     	</td>
     </tr>
     </table>

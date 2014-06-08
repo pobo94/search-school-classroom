@@ -53,6 +53,8 @@ public class UserServlet extends HttpServlet {
 			adduser(request, response);
 		} else if (action.equalsIgnoreCase("frontlogin")) {
 			frontlogin(request, response);
+		}else if (action.equalsIgnoreCase("saveuser")) {
+			saveUser(request, response);
 			}
 		
 		} else if (action.equalsIgnoreCase("frontlogin")) {
@@ -154,7 +156,6 @@ public class UserServlet extends HttpServlet {
 
 	private void userlist(HttpServletRequest request,
 			HttpServletResponse response) {
-
 		int page = Helper.strToint(request.getParameter("page"));// 当前页
 		System.out.println("page=" + page);
 		int rowCount = 0;// user普通用户在表中总的数据行
@@ -165,14 +166,13 @@ public class UserServlet extends HttpServlet {
 		dbUser = new DbUser(conn);
 		userList = dbUser.getUserList(userList, page, page_size);
 		rowCount = dbUser.countAll();
-
+		
 		conn.disConnect();
 		if (rowCount % page_size != 0) {
 			pageCount = rowCount / page_size + 1;
 		} else {
 			pageCount = rowCount / page_size;
 		}
-
 		request.setAttribute("user_count", rowCount);
 		request.setAttribute("user_page", page);
 		request.setAttribute("user_pagesize", page_size);
@@ -200,7 +200,6 @@ public class UserServlet extends HttpServlet {
 		response.setDateHeader("Expire", 0);
 		RandomValidateCode randomValidateCode = new RandomValidateCode();
 		randomValidateCode.getRandcode(request, response);// 输出图片方法
-
 	}
 
 	private void login(HttpServletRequest request, HttpServletResponse response)
@@ -213,19 +212,14 @@ public class UserServlet extends HttpServlet {
 			response.sendRedirect("behind/login.jsp");
 
 		} else {
-
 			String rd = request.getParameter("random");
-
 			if (random.equalsIgnoreCase(rd)) {
 				String account = request.getParameter("username");
 				String pssword = request.getParameter("password");
 
 				DbConnection conn = new DbConnection();
 				DbManager dbManager=new DbManager(conn);
-				
-//				dbUser = new DbUser(conn);
-//				user = dbUser.getUserByAccount(account);
-				
+
 				Manager manager=new Manager();
 				manager=dbManager.getManagerByAccount(account);
 
@@ -241,6 +235,34 @@ public class UserServlet extends HttpServlet {
 		}
 	}
 
+	
+	 private void saveUser(HttpServletRequest request,
+			 HttpServletResponse response)  {			
+	//		 request.setCharacterEncoding("UTF-8");
+		 
+		 String id=request.getParameter("userId");
+		 String account=request.getParameter("account");
+		 String password=request.getParameter("password");
+		 String username=request.getParameter("username");
+		 String gender=request.getParameter("gender");
+		 String mobile=request.getParameter("mobile");
+		 String email=request.getParameter("Email");
+		 String qq=request.getParameter("QQ");
+		 String status=request.getParameter("status");
+		 String registerTime=request.getParameter("registerTime");
+		 String LastTime=request.getParameter("LastTime");
+		 String vistCount=request.getParameter("vistCount");
+		 String 
+		 
+		 
+						 	
+			 DbConnection conn = new DbConnection();
+			 dbUser = new DbUser(conn);
+			 
+			 
+			 
+			
+			 }
 	// private void deleteAllRoom(HttpServletRequest request,
 	// HttpServletResponse response) {
 	//
@@ -276,63 +298,7 @@ public class UserServlet extends HttpServlet {
 	// }
 	// }
 	//
-	// private void saveRoom(HttpServletRequest request,
-	// HttpServletResponse response) throws UnsupportedEncodingException {
-	//
-	// request.setCharacterEncoding("UTF-8");
-	// System.out.println(request.getParameter("adminId"));
-	// classroom.setAdminId(Helper.strToint(request.getParameter("adminId")));
-	// classroom.setRoomNum(request.getParameter("roomNum"));
-	// if(request.getParameter("buildNum")=="A楼"){
-	// classroom.setBuildingNum("A");
-	// }else if(request.getParameter("bulidNum")=="B楼"){
-	// classroom.setBuildingNum("B");
-	// }else if(request.getParameter("bulidNum")=="X楼"){
-	// classroom.setBuildingNum("X");
-	// }else if(request.getParameter("bulidNum")=="D楼"){
-	// classroom.setBuildingNum("D");
-	// }
-	// classroom.setIsEmpty(Helper.strToint(request.getParameter("isEmpty")));
-	// if(request.getParameter("lesson")=="1-2节"){
-	// classroom.setLesson(1);
-	// }else if(request.getParameter("lesson")=="3-4节"){
-	// classroom.setLesson(3);
-	// }else if(request.getParameter("lesson")=="5-6节"){
-	// classroom.setLesson(5);
-	// }else if(request.getParameter("lesson")=="7-8节"){
-	// classroom.setLesson(7);
-	// }else if(request.getParameter("lesson")=="9-10节"){
-	// classroom.setLesson(9);
-	// }
-	// classroom.setDay(Helper.strToint(request.getParameter("day")));
-	// classroom.setWeek(Helper.strToint(request.getParameter("week")));
-	// classroom.setTerm(request.getParameter("term"));
-	// int type=Helper.strToint(request.getParameter("type"));
-	//
-	// DbConnection dbconn=new DbConnection();
-	// DbClassRoom dbroom=new DbClassRoom(dbconn);
-	// boolean flag=false;
-	// if(type==0){
-	// flag=dbroom.insertRoom(classroom);
-	// System.out.println("添加结果："+flag);
-	// }else{
-	//
-	// System.out.println("roomId="+request.getParameter("roomId"));
-	// classroom.setRoomId(Helper.strToint(request.getParameter("roomId")));
-	// flag=dbroom.updateRoom(classroom);
-	// System.out.println("更新结果："+flag);
-	// }
-	// dbconn.disConnect();
-	// try {
-	// getServletContext().getRequestDispatcher("/behind/roomManage/Index.jsp").forward(request,
-	// response);
-	// } catch (ServletException e) {
-	// e.printStackTrace();
-	// } catch (IOException e) {
-	// e.printStackTrace();
-	// }
-	//
-	// }
+	
 	//
 	// private void operateRoom(HttpServletRequest request,
 	// HttpServletResponse response) {

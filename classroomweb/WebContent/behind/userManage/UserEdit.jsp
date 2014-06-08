@@ -14,12 +14,14 @@
 <title>adduser.jsp</title>
 <%
 	User us = new User();
+    int  exist=0;
 	String typestr = request.getParameter("type");
 	int type = Integer.valueOf(typestr);
 	if (type == 0) {
 		;
 
 	} else if (type == 1) {
+		exist=1;
 		us = (User) request.getAttribute("user");
 
 	}
@@ -96,7 +98,11 @@
 			<table width="100%">
 				<tr>
 					<td width="5%"></td>
+					<%if(exist==1){ %>
 					<td>修改页面</td>
+					<%}else{ %>
+					<td>添加页面</td>
+					<%} %>
 				</tr>
 				<tr>
 					<td align="center" colspan="2"><em><font color=#ff0000>带星号内容必须填写</font>
@@ -105,17 +111,11 @@
 			</table>
 		</div>
 		<div id="content">
-			<form action="user?action=modifyUser"
-				onsubmit="return validate_form(this)" method="post">
-				<table>
-
-
-					<tr>
-
+			<form action="/classroomweb/userServlet?action=saveuser"  onsubmit="return validate_form(this)" method="post">
+				<table>					
 						<td align="right"><u>账号</u></td>
-
 						<td align="left"><u><input type="text" name="account"
-								value="<%= us.getAccount() %>" size="20" maxlength="20"><font
+								value="<%= us.getAccount() %>" size="20" maxlength="20" ><font
 								color="#ff0000">*</font></u></td>
 					</tr>
 					<tr>
@@ -142,7 +142,7 @@
 					</tr>
 					<tr>
 						<td align="right"><u>手机号码</u></td>
-						<td align="left"><u><input type="text" name="Mobile"
+						<td align="left"><u><input type="text" name="mobile"
 								value="<%=us.getMobile() %>" size="20" maxlength="20"></u></td>
 					</tr>
 					<tr>
@@ -170,7 +170,7 @@
 					<tr>
 						<td align="right"><u>最后登录时间</u></td>
 						<td align="left"><u><input type="text"
-								name="registerTime" value="<%=us.getLastTime()%>" size="20"
+								name="LastTime" value="<%=us.getLastTime()%>" size="20"
 								maxlength="20"></u></td>
 					</tr>
 					<tr>
