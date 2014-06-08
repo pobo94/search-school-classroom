@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<title>Example1</title> 
+<script type="text/javascript" src="如下:
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<title>Example1</title> 
+<script type="text/javascript" src="/Resource/如下:
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<title>Example1</title> 
+<script type="text/javascript" src="js/jquery.min.js"></script> 
+<script type="text/javascript"> 
+function jump() 
+{ 
+//清空表单所有数据 
+document.getElementById("firstname").value="" 
+document.getElementById("lastname").value="" 
+$("#firstnameLabel").text("") 
+$("#lastnameLabel").text("") 
+} 
+$(document).ready(function(){ 
+$("#form1").bind("submit", function(){ 
+var txt_firstname = $.trim($("#firstname").attr("value")) 
+var txt_lastname = $.trim($("#lastname").attr("value")) 
+
+$("#firstnameLabel").text("") 
+$("#lastnameLabel").text("") 
+
+var isSuccess = 1; 
+if(txt_firstname.length == 0) 
+{ 
+$("#firstnameLabel").text("firstname不能为空！") 
+$("#firstnameLabel").css({"color":"red"}); 
+isSuccess = 0; 
+} 
+if(txt_lastname.length == 0) 
+{ 
+$("#lastnameLabel").text("lastname不能为空！") 
+$("#lastnameLabel").css({"color":"red"}); 
+isSuccess = 0; 
+} 
+if(isSuccess == 0) 
+{ 
+return false; 
+} 
+}) 
+}) 
+</script> 
+</head> 
+<body> 
+提交表单前进行验证(方法一) 
+<hr width="40%" align="left" /> 
+<form id="form1" method="post" action="/DealWithForm1/"> 
+<table> 
+<tr> 
+<td>first_name:</td> 
+<td><input name="firstname" type="text" id="firstname" /></td> 
+<td><label id="firstnameLabel"></label></td> 
+</tr> 
+<tr> 
+<td>last_name:</td> 
+<td><input name="lastname" type="text" id="lastname" /></td> 
+<td><label id="lastnameLabel"></label></td> 
+</tr> 
+</table> 
+<hr width="40%" align="left" /> 
+<button type="submit">提交</button> 
+<button type="button" onclick="jump();">取消</button> 
+</form> 
+</body> 
+</html> 
+详细出处参考：http://www.jb51.net/article/40161.htm"></script> 
+<script type="text/javascript"> 
+function jump() 
+{ 
+//清空表单所有数据 
+document.getElementById("firstname").value="" 
+document.getElementById("lastname").value="" 
+$("#firstnameLabel").text("") 
+$("#lastnameLabel").text("") 
+} 
+$(document).ready(function(){ 
+$("#form1").bind("submit", function(){ 
+var txt_firstname = $.trim($("#firstname").attr("value")) 
+var txt_lastname = $.trim($("#lastname").attr("value")) 
+
+$("#firstnameLabel").text("") 
+$("#lastnameLabel").text("") 
+
+var isSuccess = 1; 
+if(txt_firstname.length == 0) 
+{ 
+$("#firstnameLabel").text("firstname不能为空！") 
+$("#firstnameLabel").css({"color":"red"}); 
+isSuccess = 0; 
+} 
+if(txt_lastname.length == 0) 
+{ 
+$("#lastnameLabel").text("lastname不能为空！") 
+$("#lastnameLabel").css({"color":"red"}); 
+isSuccess = 0; 
+} 
+if(isSuccess == 0) 
+{ 
+return false; 
+} 
+}) 
+}) 
+</script> 
+</head> 
+<body> 
+提交表单前进行验证(方法一) 
+<hr width="40%" align="left" /> 
+<form id="form1" method="post" action="/DealWithForm1/"> 
+<table> 
+<tr> 
+<td>first_name:</td> 
+<td><input name="firstname" type="text" id="firstname" /></td> 
+<td><label id="firstnameLabel"></label></td> 
+</tr> 
+<tr> 
+<td>last_name:</td> 
+<td><input name="lastname" type="text" id="lastname" /></td> 
+<td><label id="lastnameLabel"></label></td> 
+</tr> 
+</table> 
+<hr width="40%" align="left" /> 
+<button type="submit">提交</button> 
+<button type="button" onclick="jump();">取消</button> 
+</form> 
+</body> 
+</html> 
+详细出处参考：http://www.jb51.net/article/40161.htm"></script> 
+<script type="text/javascript"> 
+function jump() 
+{ 
+//清空表单所有数据 
+document.getElementById("firstname").value="" 
+document.getElementById("lastname").value="" 
+$("#firstnameLabel").text("") 
+$("#lastnameLabel").text("") 
+} 
+$(document).ready(function(){ 
+$("#form1").bind("submit", function(){ 
+var txt_firstname = $.trim($("#firstname").attr("value")) 
+var txt_lastname = $.trim($("#lastname").attr("value")) 
+
+$("#firstnameLabel").text("") 
+$("#lastnameLabel").text("") 
+
+var isSuccess = 1; 
+if(txt_firstname.length == 0) 
+{ 
+$("#firstnameLabel").text("firstname不能为空！") 
+$("#firstnameLabel").css({"color":"red"}); 
+isSuccess = 0; 
+} 
+if(txt_lastname.length == 0) 
+{ 
+$("#lastnameLabel").text("lastname不能为空！") 
+$("#lastnameLabel").css({"color":"red"}); 
+isSuccess = 0; 
+} 
+if(isSuccess == 0) 
+{ 
+return false; 
+} 
+}) 
+}) 
+</script> 
+</head> 
+<body> 
+提交表单前进行验证(方法一) 
+<hr width="40%" align="left" /> 
+<form id="form1" method="post" action="/DealWithForm1/"> 
+<table> 
+<tr> 
+<td>first_name:</td> 
+<td><input name="firstname" type="text" id="firstname" /></td> 
+<td><label id="firstnameLabel"></label></td> 
+</tr> 
+<tr> 
+<td>last_name:</td> 
+<td><input name="lastname" type="text" id="lastname" /></td> 
+<td><label id="lastnameLabel"></label></td> 
+</tr> 
+</table> 
+<hr width="40%" align="left" /> 
+<button type="submit">提交</button> 
+<button type="button" onclick="jump();">取消</button> 
+</form> 
+</body> 
+</html> 
+详细出处参考：http://www.jb51.net/article/40161.htm

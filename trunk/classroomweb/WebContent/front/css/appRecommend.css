@@ -1,0 +1,44 @@
+@CHARSET "UTF-8";
+#appTitle{
+		width:650px;
+		height:80px; 
+		margin:auto;
+	}
+	#appWrapper{
+		width:650px;
+		margin:auto;
+		margin-top:5px;
+	}
+	.applist{
+		height:100px;
+		border-bottom:1px dashed green;
+		cursor:pointer;
+	}
+	.tubiao{
+		width:70px;
+		float:left;
+		padding-top:20px;
+		
+	}
+	.tubiao_name{
+		width:80px;
+		margin-left:40px;
+		float:left;
+		padding-top:40px;
+		font-family:华文新魏;
+		font-size:18px;
+	}
+	.describe{
+		width:200px;
+		margin-left:40px;
+		float:left;
+		padding-top:30px;
+		font-family:微软雅黑;
+		font-size:14px;
+	}
+	.download{
+		width:130px;
+		margin-left:80px;
+		float:left;
+		padding-top:35px;
+	}

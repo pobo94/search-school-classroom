@@ -54,19 +54,19 @@
 				<div id="basic">
 			    	<div id="first">
 				    	<%if(user==null){ %>
-	        	   		<font size="2" color="green">Hi,欢迎您，您还没有登录！</font>
-	        	   		<a href="javascript:void(0)" id="tucao_chat" onclick="test(this)"><img src="images/contact_blue.png" alt="img" />&nbsp;&nbsp;登录</a><a href="#">|立即注册&nbsp;&nbsp;
+	        	   		<font size="2" color="green">Hi,欢迎您，您还没有登录！&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
+	        	   		<a href="javascript:void(0)" id="tucao_chat" onclick="test(this)"><img src="images/contact_blue.png" alt="img" />&nbsp;&nbsp;登录</a><a href="#">|立即注册&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	        	   		<%}else{ %>
-	        	   		<font size="2" color="green">你好：<%=user.getAccount() %>，欢迎登陆！</font>
+	        	   		<font size="2" color="green">你好：<%=user.getAccount() %>，欢迎登陆！&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
 	        	   		<%} %>
 			    	
 				    	<%if(user==null){ %> 
 				    	<a onclick="alert('对不起，您还未登陆，无权发帖！')" style="cursor:pointer;">
-					    	<img src="images/documents_edit.png" alt="img" />&nbsp;我要发帖
+					    	<img src="images/documents_edit.png" alt="img" />&nbsp;&nbsp;&nbsp;&nbsp;我要发帖
 					     </a>
 				    	<%}else{ %>
 				    	 <a href="fatie.jsp?userId=<%=user.getUserId()%>&&account=<%=user.getAccount() %>" style="cursor:pointer;">
-					    	<img src="images/documents_edit.png" alt="img" />&nbsp;我要发帖
+					    	<img src="images/documents_edit.png" alt="img" />&nbsp;&nbsp;&nbsp;&nbsp;我要发帖
 					      </a>
 				    	<%} %>
 			    	</div>

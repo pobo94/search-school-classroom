@@ -2,16 +2,22 @@
 #basic {
 	height: 50px;
 	/* background:#FCF; */
+	font-family:微软雅黑;
+	font-size:14px;
+}
+#loginInformation{
+	font-family:微软雅黑;
+	font-size:14px;
 }
 #first {
 	height: 20px;
-	font-family:宋体/* Verdana, Geneva, sans-serif */;
+	font-family:微软雅黑;
 	font-size:14px;
 }
 #second {
 	margin-top:5px;
 	height: 20px;
-	font-family:Verdana, Geneva, sans-serif;
+	font-family:微软雅黑;
 	font-size:14px;
 }
 
@@ -20,6 +26,8 @@
 	border: 2px solid #FCC;
 	margin:auto;
 	background:url(../images/sky.jpg); 
+	font-family:微软雅黑;
+	font-size:14px;
 }
 .fatie{
 	width: 650px;	
