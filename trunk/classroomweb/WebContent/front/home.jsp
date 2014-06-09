@@ -127,23 +127,18 @@
         	
             <h4><strong>欢迎访问"快人一步"教室查询系统</strong></h4>
             <div class="content_box_inner">
-                <div class="image_wrapper image_fl"><img src="images/templatemo_image_05.jpg" alt="image" /></div>
-                <p align="justify"><strong>你有精美图片，我有实用消息；</strong></p>
-                <p align="justify"><strong>你有笑话万千，我有吐槽连连；</strong></p>
-                <p align="justify"><strong>你有阡陌纵横，我有曲径通幽；</strong></p>
-                <p align="justify"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;知识未动，&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;教室先行；</strong></p>
-                <p align="justify"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;快人一步，&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;伴你学成；</strong></p>
+                
+                <p align="justify" style="font-family:微软雅黑;font-size:15px;">你有精美图片，我有实用消息；你有笑话万千，我有吐槽连连；</p>
+                <p align="justify" style="font-family:微软雅黑;font-size:15px;">你有阡陌纵横，我有曲径通幽；知识未动，教室先行；</p>
+                <p align="justify" style="font-family:微软雅黑;font-size:15px;">快人一步，伴你学成；</p>
                 <div class="cleaner"></div>
             </div>
             
         </div>
-        <br><br>
-         <div class="content_box" style="float:left;">
-           <!-- <div class="col_w280"> -->
-                	
-                	
+         <div class="content_box last" style="float:left;">
+                            	
            <div class="content">
-           <div id="recent" style="margin-top:20px;"><h4><strong>最近活动</h3></strong></h4></div>
+           <div id="recent" style="margin-top:30px;"><h4><strong>最近活动</h3></strong></h4></div>
 			  <div class="main" >
 			  
 			    <ul class="imgarea" >
