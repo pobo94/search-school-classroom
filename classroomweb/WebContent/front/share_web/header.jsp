@@ -47,9 +47,9 @@ int menu=Helper.strToint(request.getParameter("menu"));
 			resize:false,
 			
 		    content:
-		    '<form action="/classroomweb/userServlet?action=frontlogin&&page='+page+'" method="post"><center>'+
+		    /* '<form action="/classroomweb/userServlet?action=frontlogin&&page='+page+'" method="post"><center>'+
 		    '<p><label>账号</label>：<input class="myinput"  name="username" type="text" value="" ><lable class="labright">立即注册</label></p>'+
-		    '<p><label>密码：<input class="myinput" type="password" name="password" value="" ><lable class="labright" >忘记密码</label></p>'+
+		    '<p><label>密码：<input class="myinput" type="password" name="password" value="" ><lable class="labright" >忘记密码</label></p>'+ */
 		    '<form action="/classroomweb/userServlet?action=frontlogin&&page='+page+'" method="post"><center>'+
 		    '<p><label>账号</label>：<input class="myinput"  name="username" type="text" value="" ><lable class="labright"><a href="/classroomweb/front/addUser.jsp">立即注册</a></label></p>'+
 		    '<p><label>密码：<input class="myinput" type="password" name="password" value="" ><lable class="labright" >忘记密码</label></p>'+

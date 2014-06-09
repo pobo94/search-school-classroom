@@ -116,7 +116,7 @@
 				</div>
 				<%} %>
 				
-				<div id="page_content"> 
+				<%-- <div id="page_content"> 
 				       [第一页]&nbsp;&nbsp;[上一页]
 						[下一页]&nbsp;&nbsp;[最后一页 ]
 						Go<select style="width:70px;">
@@ -124,7 +124,7 @@
 						<option value="<%=i%>"><%=i%></option>
 						<%} %>
 						</select><input type="submit" value="跳转" />
-				</div>
+				</div> --%>
 				<div id="pubReply">
 					<div class="pubReply_left">
 				        <div class="userImage"><img src="images/touxiang.jpg" /></div>

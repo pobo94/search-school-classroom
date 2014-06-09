@@ -48,9 +48,9 @@ var timeID=setTimeout(showLeftTime,1000);
 	<!-- end of site_title -->
 
 	<div class="sidebar_box">
-        <a href="http://www.hevttc.edu.cn/" target="self"><h3><strong style="cursor:pointer;color:blue;">河北科技师范学院</strong></h3></a>
-		<h3><strong style="cursor:pointer;color:blue;">科师教室动态公告</strong></h3>
-		<h6><font color="black"><label id="show">显示时间的位置</label><%=Helper.getWeekOfDate(dt)%></font></h6>
+        <a href="http://www.hevttc.edu.cn/" target="self"><h3><strong style="cursor:pointer;color:gray;">河北科技师范学院</strong></h3></a>
+		<h3><strong style="cursor:pointer;color:gray;">科师教室动态公告</strong></h3>
+		<h6><font color="gray"><label id="show">显示时间的位置</label><%=Helper.getWeekOfDate(dt)%></font></h6>
 		<div class="sidebar_content">
 
 			<marquee direction="up" width="255" height="370" loop="-1" vspace="6"
@@ -68,9 +68,9 @@ var timeID=setTimeout(showLeftTime,1000);
 						<h6>
 							<--------------公告<%=i + 1%>-------------->
 						</h6>
-						<p><%=content%></p>
+						<p><div id="content" style="font-family:微软雅黑;font-size:14px;"><%=content%></div></p>
 						<p>
-							发布时间：<%=pubTime%>&nbsp;&nbsp;<%=Helper.getWeekOfDate(announcement.getPubTime())%></p>
+							<div id="date" style="font-family:微软雅黑;font-size:12px;">发布时间：<%=pubTime%>&nbsp;&nbsp;<%=Helper.getWeekOfDate(announcement.getPubTime())%></div></p>
 					</li>
 					<%
 						}
@@ -83,9 +83,9 @@ var timeID=setTimeout(showLeftTime,1000);
 	</div>
 	<div class="sidebar_box last">
 
-		<a href="contact.jsp"><h3><strong style="cursor:pointer;color:blue;">联系我们</strong></h3></a> 
-		<a href="about.jsp"><h3><strong style="cursor:pointer;color:blue;">关于我们</strong></h3></a> 
-		<a href="help.jsp"><h3><strong style="cursor:pointer;color:blue;">点击帮助</strong></h3></a>
-		<a href="timescroll/shi_jian_zhou.html"><h3><strong style="cursor:pointer;color:blue;">网站时间轴</strong></h3></a>
+		<a href="contact.jsp"><h3><strong style="cursor:pointer;color:gray;">联系我们</strong></h3></a> 
+		<a href="about.jsp"><h3><strong style="cursor:pointer;color:gray;">关于我们</strong></h3></a> 
+		<a href="help.jsp"><h3><strong style="cursor:pointer;color:gray;">点击帮助</strong></h3></a>
+		<a href="timescroll/shi_jian_zhou.html"><h3><strong style="cursor:pointer;color:gray;">网站时间轴</strong></h3></a>
 		
 	</div>

@@ -23,11 +23,15 @@
 
 #reply_content {
 	width: 650px;	
-	border: 2px solid #FCC;
+	border-top: 1px solid #CEE;
+	border-bottom: 1px solid #CEE; 
+	border-right: 1px solid #CEE;
 	margin:auto;
-	background:url(../images/sky.jpg); 
+	/* background:url(../images/sky.jpg); */ 
+	background:white;
 	font-family:微软雅黑;
 	font-size:14px;
+	
 }
 .fatie{
 	width: 650px;	
@@ -64,6 +68,7 @@
 	border-right-style:dotted;
 	border-right-width:1px;
 	border-right-color:#666;
+	background-color: #CEE;
 }
 .adminImage{
 	margin-top:10px;
@@ -89,7 +94,6 @@
 	line-height:25px;
 	padding-left:20px;
 	border-top:1px dashed #999;
-	border-bottom:1px dashed #66F; 
 }
 .reply{
 	
@@ -119,11 +123,14 @@
 	text-align:center;
 	border-right:1px dotted;
 	border-right-color:#999;
+	background-color: #CEE;
+	
 }
 .pubReply_right{
 	float:left;
 	line-height:50px;
 	height: 370px;
+	background:url(../images/paopao.jpg);
 }
 .floorNum{
 	float:left;
@@ -135,6 +142,7 @@
 	border-right-color:#999;
 	/* border-top: 1px dashed #999; */
 	border-bottom:1px dashed #999; 
+	background-color: #CEE;
 }
 .userImage{
 	margin-top:10px;
