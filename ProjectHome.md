@@ -1,0 +1,1 @@
+search empty classroom
